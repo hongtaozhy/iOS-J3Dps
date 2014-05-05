@@ -10,4 +10,12 @@
 
 @interface HTViewController : UIViewController
 
+@property IBOutlet UIButton *loli;
+@property IBOutlet UIButton *man;
+@property IBOutlet UIButton *woman;
+@property IBOutlet UIButton *boy;
+
+
+- (IBAction)ButtonAction:(UIButton *)sender;
+
 @end

@@ -15,12 +15,12 @@
 		432191441917450B002AD4AB /* HTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 432191431917450B002AD4AB /* HTAppDelegate.m */; };
 		432191471917450B002AD4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432191451917450B002AD4AB /* Main.storyboard */; };
 		4321914A1917450B002AD4AB /* HTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432191491917450B002AD4AB /* HTViewController.m */; };
-		4321914C1917450B002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321914B1917450B002AD4AB /* Images.xcassets */; };
 		432191531917450B002AD4AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191521917450B002AD4AB /* XCTest.framework */; };
 		432191541917450B002AD4AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191331917450B002AD4AB /* Foundation.framework */; };
 		432191551917450B002AD4AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191371917450B002AD4AB /* UIKit.framework */; };
 		4321915D1917450B002AD4AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4321915B1917450B002AD4AB /* InfoPlist.strings */; };
 		4321915F1917450B002AD4AB /* J3DpsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321915E1917450B002AD4AB /* J3DpsTests.m */; };
+		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +47,12 @@
 		432191461917450B002AD4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		432191481917450B002AD4AB /* HTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController.h; sourceTree = "<group>"; };
 		432191491917450B002AD4AB /* HTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController.m; sourceTree = "<group>"; };
-		4321914B1917450B002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		432191511917450B002AD4AB /* J3DpsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = J3DpsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		432191521917450B002AD4AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4321915A1917450B002AD4AB /* J3DpsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "J3DpsTests-Info.plist"; sourceTree = "<group>"; };
 		4321915C1917450B002AD4AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4321915E1917450B002AD4AB /* J3DpsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J3DpsTests.m; sourceTree = "<group>"; };
+		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +112,12 @@
 		432191391917450B002AD4AB /* J3Dps */ = {
 			isa = PBXGroup;
 			children = (
+				4321917E1917EB8C002AD4AB /* Images.xcassets */,
 				432191421917450B002AD4AB /* HTAppDelegate.h */,
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
 				432191451917450B002AD4AB /* Main.storyboard */,
 				432191481917450B002AD4AB /* HTViewController.h */,
 				432191491917450B002AD4AB /* HTViewController.m */,
-				4321914B1917450B002AD4AB /* Images.xcassets */,
 				4321913A1917450B002AD4AB /* Supporting Files */,
 			);
 			path = J3Dps;
@@ -229,7 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4321914C1917450B002AD4AB /* Images.xcassets in Resources */,
+				4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */,
 				4321913E1917450B002AD4AB /* InfoPlist.strings in Resources */,
 				432191471917450B002AD4AB /* Main.storyboard in Resources */,
 			);
@@ -380,6 +380,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,6 +394,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +459,7 @@
 				432191641917450B002AD4AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		432191651917450B002AD4AB /* Build configuration list for PBXNativeTarget "J3DpsTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +468,7 @@
 				432191671917450B002AD4AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
