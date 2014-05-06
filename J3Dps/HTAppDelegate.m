@@ -7,6 +7,8 @@
 //
 
 #import "HTAppDelegate.h"
+#import "HTDBManager.h"
+#import "HTEquipManager.h"
 
 @implementation HTAppDelegate
 
@@ -14,6 +16,7 @@
 {
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     // Override point for customization after application launch.
+    [[HTEquipManager sharedManager] initData];
     return YES;
 }
 							

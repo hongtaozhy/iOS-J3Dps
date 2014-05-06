@@ -22,8 +22,6 @@
     [self.man setImage:[UIImage imageNamed:@"chengnan-c"] forState:UIControlStateSelected];
     [self.woman setImage:[UIImage imageNamed:@"chengnv-c"] forState:UIControlStateSelected];
     [self.boy setImage:[UIImage imageNamed:@"zhengtai-c"] forState:UIControlStateSelected];
-
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,4 +39,10 @@
     }
     self.currenctButton.selected = !sender.selected;
 }
+
+- (IBAction)sureDown:(UIButton *)sender
+{
+    
+}
+
 @end

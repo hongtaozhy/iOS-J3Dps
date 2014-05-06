@@ -21,6 +21,17 @@
 		4321915D1917450B002AD4AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4321915B1917450B002AD4AB /* InfoPlist.strings */; };
 		4321915F1917450B002AD4AB /* J3DpsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321915E1917450B002AD4AB /* J3DpsTests.m */; };
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
+		43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC319191C7200A3AF6A /* HTEquip.m */; };
+		43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC71919326200A3AF6A /* HTXiangqian.m */; };
+		43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CD41919379C00A3AF6A /* HTEquipManager.m */; };
+		43D1792D1918F76E003E0035 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1792C1918F76E003E0035 /* libsqlite3.dylib */; };
+		43D1793A1918F801003E0035 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179301918F801003E0035 /* FMDatabase.m */; };
+		43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179321918F801003E0035 /* FMDatabaseAdditions.m */; };
+		43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179341918F801003E0035 /* FMDatabasePool.m */; };
+		43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179361918F801003E0035 /* FMDatabaseQueue.m */; };
+		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
+		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
+		43D179491918FD7B003E0035 /* j3dps.db in Resources */ = {isa = PBXBuildFile; fileRef = 43D179481918FD7B003E0035 /* j3dps.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +64,26 @@
 		4321915C1917450B002AD4AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4321915E1917450B002AD4AB /* J3DpsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J3DpsTests.m; sourceTree = "<group>"; };
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43A08CC219191C7200A3AF6A /* HTEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquip.h; sourceTree = "<group>"; };
+		43A08CC319191C7200A3AF6A /* HTEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquip.m; sourceTree = "<group>"; };
+		43A08CC61919326200A3AF6A /* HTXiangqian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTXiangqian.h; sourceTree = "<group>"; };
+		43A08CC71919326200A3AF6A /* HTXiangqian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTXiangqian.m; sourceTree = "<group>"; };
+		43A08CD31919379C00A3AF6A /* HTEquipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquipManager.h; sourceTree = "<group>"; };
+		43A08CD41919379C00A3AF6A /* HTEquipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquipManager.m; sourceTree = "<group>"; };
+		43D1792C1918F76E003E0035 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		43D1792F1918F801003E0035 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		43D179301918F801003E0035 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		43D179311918F801003E0035 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		43D179321918F801003E0035 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		43D179331918F801003E0035 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		43D179341918F801003E0035 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		43D179351918F801003E0035 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		43D179361918F801003E0035 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		43D179381918F801003E0035 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		43D179391918F801003E0035 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		43D179441918FCEA003E0035 /* HTDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDBManager.h; sourceTree = "<group>"; };
+		43D179451918FCEA003E0035 /* HTDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDBManager.m; sourceTree = "<group>"; };
+		43D179481918FD7B003E0035 /* j3dps.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = j3dps.db; path = J3Dps/j3dps.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D1792D1918F76E003E0035 /* libsqlite3.dylib in Frameworks */,
 				432191361917450B002AD4AB /* CoreGraphics.framework in Frameworks */,
 				432191381917450B002AD4AB /* UIKit.framework in Frameworks */,
 				432191341917450B002AD4AB /* Foundation.framework in Frameworks */,
@@ -82,6 +114,7 @@
 		432191271917450B002AD4AB = {
 			isa = PBXGroup;
 			children = (
+				43D179471918FD65003E0035 /* Resources */,
 				432191391917450B002AD4AB /* J3Dps */,
 				432191581917450B002AD4AB /* J3DpsTests */,
 				432191321917450B002AD4AB /* Frameworks */,
@@ -101,6 +134,7 @@
 		432191321917450B002AD4AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43D1792C1918F76E003E0035 /* libsqlite3.dylib */,
 				432191331917450B002AD4AB /* Foundation.framework */,
 				432191351917450B002AD4AB /* CoreGraphics.framework */,
 				432191371917450B002AD4AB /* UIKit.framework */,
@@ -112,6 +146,8 @@
 		432191391917450B002AD4AB /* J3Dps */ = {
 			isa = PBXGroup;
 			children = (
+				43A08CC119191C4D00A3AF6A /* Equip */,
+				43D1792E1918F801003E0035 /* src */,
 				4321917E1917EB8C002AD4AB /* Images.xcassets */,
 				432191421917450B002AD4AB /* HTAppDelegate.h */,
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
@@ -150,6 +186,46 @@
 				4321915B1917450B002AD4AB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43A08CC119191C4D00A3AF6A /* Equip */ = {
+			isa = PBXGroup;
+			children = (
+				43A08CC219191C7200A3AF6A /* HTEquip.h */,
+				43A08CC319191C7200A3AF6A /* HTEquip.m */,
+				43A08CC61919326200A3AF6A /* HTXiangqian.h */,
+				43A08CC71919326200A3AF6A /* HTXiangqian.m */,
+				43A08CD31919379C00A3AF6A /* HTEquipManager.h */,
+				43A08CD41919379C00A3AF6A /* HTEquipManager.m */,
+			);
+			name = Equip;
+			sourceTree = "<group>";
+		};
+		43D1792E1918F801003E0035 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				43D1792F1918F801003E0035 /* FMDatabase.h */,
+				43D179301918F801003E0035 /* FMDatabase.m */,
+				43D179311918F801003E0035 /* FMDatabaseAdditions.h */,
+				43D179321918F801003E0035 /* FMDatabaseAdditions.m */,
+				43D179331918F801003E0035 /* FMDatabasePool.h */,
+				43D179341918F801003E0035 /* FMDatabasePool.m */,
+				43D179351918F801003E0035 /* FMDatabaseQueue.h */,
+				43D179361918F801003E0035 /* FMDatabaseQueue.m */,
+				43D179381918F801003E0035 /* FMResultSet.h */,
+				43D179391918F801003E0035 /* FMResultSet.m */,
+				43D179441918FCEA003E0035 /* HTDBManager.h */,
+				43D179451918FCEA003E0035 /* HTDBManager.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		43D179471918FD65003E0035 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43D179481918FD7B003E0035 /* j3dps.db */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D179491918FD7B003E0035 /* j3dps.db in Resources */,
 				4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */,
 				4321913E1917450B002AD4AB /* InfoPlist.strings in Resources */,
 				432191471917450B002AD4AB /* Main.storyboard in Resources */,
@@ -250,9 +327,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
+				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
 				4321914A1917450B002AD4AB /* HTViewController.m in Sources */,
+				43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */,
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,
+				43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */,
 				432191401917450B002AD4AB /* main.m in Sources */,
+				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
+				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
+				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
+				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
+				43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Hong (9WLQ25DW6P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08A565ED-7C77-44C5-BEFA-5F7C57560525";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,6 +484,7 @@
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08A565ED-7C77-44C5-BEFA-5F7C57560525";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
