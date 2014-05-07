@@ -21,6 +21,7 @@
 		4321915D1917450B002AD4AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4321915B1917450B002AD4AB /* InfoPlist.strings */; };
 		4321915F1917450B002AD4AB /* J3DpsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321915E1917450B002AD4AB /* J3DpsTests.m */; };
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
+		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
 		43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC319191C7200A3AF6A /* HTEquip.m */; };
 		43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC71919326200A3AF6A /* HTXiangqian.m */; };
 		43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CD41919379C00A3AF6A /* HTEquipManager.m */; };
@@ -64,6 +65,8 @@
 		4321915C1917450B002AD4AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4321915E1917450B002AD4AB /* J3DpsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J3DpsTests.m; sourceTree = "<group>"; };
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
+		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
 		43A08CC219191C7200A3AF6A /* HTEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquip.h; sourceTree = "<group>"; };
 		43A08CC319191C7200A3AF6A /* HTEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquip.m; sourceTree = "<group>"; };
 		43A08CC61919326200A3AF6A /* HTXiangqian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTXiangqian.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				432191421917450B002AD4AB /* HTAppDelegate.h */,
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
 				432191451917450B002AD4AB /* Main.storyboard */,
+				432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */,
+				432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */,
 				432191481917450B002AD4AB /* HTViewController.h */,
 				432191491917450B002AD4AB /* HTViewController.m */,
 				4321913A1917450B002AD4AB /* Supporting Files */,
@@ -329,6 +334,7 @@
 			files = (
 				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
+				432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */,
 				4321914A1917450B002AD4AB /* HTViewController.m in Sources */,
 				43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */,
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "HTViewController.h"
+#import "HTEquipManager.h"
+#import "HTEquip.h"
 
 @interface HTViewController ()
 @property (nonatomic,retain) UIButton *currenctButton;
@@ -37,12 +39,58 @@
         self.currenctButton.selected = NO;
         self.currenctButton = sender;
     }
-    self.currenctButton.selected = !sender.selected;
+    self.currenctButton.selected = YES;
 }
 
 - (IBAction)sureDown:(UIButton *)sender
 {
+//    NSString *title = @"请输入装备名称";
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                    message:nil
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"确定"
+//                                          otherButtonTitles:nil];
+//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//    
+//    [alert show];
+}
+
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UITextField *textField=[alertView textFieldAtIndex:0];
+    NSString *name  = [textField text];
+    NSArray *arr = [[HTEquipManager sharedManager] allEquip];
     
+
+    HTEquip *find = nil;
+    for (HTEquip *nowEquip in arr)
+    {
+        if ( [nowEquip.name isEqualToString:name] )
+        {
+            find = nowEquip;
+            break;
+        }
+    }
+    
+    NSString *msg = nil;
+    if (find)
+    {
+        msg = [NSString stringWithFormat:@"%@",find];
+    }
+    else
+    {
+        msg = @"没找到这件装备";
+    }
+    UIAlertView *alert = nil;
+    
+    
+    alert = [[UIAlertView alloc] initWithTitle:@"查找结果"
+                                       message:msg
+                                      delegate:nil
+                             cancelButtonTitle:@"确定"
+                             otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

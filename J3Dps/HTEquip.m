@@ -44,4 +44,23 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return  [NSString stringWithFormat:@"%@\n掉落:%@\n体质+%d\n根骨+%d\n力道+%d\n身法+%d\n元气+%d\n攻击+%d\n破防+%d\n会心+%d\n会效+%d\n命中+%d\n无双+%d\n御劲+%d\n化劲+%d\n",
+             self.name,
+             self.diaoluo,
+             (int)self.tizhi,
+             (int)self.gengu,
+             (int)self.lidao,
+             (int)self.shenfa,
+             (int)self.yuanqi,
+             (int)self.gongji,
+             (int)self.pofang,
+             (int)self.huixin,
+             (int)self.huixiao,
+             (int)self.mingzhong,
+             (int)self.wushuang,
+             (int)self.yujin,
+             (int)self.huajin];
+}
 @end

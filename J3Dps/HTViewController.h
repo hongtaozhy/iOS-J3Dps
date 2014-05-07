@@ -18,6 +18,6 @@
 
 - (IBAction)ButtonAction:(UIButton *)sender;
 
-- (IBAction)sureDown:(UIButton *)sender;
+//- (IBAction)sureDown:(UIButton *)sender;
 
 @end
