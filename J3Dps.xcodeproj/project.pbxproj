@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43173DF8191E63D600B14BF6 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173DF7191E63D600B14BF6 /* DrawerViewController.m */; };
+		43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */; };
+		43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173DFE191E646700B14BF6 /* HTMainViewController.m */; };
+		43173E03191E65A500B14BF6 /* HTMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173E02191E65A500B14BF6 /* HTMenuView.m */; };
 		432191341917450B002AD4AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191331917450B002AD4AB /* Foundation.framework */; };
 		432191361917450B002AD4AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191351917450B002AD4AB /* CoreGraphics.framework */; };
 		432191381917450B002AD4AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191371917450B002AD4AB /* UIKit.framework */; };
@@ -46,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43173DF6191E63D600B14BF6 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		43173DF7191E63D600B14BF6 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		43173DF9191E63E800B14BF6 /* UIDevice+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extension.h"; sourceTree = "<group>"; };
+		43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extension.m"; sourceTree = "<group>"; };
+		43173DFD191E646700B14BF6 /* HTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMainViewController.h; path = J3Dps/HTMainViewController.h; sourceTree = SOURCE_ROOT; };
+		43173DFE191E646700B14BF6 /* HTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMainViewController.m; path = J3Dps/HTMainViewController.m; sourceTree = SOURCE_ROOT; };
+		43173E01191E65A500B14BF6 /* HTMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMenuView.h; sourceTree = "<group>"; };
+		43173E02191E65A500B14BF6 /* HTMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMenuView.m; sourceTree = "<group>"; };
 		432191301917450B002AD4AB /* J3Dps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = J3Dps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		432191331917450B002AD4AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		432191351917450B002AD4AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,9 +126,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43173DF5191E63B300B14BF6 /* DrawerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43173DF9191E63E800B14BF6 /* UIDevice+Extension.h */,
+				43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */,
+				43173DF6191E63D600B14BF6 /* DrawerViewController.h */,
+				43173DF7191E63D600B14BF6 /* DrawerViewController.m */,
+			);
+			name = DrawerViewController;
+			sourceTree = "<group>";
+		};
+		43173DFC191E640A00B14BF6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43173DFD191E646700B14BF6 /* HTMainViewController.h */,
+				43173DFE191E646700B14BF6 /* HTMainViewController.m */,
+			);
+			name = ViewController;
+			path = src;
+			sourceTree = "<group>";
+		};
+		43173E00191E658C00B14BF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43173E01191E65A500B14BF6 /* HTMenuView.h */,
+				43173E02191E65A500B14BF6 /* HTMenuView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		432191271917450B002AD4AB = {
 			isa = PBXGroup;
 			children = (
+				43173DF5191E63B300B14BF6 /* DrawerViewController */,
 				43D179471918FD65003E0035 /* Resources */,
 				432191391917450B002AD4AB /* J3Dps */,
 				432191581917450B002AD4AB /* J3DpsTests */,
@@ -149,8 +192,10 @@
 		432191391917450B002AD4AB /* J3Dps */ = {
 			isa = PBXGroup;
 			children = (
-				43A08CC119191C4D00A3AF6A /* Equip */,
-				43D1792E1918F801003E0035 /* src */,
+				43173E00191E658C00B14BF6 /* View */,
+				43173DFC191E640A00B14BF6 /* ViewController */,
+				43A08CC119191C4D00A3AF6A /* EquipManager */,
+				43D1792E1918F801003E0035 /* FMDB */,
 				4321917E1917EB8C002AD4AB /* Images.xcassets */,
 				432191421917450B002AD4AB /* HTAppDelegate.h */,
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
@@ -193,7 +238,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		43A08CC119191C4D00A3AF6A /* Equip */ = {
+		43A08CC119191C4D00A3AF6A /* EquipManager */ = {
 			isa = PBXGroup;
 			children = (
 				43A08CC219191C7200A3AF6A /* HTEquip.h */,
@@ -203,10 +248,10 @@
 				43A08CD31919379C00A3AF6A /* HTEquipManager.h */,
 				43A08CD41919379C00A3AF6A /* HTEquipManager.m */,
 			);
-			name = Equip;
+			name = EquipManager;
 			sourceTree = "<group>";
 		};
-		43D1792E1918F801003E0035 /* src */ = {
+		43D1792E1918F801003E0035 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
 				43D1792F1918F801003E0035 /* FMDatabase.h */,
@@ -222,6 +267,7 @@
 				43D179441918FCEA003E0035 /* HTDBManager.h */,
 				43D179451918FCEA003E0035 /* HTDBManager.m */,
 			);
+			name = FMDB;
 			path = src;
 			sourceTree = "<group>";
 		};
@@ -333,6 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
+				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
+				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
 				432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */,
 				4321914A1917450B002AD4AB /* HTViewController.m in Sources */,
@@ -343,8 +391,10 @@
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
 				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
+				43173DF8191E63D600B14BF6 /* DrawerViewController.m in Sources */,
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
 				43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */,
+				43173E03191E65A500B14BF6 /* HTMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
