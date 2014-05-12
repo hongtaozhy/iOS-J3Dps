@@ -12,9 +12,6 @@
                     <navigationBar key="navigationBar" hidden="YES" alpha="0.0" contentMode="scaleToFill" barStyle="black" id="YAn-5P-OwL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="q9O-ur-MNv"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtE-h4-JZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,9 +70,6 @@
                                 <state key="normal" image="done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ewI-XU-WVA" kind="push" id="4P3-Lm-tte"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xuanzetixing" id="pgr-ad-4IT">
                                 <rect key="frame" x="10" y="50" width="150" height="32"/>

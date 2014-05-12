@@ -9,6 +9,7 @@
 #import "HTAppDelegate.h"
 #import "HTDBManager.h"
 #import "HTEquipManager.h"
+#import "HTMainViewController.h"
 
 @implementation HTAppDelegate
 
@@ -17,6 +18,15 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     // Override point for customization after application launch.
     [[HTEquipManager sharedManager] initData];
+    
+    HTMainViewController *rootctrl = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
+
+    UINavigationController *rootNavigation = [[UINavigationController alloc] init];
+    [rootNavigation setNavigationBarHidden:YES];
+    [rootNavigation pushViewController:rootctrl animated:NO];
+    
+    self.window.rootViewController = rootNavigation;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

@@ -587,7 +587,11 @@
 //            }];
         }
             break;
-        default:
+        default://意外情况回配装首页
+        {
+            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:mainViewCtrller animated:YES];
+        }
             break;
     }
 //                             }];
