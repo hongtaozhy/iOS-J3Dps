@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HTMenuView : UIView
+@protocol HTCenterViewDelegate <NSObject>
+
+- (void)changedViewContorller:(NSInteger)index;
+
+@end
+
+@interface HTMenuView : UITableView<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,assign) id<HTCenterViewDelegate> centerDelegate;
+
++ (instancetype)sharedView;
 
 @end

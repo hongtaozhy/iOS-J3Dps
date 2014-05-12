@@ -8,6 +8,8 @@
 
 #import "DrawerViewController.h"
 #import "UIDevice+Extension.h"
+#import "HTMainViewController.h"
+#import "HTBodySelectViewController.h"
 
 #define CENTER_VIEW_TAG        3900
 
@@ -58,6 +60,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[HTMenuView sharedView] setCenterDelegate:self];
+}
+
+- (void)dealloc
+{
+//    [[HTMenuView sharedView] setCenterDelegate:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -549,4 +557,39 @@
     panGesture.enabled = YES;
 }
 
+#pragma mark - HTCenterViewContorller
+- (void)changedViewContorller:(NSInteger)index
+{
+//    [self dismissViewControllerAnimated:NO
+//                             completion:^{
+    UINavigationController *root = self.navigationController;
+    NSArray *arr =  [root popToRootViewControllerAnimated:NO];
+    NSLog(@"%@",arr);
+    
+    switch (index) {
+        case 0:
+        {
+            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:mainViewCtrller animated:YES];
+//            [self presentViewController:mainViewCtrller animated:YES completion:^{
+//                ;
+//            }];
+        }
+            break;
+            
+        case 1:
+        {
+            HTBodySelectViewController *bodySelectViewController = [[HTBodySelectViewController alloc] initWithNibName:nil bundle:nil];            
+            [root pushViewController:bodySelectViewController animated:YES];
+
+//            [self presentViewController:bodySelectViewController animated:YES completion:^{
+//                ;
+//            }];
+        }
+            break;
+        default:
+            break;
+    }
+//                             }];
+}
 @end

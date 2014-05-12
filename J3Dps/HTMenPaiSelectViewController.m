@@ -7,6 +7,7 @@
 //
 
 #import "HTMenPaiSelectViewController.h"
+#import "HTMainViewController.h"
 
 @interface HTMenPaiSelectViewController ()
 @property (nonatomic,retain) UIButton *currenctMenPaiButton;
@@ -48,7 +49,11 @@
 
 - (IBAction)backButtonPress:(UIButton *)sender
 {
-    [[self navigationController] popViewControllerAnimated:YES];
+    HTMainViewController *mainViewController = [[HTMainViewController alloc] init];
+//    [self presentModalViewController:mainViewController animated:YES];
+
+//    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] pushViewController:mainViewController animated:YES];
 }
 
 - (IBAction)ButtonAction:(UIButton *)sender

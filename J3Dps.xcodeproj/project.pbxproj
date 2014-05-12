@@ -11,6 +11,7 @@
 		43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */; };
 		43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173DFE191E646700B14BF6 /* HTMainViewController.m */; };
 		43173E03191E65A500B14BF6 /* HTMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173E02191E65A500B14BF6 /* HTMenuView.m */; };
+		43173E08191E816F00B14BF6 /* HTBodySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43173E07191E816F00B14BF6 /* HTBodySelectViewController.m */; };
 		432191341917450B002AD4AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191331917450B002AD4AB /* Foundation.framework */; };
 		432191361917450B002AD4AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191351917450B002AD4AB /* CoreGraphics.framework */; };
 		432191381917450B002AD4AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191371917450B002AD4AB /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		43173DFE191E646700B14BF6 /* HTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMainViewController.m; path = J3Dps/HTMainViewController.m; sourceTree = SOURCE_ROOT; };
 		43173E01191E65A500B14BF6 /* HTMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMenuView.h; sourceTree = "<group>"; };
 		43173E02191E65A500B14BF6 /* HTMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMenuView.m; sourceTree = "<group>"; };
+		43173E06191E816F00B14BF6 /* HTBodySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTBodySelectViewController.h; path = J3Dps/HTBodySelectViewController.h; sourceTree = SOURCE_ROOT; };
+		43173E07191E816F00B14BF6 /* HTBodySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTBodySelectViewController.m; path = J3Dps/HTBodySelectViewController.m; sourceTree = SOURCE_ROOT; };
 		432191301917450B002AD4AB /* J3Dps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = J3Dps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		432191331917450B002AD4AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		432191351917450B002AD4AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,6 +145,8 @@
 			children = (
 				43173DFD191E646700B14BF6 /* HTMainViewController.h */,
 				43173DFE191E646700B14BF6 /* HTMainViewController.m */,
+				43173E06191E816F00B14BF6 /* HTBodySelectViewController.h */,
+				43173E07191E816F00B14BF6 /* HTBodySelectViewController.m */,
 			);
 			name = ViewController;
 			path = src;
@@ -388,6 +393,7 @@
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,
 				43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */,
 				432191401917450B002AD4AB /* main.m in Sources */,
+				43173E08191E816F00B14BF6 /* HTBodySelectViewController.m in Sources */,
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
 				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
