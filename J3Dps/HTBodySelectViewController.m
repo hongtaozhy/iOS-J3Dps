@@ -11,6 +11,13 @@
 
 @interface HTBodySelectViewController ()
 
+@property (nonatomic,retain) UIButton *loli;
+@property (nonatomic,retain) UIButton *man;
+@property (nonatomic,retain) UIButton *woman;
+@property (nonatomic,retain) UIButton *boy;
+
+@property (nonatomic,retain) UIButton *currenctButton;
+
 @end
 
 @implementation HTBodySelectViewController
@@ -27,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currenctButton = nil;
+
     // Do any additional setup after loading the view.
     // Create left view
     self.leftView = [HTMenuView sharedView];
@@ -46,6 +55,11 @@
     self.showDrawerMaxTrasitionX = 40;
     
     [self initialDrawerViewController];
+ 
+    [self.loli setImage:[UIImage imageNamed:@"loli-c"] forState:UIControlStateSelected];
+    [self.man setImage:[UIImage imageNamed:@"chengnan-c"] forState:UIControlStateSelected];
+    [self.woman setImage:[UIImage imageNamed:@"chengnv-c"] forState:UIControlStateSelected];
+    [self.boy setImage:[UIImage imageNamed:@"zhengtai-c"] forState:UIControlStateSelected];
     
 }
 
@@ -55,15 +69,65 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)bodySelectButtonPress:(UIButton *)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (sender != [self currenctButton])
+    {
+        self.currenctButton.selected = NO;
+        self.currenctButton = sender;
+    }
+    self.currenctButton.selected = YES;
 }
-*/
 
+#pragma mark - Test DB
+- (void)sureDown:(UIButton *)sender
+{
+    //    NSString *title = @"请输入装备名称";
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+    //                                                    message:nil
+    //                                                   delegate:self
+    //                                          cancelButtonTitle:@"确定"
+    //                                          otherButtonTitles:nil];
+    //    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    //
+    //    [alert show];
+}
+
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+//    UITextField *textField=[alertView textFieldAtIndex:0];
+//    NSString *name  = [textField text];
+//    NSArray *arr = [[HTEquipManager sharedManager] allEquip];
+//    
+//    
+//    HTEquip *find = nil;
+//    for (HTEquip *nowEquip in arr)
+//    {
+//        if ( [nowEquip.name isEqualToString:name] )
+//        {
+//            find = nowEquip;
+//            break;
+//        }
+//    }
+//    
+//    NSString *msg = nil;
+//    if (find)
+//    {
+//        msg = [NSString stringWithFormat:@"%@",find];
+//    }
+//    else
+//    {
+//        msg = @"没找到这件装备";
+//    }
+//    UIAlertView *alert = nil;
+//    
+//    
+//    alert = [[UIAlertView alloc] initWithTitle:@"查找结果"
+//                                       message:msg
+//                                      delegate:nil
+//                             cancelButtonTitle:@"确定"
+//                             otherButtonTitles:nil];
+//    [alert show];
+}
 @end

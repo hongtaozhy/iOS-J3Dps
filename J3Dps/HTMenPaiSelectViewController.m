@@ -29,6 +29,26 @@
 {
     [super viewDidLoad];
     
+    // Create left view
+    self.leftView = [HTMenuView sharedView];
+    // Create right view
+    //    self.rightView = [HTMenuView sharedView];
+    
+    // Create center view
+    self.centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg2"]];
+    
+    
+    // Set parameters
+    self.leftViewVisibleWidth = 200;
+    self.rightViewVisibleWidth = 120;
+    self.leftViewCenterX = 70;
+    self.rightViewCenterX = 150;
+    self.showDrawerMaxTrasitionX = 40;
+    
+    [self initialDrawerViewController];
+
+    
     [self.xxButton setImage:[UIImage imageNamed:@"qixiu-c"] forState:UIControlStateSelected];
     [self.cjButton setImage:[UIImage imageNamed:@"cangjian-c"] forState:UIControlStateSelected];
     [self.cyButton setImage:[UIImage imageNamed:@"chunyang-c"] forState:UIControlStateSelected];
@@ -47,16 +67,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)backButtonPress:(UIButton *)sender
+- (void)backButtonPress
 {
-    HTMainViewController *mainViewController = [[HTMainViewController alloc] init];
-//    [self presentModalViewController:mainViewController animated:YES];
-
-//    [[self navigationController] popViewControllerAnimated:YES];
-    [[self navigationController] pushViewController:mainViewController animated:YES];
 }
 
-- (IBAction)ButtonAction:(UIButton *)sender
+- (void)menpaiSelectButtonPress:(UIButton *)sender
 {
     if (sender != [self currenctMenPaiButton])
     {

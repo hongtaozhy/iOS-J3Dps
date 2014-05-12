@@ -20,4 +20,6 @@
 
 + (instancetype)sharedView;
 
+- (void)changRowByCode:(NSInteger)index;
+
 @end

@@ -19,7 +19,6 @@
 		432191401917450B002AD4AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321913F1917450B002AD4AB /* main.m */; };
 		432191441917450B002AD4AB /* HTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 432191431917450B002AD4AB /* HTAppDelegate.m */; };
 		432191471917450B002AD4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432191451917450B002AD4AB /* Main.storyboard */; };
-		4321914A1917450B002AD4AB /* HTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432191491917450B002AD4AB /* HTViewController.m */; };
 		432191531917450B002AD4AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191521917450B002AD4AB /* XCTest.framework */; };
 		432191541917450B002AD4AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191331917450B002AD4AB /* Foundation.framework */; };
 		432191551917450B002AD4AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432191371917450B002AD4AB /* UIKit.framework */; };
@@ -72,16 +71,14 @@
 		432191421917450B002AD4AB /* HTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAppDelegate.h; sourceTree = "<group>"; };
 		432191431917450B002AD4AB /* HTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAppDelegate.m; sourceTree = "<group>"; };
 		432191461917450B002AD4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		432191481917450B002AD4AB /* HTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController.h; sourceTree = "<group>"; };
-		432191491917450B002AD4AB /* HTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController.m; sourceTree = "<group>"; };
 		432191511917450B002AD4AB /* J3DpsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = J3DpsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		432191521917450B002AD4AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4321915A1917450B002AD4AB /* J3DpsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "J3DpsTests-Info.plist"; sourceTree = "<group>"; };
 		4321915C1917450B002AD4AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4321915E1917450B002AD4AB /* J3DpsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J3DpsTests.m; sourceTree = "<group>"; };
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
-		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
+		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMenPaiSelectViewController.h; path = ../HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
+		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
 		43A08CC219191C7200A3AF6A /* HTEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquip.h; sourceTree = "<group>"; };
 		43A08CC319191C7200A3AF6A /* HTEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquip.m; sourceTree = "<group>"; };
 		43A08CC61919326200A3AF6A /* HTXiangqian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTXiangqian.h; sourceTree = "<group>"; };
@@ -147,6 +144,8 @@
 				43173DFE191E646700B14BF6 /* HTMainViewController.m */,
 				43173E06191E816F00B14BF6 /* HTBodySelectViewController.h */,
 				43173E07191E816F00B14BF6 /* HTBodySelectViewController.m */,
+				432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */,
+				432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */,
 			);
 			name = ViewController;
 			path = src;
@@ -205,10 +204,6 @@
 				432191421917450B002AD4AB /* HTAppDelegate.h */,
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
 				432191451917450B002AD4AB /* Main.storyboard */,
-				432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */,
-				432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */,
-				432191481917450B002AD4AB /* HTViewController.h */,
-				432191491917450B002AD4AB /* HTViewController.m */,
 				4321913A1917450B002AD4AB /* Supporting Files */,
 			);
 			path = J3Dps;
@@ -388,7 +383,6 @@
 				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
 				432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */,
-				4321914A1917450B002AD4AB /* HTViewController.m in Sources */,
 				43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */,
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,
 				43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */,

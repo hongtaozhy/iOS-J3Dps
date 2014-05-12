@@ -10,6 +10,7 @@
 #import "UIDevice+Extension.h"
 #import "HTMainViewController.h"
 #import "HTBodySelectViewController.h"
+#import "HTMenPaiSelectViewController.h"
 
 #define CENTER_VIEW_TAG        3900
 
@@ -562,18 +563,13 @@
 {
 //    [self dismissViewControllerAnimated:NO
 //                             completion:^{
-    UINavigationController *root = self.navigationController;
-    NSArray *arr =  [root popToRootViewControllerAnimated:NO];
-    NSLog(@"%@",arr);
-    
+    UINavigationController *root = (UINavigationController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [root popToRootViewControllerAnimated:NO];
     switch (index) {
         case 0:
         {
             HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
             [root pushViewController:mainViewCtrller animated:YES];
-//            [self presentViewController:mainViewCtrller animated:YES completion:^{
-//                ;
-//            }];
         }
             break;
             
@@ -581,16 +577,19 @@
         {
             HTBodySelectViewController *bodySelectViewController = [[HTBodySelectViewController alloc] initWithNibName:nil bundle:nil];            
             [root pushViewController:bodySelectViewController animated:YES];
-
-//            [self presentViewController:bodySelectViewController animated:YES completion:^{
-//                ;
-//            }];
+        }
+            break;
+        case 2:
+        {
+            HTMenPaiSelectViewController *menpaiSelectCtrl = [[HTMenPaiSelectViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:menpaiSelectCtrl animated:YES];
         }
             break;
         default://意外情况回配装首页
         {
-            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
-            [root pushViewController:mainViewCtrller animated:YES];
+//            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
+//            [root pushViewController:mainViewCtrller animated:YES];
+            [[HTMenuView sharedView] changRowByCode:0];
         }
             break;
     }

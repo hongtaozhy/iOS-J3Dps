@@ -7,22 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DrawerViewController.h"
 
-@interface HTMenPaiSelectViewController : UIViewController
+@interface HTMenPaiSelectViewController : DrawerViewController
 
-@property IBOutlet UIButton *xxButton;
-@property IBOutlet UIButton *cyButton;
-@property IBOutlet UIButton *gbButton;
-@property IBOutlet UIButton *cjButton;
-@property IBOutlet UIButton *tmButton;
-@property IBOutlet UIButton *wdButton;
-@property IBOutlet UIButton *slButton;
-@property IBOutlet UIButton *tcButton;
-@property IBOutlet UIButton *whButton;
-@property IBOutlet UIButton *mjButton;
+@property (nonatomic,retain) UIButton *xxButton;
+@property (nonatomic,retain) UIButton *cyButton;
+@property (nonatomic,retain) UIButton *gbButton;
+@property (nonatomic,retain) UIButton *cjButton;
+@property (nonatomic,retain) UIButton *tmButton;
+@property (nonatomic,retain) UIButton *wdButton;
+@property (nonatomic,retain) UIButton *slButton;
+@property (nonatomic,retain) UIButton *tcButton;
+@property (nonatomic,retain) UIButton *whButton;
+@property (nonatomic,retain) UIButton *mjButton;
 
-- (IBAction)backButtonPress:(UIButton *)sender;
+- (void)backButtonPress;
 
-- (IBAction)ButtonAction:(UIButton *)sender;
+- (void)menpaiSelectButtonPress:(UIButton *)sender;
 
 @end

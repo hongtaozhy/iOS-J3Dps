@@ -35,7 +35,7 @@
     
     // Create center view
     self.centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
-    self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg2"]];
+    self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4"]];
 
     
     // Set parameters

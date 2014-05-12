@@ -49,7 +49,16 @@ static HTMenuView *__MenuView = NULL;
     return self;
 }
 
+- (void)changRowByCode:(NSInteger)index
+{
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [self selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    
+    [[self centerDelegate] changedViewContorller:index];
+
+}
 #pragma mark - TableView Methods
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -75,7 +84,6 @@ static HTMenuView *__MenuView = NULL;
         cell.textLabel.textColor = [UIColor colorWithRed:211.0/255.0 green:213.0/255.0 blue:197.0/255.0 alpha:1];
 
         cell.textLabel.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16.0];
-        NSLog(@"%f", cell.contentView.frame.size.height);
     }
     
     // Add a detail view accessory
