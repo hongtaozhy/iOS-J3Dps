@@ -46,6 +46,23 @@
     self.centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1"]];
     
+    UIImage *loliImg = [UIImage imageNamed:@"loli"];
+    self.loli = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.loli.backgroundColor = [UIColor colorWithPatternImage:loliImg];
+    self.loli.frame = CGRectMake(10, 94, loliImg.size.width, loliImg.size.height);
+    [self.loli setImage:[UIImage imageNamed:@"loli-c"] forState:UIControlStateSelected];
+    [self.loli addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.centerView addSubview:self.loli];
+    
+    UIImage *manImg = [UIImage imageNamed:@"chengnan"];
+    self.man = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.man.backgroundColor = [UIColor colorWithPatternImage:manImg];
+    self.man.frame = CGRectMake(12, 295, manImg.size.width, manImg.size.height);
+    [self.man setImage:[UIImage imageNamed:@"chengnan-c"] forState:UIControlStateSelected];
+    [self.man addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.centerView addSubview:self.man];
+
     
     // Set parameters
     self.leftViewVisibleWidth = 200;
@@ -56,8 +73,6 @@
     
     [self initialDrawerViewController];
  
-    [self.loli setImage:[UIImage imageNamed:@"loli-c"] forState:UIControlStateSelected];
-    [self.man setImage:[UIImage imageNamed:@"chengnan-c"] forState:UIControlStateSelected];
     [self.woman setImage:[UIImage imageNamed:@"chengnv-c"] forState:UIControlStateSelected];
     [self.boy setImage:[UIImage imageNamed:@"zhengtai-c"] forState:UIControlStateSelected];
     
