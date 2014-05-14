@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "HTXiangqian.h"
 
+typedef NS_ENUM(NSInteger, HTBody)
+{
+    HTBodyLoli  = 0,
+    HTBodyWoman = 1,
+    HTBodyMan   = 2,
+    HTBodyBoy   = 3
+};
+
 typedef NS_ENUM(NSInteger, HTMenpai)
 {
     HTCommon    = 0, //通用类

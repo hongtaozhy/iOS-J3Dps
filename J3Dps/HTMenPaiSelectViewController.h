@@ -22,7 +22,8 @@
 @property (nonatomic,retain) UIButton *whButton;
 @property (nonatomic,retain) UIButton *mjButton;
 
-- (void)backButtonPress;
+@property (nonatomic,retain) UIButton *xf1Button;
+@property (nonatomic,retain) UIButton *xf2Button;
 
 - (void)menpaiSelectButtonPress:(UIButton *)sender;
 

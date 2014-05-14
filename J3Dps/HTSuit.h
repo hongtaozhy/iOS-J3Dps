@@ -10,4 +10,14 @@
 
 @interface HTSuit : NSObject
 
+@property (nonatomic,assign) HTBody body;
+@property (nonatomic,assign) HTMenpai menpai;
+@property (nonatomic,assign) BOOL isDefaultXinFa;
+
+@property (nonatomic,retain,readonly) NSString *bodyString;
+@property (nonatomic,retain,readonly) NSString *xinFaString;
+
+- (void)setBodyStringWithHTBody:(HTBody)body;
+- (void)setxinFaStringWithHTMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault;
+
 @end

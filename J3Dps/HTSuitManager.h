@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTSuit.h"
 
 @interface HTSuitManager : NSObject
+
+@property (nonatomic,retain) HTSuit *nowSuit;
+@property (nonatomic,retain) NSArray *allSuit;
+
++ (instancetype)sharedManager;
 
 @end

@@ -76,12 +76,15 @@
 
 - (void)initialDrawerViewController {
     //20 is the status bar height
-    if([UIDevice systemVersionIsMoreThanOrEuqal7]) {
+    if([UIDevice systemVersionIsMoreThanOrEuqal7])
+    {
         screenCenterY = ([UIScreen mainScreen].bounds.size.height) / 2;
-    } else {
+    }
+    else
+    {
         screenCenterY = ([UIScreen mainScreen].bounds.size.height - 20) / 2;
     }
-    
+
     self.view.backgroundColor = [UIColor clearColor];
     
     if(blackLeftMaskView == nil) {

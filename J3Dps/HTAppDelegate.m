@@ -10,12 +10,22 @@
 #import "HTDBManager.h"
 #import "HTEquipManager.h"
 #import "HTMainViewController.h"
+#import "UIDevice+Extension.h"
 
 @implementation HTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+//    if ([UIDevice systemVersionIsMoreThanOrEuqal7])
+//    {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+//    }
+//    else
+//    {
+//        [application setStatusBarHidden:YES];
+//    }
+
     // Override point for customization after application launch.
     [[HTEquipManager sharedManager] initData];
     

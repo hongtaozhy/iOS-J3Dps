@@ -10,4 +10,26 @@
 
 @implementation HTSuitManager
 
++ (instancetype)sharedManager
+{
+    static dispatch_once_t onceQueue;
+    static HTSuitManager *sharedManager = nil;
+    
+    dispatch_once(&onceQueue, ^{
+        sharedManager = [[self alloc] init];
+        sharedManager.allSuit = [[NSArray alloc] init];
+    });
+    
+    return sharedManager;
+}
+
+- (HTSuit *)nowSuit
+{
+    if (_nowSuit == nil)
+    {
+        _nowSuit = [[HTSuit alloc] init];
+    }
+    return _nowSuit;
+}
+
 @end

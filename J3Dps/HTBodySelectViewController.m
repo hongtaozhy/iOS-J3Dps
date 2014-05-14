@@ -9,6 +9,7 @@
 #import "HTBodySelectViewController.h"
 #import "HTMenuView.h"
 
+
 @interface HTBodySelectViewController ()
 
 @property (nonatomic,retain) UIButton *loli;
@@ -43,7 +44,7 @@
     //    self.rightView = [HTMenuView sharedView];
     
     // Create center view
-    self.centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    self.centerView = [[HTBaseView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1"]];
     
     UIImage *loliImg = [UIImage imageNamed:@"loli"];
@@ -52,7 +53,7 @@
     self.loli.frame = CGRectMake(10, 94, loliImg.size.width, loliImg.size.height);
     [self.loli setImage:[UIImage imageNamed:@"loli-c"] forState:UIControlStateSelected];
     [self.loli addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-
+    [self.loli setTag:HTBodyLoli];
     [self.centerView addSubview:self.loli];
     
     UIImage *manImg = [UIImage imageNamed:@"chengnan"];
@@ -61,8 +62,39 @@
     self.man.frame = CGRectMake(12, 295, manImg.size.width, manImg.size.height);
     [self.man setImage:[UIImage imageNamed:@"chengnan-c"] forState:UIControlStateSelected];
     [self.man addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.man setTag:HTBodyMan];
     [self.centerView addSubview:self.man];
 
+    UIImage *womanImg = [UIImage imageNamed:@"chengnv"];
+    self.woman = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.woman.backgroundColor = [UIColor colorWithPatternImage:womanImg];
+    self.woman.frame = CGRectMake(160, 94, womanImg.size.width, womanImg.size.height);
+    [self.woman setImage:[UIImage imageNamed:@"chengnv-c"] forState:UIControlStateSelected];
+    [self.woman addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.woman setTag:HTBodyWoman];
+    [self.centerView addSubview:self.woman];
+
+    UIImage *boyImg = [UIImage imageNamed:@"zhengtai"];
+    self.boy = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.boy.backgroundColor = [UIColor colorWithPatternImage:boyImg];
+    self.boy.frame = CGRectMake(162, 295, boyImg.size.width, boyImg.size.height);
+    [self.boy setImage:[UIImage imageNamed:@"zhengtai-c"] forState:UIControlStateSelected];
+    [self.boy addTarget:self action:@selector(bodySelectButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.boy setTag:HTBodyBoy];
+    [self.centerView addSubview:self.boy];
+
+    UIImage *xzImg = [UIImage imageNamed:@"xuanzetixing"];
+    UIImageView *xztx = [[UIImageView alloc] initWithImage:xzImg];
+    [xztx setFrame:CGRectMake(10, 50, xzImg.size.width, xzImg.size.height)];
+    [self.centerView addSubview:xztx];
+    
+//    UIImage *sureImg = [UIImage imageNamed:@"done1"];
+//    UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    sureButton.backgroundColor = [UIColor colorWithPatternImage:sureImg];
+//    sureButton.frame = CGRectMake(240, 518, sureImg.size.width, sureImg.size.height);
+//    [sureButton setImage:[UIImage imageNamed:@"done2"] forState:UIControlStateHighlighted];
+//    [sureButton addTarget:self action:@selector(sureDown:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.centerView addSubview:sureButton];
     
     // Set parameters
     self.leftViewVisibleWidth = 200;
@@ -72,16 +104,37 @@
     self.showDrawerMaxTrasitionX = 40;
     
     [self initialDrawerViewController];
- 
-    [self.woman setImage:[UIImage imageNamed:@"chengnv-c"] forState:UIControlStateSelected];
-    [self.boy setImage:[UIImage imageNamed:@"zhengtai-c"] forState:UIControlStateSelected];
     
+    [self nowSelectWithTag:[[HTSuitManager sharedManager] nowSuit].body];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)nowSelectWithTag:(NSInteger)tag
+{
+    switch (tag)
+    {
+        case HTBodyLoli:
+            self.currenctButton = self.loli;
+            break;
+        case HTBodyBoy:
+            self.currenctButton = self.boy;
+            break;
+        case HTBodyMan:
+            self.currenctButton = self.man;
+            break;
+        case HTBodyWoman:
+            self.currenctButton = self.woman;
+            break;
+        default:
+            self.currenctButton = nil;
+            break;
+    }
+    self.currenctButton.selected = YES;
 }
 
 - (void)bodySelectButtonPress:(UIButton *)sender
@@ -92,20 +145,17 @@
         self.currenctButton = sender;
     }
     self.currenctButton.selected = YES;
+    
+    [self sureDown:sender];
 }
 
 #pragma mark - Test DB
 - (void)sureDown:(UIButton *)sender
 {
-    //    NSString *title = @"请输入装备名称";
-    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-    //                                                    message:nil
-    //                                                   delegate:self
-    //                                          cancelButtonTitle:@"确定"
-    //                                          otherButtonTitles:nil];
-    //    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    //
-    //    [alert show];
+    [[HTSuitManager sharedManager] nowSuit].body = self.currenctButton.tag;
+    
+    [self showLeftView];
+    [[HTMenuView sharedView] changRowByCode:0];
 }
 
 

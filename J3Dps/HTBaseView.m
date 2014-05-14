@@ -7,11 +7,22 @@
 //
 
 #import "HTBaseView.h"
+#import "UIDevice+Extension.h"
 
 @implementation HTBaseView
 
 - (id)initWithFrame:(CGRect)frame
 {
+    NSInteger barHeight;
+    if([UIDevice systemVersionIsMoreThanOrEuqal7])
+    {
+        barHeight = 0;
+    }
+    else
+    {
+        barHeight = -20;
+    }
+    frame.origin.y += barHeight;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code

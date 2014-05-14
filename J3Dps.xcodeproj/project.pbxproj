@@ -26,6 +26,11 @@
 		4321915F1917450B002AD4AB /* J3DpsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321915E1917450B002AD4AB /* J3DpsTests.m */; };
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
 		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
+		436F433C1922584800ECDD31 /* HTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433B1922584800ECDD31 /* HTManager.m */; };
+		436F4340192258E500ECDD31 /* HTSuitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433F192258E500ECDD31 /* HTSuitManager.m */; };
+		436F434319225DAF00ECDD31 /* HTSuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F434219225DAF00ECDD31 /* HTSuit.m */; };
+		436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F43461922F2C200ECDD31 /* HTUILabel.m */; };
+		43895CFA1921F905005D83CF /* HTBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43895CF91921F905005D83CF /* HTBaseView.m */; };
 		43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC319191C7200A3AF6A /* HTEquip.m */; };
 		43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC71919326200A3AF6A /* HTXiangqian.m */; };
 		43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CD41919379C00A3AF6A /* HTEquipManager.m */; };
@@ -79,6 +84,16 @@
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMenPaiSelectViewController.h; path = ../HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
 		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
+		436F433A1922584800ECDD31 /* HTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTManager.h; sourceTree = "<group>"; };
+		436F433B1922584800ECDD31 /* HTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTManager.m; sourceTree = "<group>"; };
+		436F433E192258E500ECDD31 /* HTSuitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSuitManager.h; sourceTree = "<group>"; };
+		436F433F192258E500ECDD31 /* HTSuitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSuitManager.m; sourceTree = "<group>"; };
+		436F434119225DAF00ECDD31 /* HTSuit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSuit.h; sourceTree = "<group>"; };
+		436F434219225DAF00ECDD31 /* HTSuit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSuit.m; sourceTree = "<group>"; };
+		436F43451922F2C200ECDD31 /* HTUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTUILabel.h; sourceTree = "<group>"; };
+		436F43461922F2C200ECDD31 /* HTUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTUILabel.m; sourceTree = "<group>"; };
+		43895CF81921F905005D83CF /* HTBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseView.h; sourceTree = "<group>"; };
+		43895CF91921F905005D83CF /* HTBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseView.m; sourceTree = "<group>"; };
 		43A08CC219191C7200A3AF6A /* HTEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquip.h; sourceTree = "<group>"; };
 		43A08CC319191C7200A3AF6A /* HTEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquip.m; sourceTree = "<group>"; };
 		43A08CC61919326200A3AF6A /* HTXiangqian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTXiangqian.h; sourceTree = "<group>"; };
@@ -129,8 +144,6 @@
 		43173DF5191E63B300B14BF6 /* DrawerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				43173DF9191E63E800B14BF6 /* UIDevice+Extension.h */,
-				43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */,
 				43173DF6191E63D600B14BF6 /* DrawerViewController.h */,
 				43173DF7191E63D600B14BF6 /* DrawerViewController.m */,
 			);
@@ -156,6 +169,8 @@
 			children = (
 				43173E01191E65A500B14BF6 /* HTMenuView.h */,
 				43173E02191E65A500B14BF6 /* HTMenuView.m */,
+				43895CF81921F905005D83CF /* HTBaseView.h */,
+				43895CF91921F905005D83CF /* HTBaseView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 		432191271917450B002AD4AB = {
 			isa = PBXGroup;
 			children = (
+				436F43441922F2A500ECDD31 /* Util */,
 				43173DF5191E63B300B14BF6 /* DrawerViewController */,
 				43D179471918FD65003E0035 /* Resources */,
 				432191391917450B002AD4AB /* J3Dps */,
@@ -196,6 +212,7 @@
 		432191391917450B002AD4AB /* J3Dps */ = {
 			isa = PBXGroup;
 			children = (
+				436F433D1922586C00ECDD31 /* SuitManager */,
 				43173E00191E658C00B14BF6 /* View */,
 				43173DFC191E640A00B14BF6 /* ViewController */,
 				43A08CC119191C4D00A3AF6A /* EquipManager */,
@@ -205,6 +222,8 @@
 				432191431917450B002AD4AB /* HTAppDelegate.m */,
 				432191451917450B002AD4AB /* Main.storyboard */,
 				4321913A1917450B002AD4AB /* Supporting Files */,
+				436F433A1922584800ECDD31 /* HTManager.h */,
+				436F433B1922584800ECDD31 /* HTManager.m */,
 			);
 			path = J3Dps;
 			sourceTree = "<group>";
@@ -236,6 +255,28 @@
 				4321915B1917450B002AD4AB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		436F433D1922586C00ECDD31 /* SuitManager */ = {
+			isa = PBXGroup;
+			children = (
+				436F433E192258E500ECDD31 /* HTSuitManager.h */,
+				436F433F192258E500ECDD31 /* HTSuitManager.m */,
+				436F434119225DAF00ECDD31 /* HTSuit.h */,
+				436F434219225DAF00ECDD31 /* HTSuit.m */,
+			);
+			name = SuitManager;
+			sourceTree = "<group>";
+		};
+		436F43441922F2A500ECDD31 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				43173DF9191E63E800B14BF6 /* UIDevice+Extension.h */,
+				43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */,
+				436F43451922F2C200ECDD31 /* HTUILabel.h */,
+				436F43461922F2C200ECDD31 /* HTUILabel.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		43A08CC119191C4D00A3AF6A /* EquipManager */ = {
@@ -378,7 +419,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436F434319225DAF00ECDD31 /* HTSuit.m in Sources */,
 				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
+				43895CFA1921F905005D83CF /* HTBaseView.m in Sources */,
 				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
 				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
@@ -388,8 +431,11 @@
 				43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */,
 				432191401917450B002AD4AB /* main.m in Sources */,
 				43173E08191E816F00B14BF6 /* HTBodySelectViewController.m in Sources */,
+				436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */,
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
+				436F433C1922584800ECDD31 /* HTManager.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
+				436F4340192258E500ECDD31 /* HTSuitManager.m in Sources */,
 				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
 				43173DF8191E63D600B14BF6 /* DrawerViewController.m in Sources */,
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,

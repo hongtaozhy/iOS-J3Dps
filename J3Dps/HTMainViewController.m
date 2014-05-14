@@ -8,6 +8,7 @@
 
 #import "HTMainViewController.h"
 #import "HTMenuView.h"
+#import "HTUILabel.h"
 
 @interface HTMainViewController ()
 
@@ -25,7 +26,7 @@
 }
 
 - (void)viewDidLoad
-{
+{   
     [super viewDidLoad];
 
     // Create left view
@@ -34,10 +35,24 @@
 //    self.rightView = [HTMenuView sharedView];
     
     // Create center view
-    self.centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    self.centerView = [[HTBaseView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     self.centerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg4"]];
-
     
+    UIImage *xftImg = [UIImage imageNamed:@"xinfatiao"];
+    UIImageView *xztx = [[UIImageView alloc] initWithImage:xftImg];
+    [xztx setFrame:CGRectMake(60.5, 52, xftImg.size.width, xftImg.size.height)];
+    [self.centerView addSubview:xztx];
+    
+    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(0, 59, 320, 60)];
+    [tixingLabel setCenter:CGPointMake(160, 58.5)];
+    [tixingLabel setBackgroundColor:[UIColor clearColor]];
+    [tixingLabel setTextColor:[UIColor whiteColor]];
+    [tixingLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:17.0]];
+    tixingLabel.text = [NSString stringWithFormat:@"%@·%@",[[HTSuitManager sharedManager] nowSuit].bodyString,[[HTSuitManager sharedManager] nowSuit].xinFaString];
+    [tixingLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.centerView addSubview:tixingLabel];
+    
+  
     // Set parameters
     self.leftViewVisibleWidth = 200;
     self.rightViewVisibleWidth = 120;

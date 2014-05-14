@@ -29,16 +29,27 @@ static HTMenuView *__MenuView = NULL;
 
 - (instancetype)initMenu
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 568)];
+    NSInteger barHeight;
+    if([UIDevice systemVersionIsMoreThanOrEuqal7])
+    {
+        barHeight = 0;
+    }
+    else
+    {
+        barHeight = -20;
+    }
+    
+    self = [super initWithFrame:CGRectMake(0, barHeight, 320, 568)];
     if (self) {
         
         self.menuList = @[@"配装界面",@"体型选择",@"门派选择",@"偏好设置",@"配装管理",@"功能介绍",@"授权管理",@"意见反馈",@"关于我们"];
+        
         if ([UIDevice systemVersionIsMoreThanOrEuqal7])
         {
             [self setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
         }
-
-        self.tableHeaderView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+        
+        self.tableHeaderView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
 //        self.tableHeaderView.backgroundColor = [UIColor greenColor];
         self.dataSource = self;
         self.delegate = self;

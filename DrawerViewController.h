@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "HTMenuView.h"
+#import "HTSuitManager.h"
 
 @interface DrawerViewController : UIViewController<UIScrollViewDelegate,HTCenterViewDelegate>
 
