@@ -39,7 +39,7 @@
     CGContextSetLineJoin(c, kCGLineJoinRound);
     
     CGContextSetTextDrawingMode(c, kCGTextStroke);
-    self.textColor = [UIColor blackColor];
+    self.textColor = [UIColor colorWithRed:84.0/255.0 green:84.0/255.0 blue:84.0/255.0 alpha:1.0];
     [super drawTextInRect:rect];
     
     CGContextSetTextDrawingMode(c, kCGTextFill);
