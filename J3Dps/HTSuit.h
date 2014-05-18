@@ -14,6 +14,8 @@
 @property (nonatomic,assign) HTMenpai menpai;
 @property (nonatomic,assign) BOOL isDefaultXinFa;
 
+@property (nonatomic,retain) NSString *suitName;
+
 @property (nonatomic,retain,readonly) NSString *bodyString;
 @property (nonatomic,retain,readonly) NSString *xinFaString;
 

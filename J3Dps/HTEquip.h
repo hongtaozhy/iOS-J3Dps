@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "HTXiangqian.h"
 
+#define HT_NO_TAG -10010
+
+typedef NS_ENUM(NSInteger, HTEquipProType)
+{
+    HTALL       = 0,//全部
+    HTHuiXin    = 1,//会心
+    HTPoFang    = 2,//破防
+    HTJiaSu     = 3,//加速
+    HTMingZhong = 4,//命中
+    HTWuShuang  = 5,//无双
+};
+
 typedef NS_ENUM(NSInteger, HTBody)
 {
     HTBodyLoli  = 0,

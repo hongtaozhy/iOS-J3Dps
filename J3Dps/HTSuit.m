@@ -20,6 +20,7 @@
         _bodyString = @"未选择体型";
         _body = -1;
         _xinFaString = @"未选择心法";
+        self.suitName = @"未命名配装";
     }
     return self;
 }

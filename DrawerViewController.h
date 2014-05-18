@@ -30,6 +30,8 @@
 - (void)showCenterView:(BOOL)animate;
 - (void)showLeftView;
 
+- (void)removeRightMaskView;
+
 //初始化之后生效
 - (void)disableGestureForDrawerView;
 - (void)enableGestureForDrawerView;

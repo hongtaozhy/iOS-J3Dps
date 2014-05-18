@@ -394,6 +394,14 @@
     }];
 }
 
+- (void)removeRightMaskView
+{
+    UIView *blackMaskView = [self.rightView viewWithTag:BLACK_MASK_VIEW_TAG];
+    if(blackMaskView) {
+        [blackMaskView removeFromSuperview];
+    }
+}
+
 - (void)showCenterView:(BOOL)animate {
     if(self.mainView == nil) return;
     if(!(self.panFromScrollViewFirstPage && [intentionDirection isEqualToString:@"left"])

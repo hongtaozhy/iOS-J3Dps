@@ -26,11 +26,15 @@
 		4321915F1917450B002AD4AB /* J3DpsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321915E1917450B002AD4AB /* J3DpsTests.m */; };
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
 		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
+		432CE01519290976006E226C /* HTEquipSeachView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CE01419290976006E226C /* HTEquipSeachView.m */; };
+		435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */; };
 		436F433C1922584800ECDD31 /* HTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433B1922584800ECDD31 /* HTManager.m */; };
 		436F4340192258E500ECDD31 /* HTSuitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433F192258E500ECDD31 /* HTSuitManager.m */; };
 		436F434319225DAF00ECDD31 /* HTSuit.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F434219225DAF00ECDD31 /* HTSuit.m */; };
 		436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F43461922F2C200ECDD31 /* HTUILabel.m */; };
 		43895CFA1921F905005D83CF /* HTBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43895CF91921F905005D83CF /* HTBaseView.m */; };
+		439C8B7E1924D515004DD8FE /* HTPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C8B7D1924D515004DD8FE /* HTPreviewView.m */; };
+		439C8B811924D963004DD8FE /* UIImage+AddUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C8B801924D963004DD8FE /* UIImage+AddUIImage.m */; };
 		43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC319191C7200A3AF6A /* HTEquip.m */; };
 		43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CC71919326200A3AF6A /* HTXiangqian.m */; };
 		43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CD41919379C00A3AF6A /* HTEquipManager.m */; };
@@ -84,6 +88,10 @@
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMenPaiSelectViewController.h; path = ../HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
 		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
+		432CE01319290976006E226C /* HTEquipSeachView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquipSeachView.h; sourceTree = "<group>"; };
+		432CE01419290976006E226C /* HTEquipSeachView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquipSeachView.m; sourceTree = "<group>"; };
+		435EE0921927BD11000DC8D0 /* UIImage+HTMenPaiImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTMenPaiImg.h"; sourceTree = "<group>"; };
+		435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTMenPaiImg.m"; sourceTree = "<group>"; };
 		436F433A1922584800ECDD31 /* HTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTManager.h; sourceTree = "<group>"; };
 		436F433B1922584800ECDD31 /* HTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTManager.m; sourceTree = "<group>"; };
 		436F433E192258E500ECDD31 /* HTSuitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSuitManager.h; sourceTree = "<group>"; };
@@ -94,6 +102,10 @@
 		436F43461922F2C200ECDD31 /* HTUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTUILabel.m; sourceTree = "<group>"; };
 		43895CF81921F905005D83CF /* HTBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseView.h; sourceTree = "<group>"; };
 		43895CF91921F905005D83CF /* HTBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseView.m; sourceTree = "<group>"; };
+		439C8B7C1924D515004DD8FE /* HTPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPreviewView.h; sourceTree = "<group>"; };
+		439C8B7D1924D515004DD8FE /* HTPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPreviewView.m; sourceTree = "<group>"; };
+		439C8B7F1924D963004DD8FE /* UIImage+AddUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddUIImage.h"; sourceTree = "<group>"; };
+		439C8B801924D963004DD8FE /* UIImage+AddUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AddUIImage.m"; sourceTree = "<group>"; };
 		43A08CC219191C7200A3AF6A /* HTEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquip.h; sourceTree = "<group>"; };
 		43A08CC319191C7200A3AF6A /* HTEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquip.m; sourceTree = "<group>"; };
 		43A08CC61919326200A3AF6A /* HTXiangqian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTXiangqian.h; sourceTree = "<group>"; };
@@ -171,6 +183,10 @@
 				43173E02191E65A500B14BF6 /* HTMenuView.m */,
 				43895CF81921F905005D83CF /* HTBaseView.h */,
 				43895CF91921F905005D83CF /* HTBaseView.m */,
+				439C8B7C1924D515004DD8FE /* HTPreviewView.h */,
+				439C8B7D1924D515004DD8FE /* HTPreviewView.m */,
+				432CE01319290976006E226C /* HTEquipSeachView.h */,
+				432CE01419290976006E226C /* HTEquipSeachView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -275,6 +291,10 @@
 				43173DFA191E63E800B14BF6 /* UIDevice+Extension.m */,
 				436F43451922F2C200ECDD31 /* HTUILabel.h */,
 				436F43461922F2C200ECDD31 /* HTUILabel.m */,
+				439C8B7F1924D963004DD8FE /* UIImage+AddUIImage.h */,
+				439C8B801924D963004DD8FE /* UIImage+AddUIImage.m */,
+				435EE0921927BD11000DC8D0 /* UIImage+HTMenPaiImg.h */,
+				435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -422,6 +442,7 @@
 				436F434319225DAF00ECDD31 /* HTSuit.m in Sources */,
 				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
 				43895CFA1921F905005D83CF /* HTBaseView.m in Sources */,
+				439C8B7E1924D515004DD8FE /* HTPreviewView.m in Sources */,
 				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
 				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
@@ -436,9 +457,12 @@
 				436F433C1922584800ECDD31 /* HTManager.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
 				436F4340192258E500ECDD31 /* HTSuitManager.m in Sources */,
+				435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */,
 				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
 				43173DF8191E63D600B14BF6 /* DrawerViewController.m in Sources */,
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
+				432CE01519290976006E226C /* HTEquipSeachView.m in Sources */,
+				439C8B811924D963004DD8FE /* UIImage+AddUIImage.m in Sources */,
 				43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */,
 				43173E03191E65A500B14BF6 /* HTMenuView.m in Sources */,
 			);
@@ -587,7 +611,7 @@
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E67A4005-9B82-41F7-8C2B-08254F6669AB";
+				PROVISIONING_PROFILE = "90A0D674-B7E4-41E4-8780-EDAEC61D8782";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

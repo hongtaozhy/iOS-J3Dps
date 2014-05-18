@@ -53,8 +53,9 @@ static HTMenuView *__MenuView = NULL;
 //        self.tableHeaderView.backgroundColor = [UIColor greenColor];
         self.dataSource = self;
         self.delegate = self;
-        // Initialization code
+        
         self.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:35.0/255.0 blue:31.0/255.0 alpha:1];
+//        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"leftbg"]];
         self.separatorColor = [UIColor colorWithRed:36.0/255.0 green:70.0/255.0 blue:42.0/255.0 alpha:1];
     }
     return self;
@@ -88,7 +89,6 @@ static HTMenuView *__MenuView = NULL;
     if(cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"menuViewCell"];
-        cell.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:35.0/255.0 blue:31.0/255.0 alpha:1];
         cell.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:35.0/255.0 blue:31.0/255.0 alpha:1];
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame] ;
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:15.0/255.0 green:28.0/255.0 blue:24.0/255.0 alpha:1];
