@@ -45,9 +45,9 @@
 
 - (void)addBtn
 {
-    __block __weak UIImage *normalImg = nil;
-    __block __weak UIImage *selectImg = nil;
-    __block __weak UIButton *btn = nil;
+    __block UIImage *normalImg = nil;
+    __block UIImage *selectImg = nil;
+    __block UIButton *btn = nil;
     
     void (^addButton)(NSString *,NSString *,CGFloat,CGFloat,SEL,int);
     addButton = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y,SEL selector,int tag)

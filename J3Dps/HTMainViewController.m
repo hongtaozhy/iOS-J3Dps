@@ -123,9 +123,9 @@
 
 - (void)addBuWeiButton
 {
-    __block __weak UIImage *buWeiImg = nil;
-    __block __weak UIImage *buWeiSelected = nil;
-    __block __weak UIButton *buWeiBtn = nil;
+    __block UIImage *buWeiImg = nil;
+    __block UIImage *buWeiSelected = nil;
+    __block UIButton *buWeiBtn = nil;
     
     void (^buweiBtn)(NSString *,NSString *,CGFloat,CGFloat);
     buweiBtn = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y)
@@ -134,7 +134,6 @@
         buWeiSelected = [UIImage imageNamed:img2];
         buWeiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [buWeiBtn setBackgroundColor:[UIColor clearColor]];
         [buWeiBtn setImage:buWeiImg forState:UIControlStateNormal];
         [buWeiBtn setImage:buWeiSelected forState:UIControlStateSelected];
         [buWeiBtn setFrame:CGRectMake(x, y, buWeiImg.size.width, buWeiImg.size.height)];
