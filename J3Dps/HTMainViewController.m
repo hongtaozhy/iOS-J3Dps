@@ -77,6 +77,7 @@
     [tixingLabel setTextAlignment:NSTextAlignmentCenter];
     [self.centerView addSubview:tixingLabel];
     
+    
     UILabel *suitNameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 39, 320, 60)];
     [suitNameLable setCenter:CGPointMake(160, 38)];
     [suitNameLable setBackgroundColor:[UIColor clearColor]];
@@ -95,6 +96,8 @@
     [self.centerView addSubview:xfsmall];
     
     [self addBuWeiButton];
+    [self addSuitLabels];
+   
     // Set parameters
     self.leftViewVisibleWidth = 200;
     self.rightViewVisibleWidth = 300;
@@ -120,6 +123,41 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)addSuitLabels
+{
+    UIFont *fontscore = [UIFont fontWithName:@"STHeitiSC-Medium" size:16.0];
+    HTSuit *nowS = [[HTSuitManager sharedManager] nowSuit];
+    
+    void (^addLabel)(NSString *,CGFloat,CGFloat);
+    addLabel = ^(NSString *string,CGFloat x,CGFloat y)
+    {
+        CGSize size = [string sizeWithFont:fontscore];
+        UILabel *lable = [[HTUILabel alloc] initWithFrame:CGRectMake(x, y, size.width, size.height)];
+        [lable setBackgroundColor:[UIColor clearColor]];
+        [lable setTextColor:[UIColor whiteColor]];
+        [lable setFont:fontscore];
+        lable.text = string;
+        [lable setTextAlignment:NSTextAlignmentCenter];
+        [self.centerView addSubview:lable];
+    };
+    addLabel([NSString descriptionWithInt:nowS.suitScores   baseString:@"装备分数"],115,350);
+    
+    int tz = 2;
+    addLabel([NSString descriptionWithInt:nowS.mainProperty baseString:nowS.mainPropertyString],23,390-tz++);
+    addLabel([NSString descriptionWithInt:nowS.baseAttackValue baseString:@"基础攻击"],23,410-tz++);
+    addLabel([NSString descriptionWithInt:nowS.attackValue baseString:@"面板攻击"],23,430-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.mingzhongValue baseString:@"内功命中"],23,450-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.huixinValue baseString:@"内功会心"],23,470-tz++);
+
+    tz = 2;
+    addLabel([NSString descriptionWithDouble:nowS.huixiaoValue baseString:@"会心效果"],173,390-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.jiasuValue baseString:@"加\x20\x20\x20\x20\x20\x20\x20\x20速"],173,410-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.wushuangValue baseString:@"无\x20\x20\x20\x20\x20\x20\x20\x20双"],173,430-tz++);
+    addLabel([NSString descriptionWithInt:nowS.pofangValue baseString:@"破\x20\x20\x20\x20\x20\x20\x20\x20防"],173,450-tz++);
+    addLabel([NSString descriptionWithInt:nowS.bloodValue baseString:@"气\x20\x20\x20\x20\x20\x20\x20\x20血"],173,470-tz++);
+
 }
 
 - (void)addBuWeiButton

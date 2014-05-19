@@ -27,6 +27,7 @@
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
 		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
 		432CE01519290976006E226C /* HTEquipSeachView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CE01419290976006E226C /* HTEquipSeachView.m */; };
+		4341D9E9192A10A000B5ADC5 /* NSString+descption.m in Sources */ = {isa = PBXBuildFile; fileRef = 4341D9E8192A10A000B5ADC5 /* NSString+descption.m */; };
 		435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */; };
 		436F433C1922584800ECDD31 /* HTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433B1922584800ECDD31 /* HTManager.m */; };
 		436F4340192258E500ECDD31 /* HTSuitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433F192258E500ECDD31 /* HTSuitManager.m */; };
@@ -90,6 +91,8 @@
 		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
 		432CE01319290976006E226C /* HTEquipSeachView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquipSeachView.h; sourceTree = "<group>"; };
 		432CE01419290976006E226C /* HTEquipSeachView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquipSeachView.m; sourceTree = "<group>"; };
+		4341D9E7192A10A000B5ADC5 /* NSString+descption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+descption.h"; sourceTree = "<group>"; };
+		4341D9E8192A10A000B5ADC5 /* NSString+descption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+descption.m"; sourceTree = "<group>"; };
 		435EE0921927BD11000DC8D0 /* UIImage+HTMenPaiImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTMenPaiImg.h"; sourceTree = "<group>"; };
 		435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTMenPaiImg.m"; sourceTree = "<group>"; };
 		436F433A1922584800ECDD31 /* HTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTManager.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				439C8B801924D963004DD8FE /* UIImage+AddUIImage.m */,
 				435EE0921927BD11000DC8D0 /* UIImage+HTMenPaiImg.h */,
 				435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */,
+				4341D9E7192A10A000B5ADC5 /* NSString+descption.h */,
+				4341D9E8192A10A000B5ADC5 /* NSString+descption.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */,
 				43A08CC419191C7200A3AF6A /* HTEquip.m in Sources */,
 				43173DF8191E63D600B14BF6 /* DrawerViewController.m in Sources */,
+				4341D9E9192A10A000B5ADC5 /* NSString+descption.m in Sources */,
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
 				432CE01519290976006E226C /* HTEquipSeachView.m in Sources */,
 				439C8B811924D963004DD8FE /* UIImage+AddUIImage.m in Sources */,

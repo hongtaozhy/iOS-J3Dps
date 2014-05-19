@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import "HTBaseView.h"
     #import "HTEquip.h"
+    #import "NSString+descption.h"
 #endif
