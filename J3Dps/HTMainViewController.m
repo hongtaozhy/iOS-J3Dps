@@ -16,6 +16,7 @@
 
 @interface HTMainViewController ()
 @property (nonatomic,retain) UIButton *currenctButton;
+@property (nonatomic,retain) HTEquipSeachView *serachEquipView;
 @end
 
 @implementation HTMainViewController
@@ -201,8 +202,13 @@
     }
     self.currenctButton.selected = YES;
     
-    HTEquipSeachView *view = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
+    if (self.serachEquipView)
+    {
+        [self.serachEquipView removeFromSuperview];
+        self.serachEquipView = nil;
+    }
+    self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
     
-    [self.centerView addSubview:view];
+    [self.centerView addSubview:self.serachEquipView];
 }
 @end
