@@ -22,11 +22,6 @@
         _body = -1;
         _xinFaString = @"未选择心法";
         self.suitName = @"未命名配装";
-        self.suitScores = 0;
-        
-        self.mingzhongValue = 0;
-        self.huixiaoValue = 0;
-        self.bloodValue = 0;
     }
     return self;
 }
@@ -49,41 +44,41 @@
         case HTBodyLoli:
         {
             _bodyString = @"萝莉";
-            self.tizhi = 95;
-            self.gengu = 98;
-            self.lidao = 96;
-            self.shenfa = 99;
-            self.yuanqi = 97;
+            self.basetizhi = 95;
+            self.basegengu = 98;
+            self.baselidao = 96;
+            self.baseshenfa = 99;
+            self.baseyuanqi = 97;
         }
             break;
         case HTBodyWoman:
         {
             _bodyString = @"御姐";
-            self.tizhi = 96;
-            self.gengu = 98;
-            self.lidao = 97;
-            self.shenfa = 98;
-            self.yuanqi = 96;
+            self.basetizhi = 96;
+            self.basegengu = 98;
+            self.baselidao = 97;
+            self.baseshenfa = 98;
+            self.baseyuanqi = 96;
         }
             break;
         case HTBodyMan:
         {
             _bodyString = @"成男";
-            self.tizhi = 99;
-            self.gengu = 96;
-            self.lidao = 98;
-            self.shenfa = 97;
-            self.yuanqi = 95;
+            self.basetizhi = 99;
+            self.basegengu = 96;
+            self.baselidao = 98;
+            self.baseshenfa = 97;
+            self.baseyuanqi = 95;
         }
             break;
         case HTBodyBoy:
         {
             _bodyString = @"正太";
-            self.tizhi = 96;
-            self.gengu = 98;
-            self.lidao = 96;
-            self.shenfa = 98;
-            self.yuanqi = 95;
+            self.basetizhi = 96;
+            self.basegengu = 98;
+            self.baselidao = 96;
+            self.baseshenfa = 98;
+            self.baseyuanqi = 95;
         }
             break;
         default:
@@ -282,6 +277,53 @@
         _mainPropertyString = @"体\x20\x20\x20\x20\x20\x20\x20\x20质";
     }
     return _mainPropertyString;
+}
+
+- (NSInteger)suitScores
+{
+    return _hushou.score+_maozi.score+_shangyi.score+_xiazhuang.score+_yaodai.score+_xiezi.score
+            +_jiezhi1.score+_jiezhi2.score+_xianglian.score+_yaozhui.score
+            +_wuqi.score+_anqi.score;
+}
+
+- (NSInteger)tizhi
+{
+    return self.basetizhi +
+    _hushou.tizhi+_maozi.tizhi+_shangyi.tizhi+_xiazhuang.tizhi+_yaodai.tizhi+_xiezi.tizhi
+    +_jiezhi1.tizhi+_jiezhi2.tizhi+_xianglian.tizhi+_yaozhui.tizhi
+    +_wuqi.tizhi+_anqi.tizhi;
+}
+
+- (NSInteger)gengu
+{
+    return self.basegengu +
+    _hushou.gengu+_maozi.gengu+_shangyi.gengu+_xiazhuang.gengu+_yaodai.gengu+_xiezi.gengu
+    +_jiezhi1.gengu+_jiezhi2.gengu+_xianglian.gengu+_yaozhui.gengu
+    +_wuqi.gengu+_anqi.gengu;
+}
+
+- (NSInteger)lidao
+{
+    return self.baselidao +
+    _hushou.lidao+_maozi.lidao+_shangyi.lidao+_xiazhuang.lidao+_yaodai.lidao+_xiezi.lidao
+    +_jiezhi1.lidao+_jiezhi2.lidao+_xianglian.lidao+_yaozhui.lidao
+    +_wuqi.lidao+_anqi.lidao;
+}
+
+- (NSInteger)shenfa
+{
+    return self.baseshenfa +
+    _hushou.shenfa+_maozi.shenfa+_shangyi.shenfa+_xiazhuang.shenfa+_yaodai.shenfa+_xiezi.shenfa
+    +_jiezhi1.shenfa+_jiezhi2.shenfa+_xianglian.shenfa+_yaozhui.shenfa
+    +_wuqi.shenfa+_anqi.shenfa;
+}
+
+- (NSInteger)yuanqi
+{
+    return self.baseyuanqi +
+    _hushou.yuanqi+_maozi.yuanqi+_shangyi.yuanqi+_xiazhuang.yuanqi+_yaodai.yuanqi+_xiezi.yuanqi
+    +_jiezhi1.yuanqi+_jiezhi2.yuanqi+_xianglian.yuanqi+_yaozhui.yuanqi
+    +_wuqi.yuanqi+_anqi.yuanqi;
 }
 
 @end

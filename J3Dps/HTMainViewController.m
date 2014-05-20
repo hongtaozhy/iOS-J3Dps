@@ -68,16 +68,6 @@
     UIFont *fonttx = [UIFont fontWithName:@"STHeitiSC-Medium" size:19.0];
     CGSize size = [showtixing sizeWithFont:fonttx];
     
-    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    [tixingLabel setCenter:CGPointMake(160-(xfsmallImg.size.width/2.0), 63)];
-    [tixingLabel setBackgroundColor:[UIColor clearColor]];
-    [tixingLabel setTextColor:[UIColor whiteColor]];
-    [tixingLabel setFont:fonttx];
-    tixingLabel.text = showtixing;
-    [tixingLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.centerView addSubview:tixingLabel];
-    
-    
     UILabel *suitNameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 39, 320, 60)];
     [suitNameLable setCenter:CGPointMake(160, 38)];
     [suitNameLable setBackgroundColor:[UIColor clearColor]];
@@ -86,6 +76,16 @@
     suitNameLable.text = [[[HTSuitManager sharedManager] nowSuit] suitName];
     [suitNameLable setTextAlignment:NSTextAlignmentCenter];
     [self.centerView addSubview:suitNameLable];
+    
+    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    [tixingLabel setCenter:CGPointMake(160-(xfsmallImg.size.width/2.0), 63)];
+    [tixingLabel setBackgroundColor:[UIColor clearColor]];
+    [tixingLabel setTextColor:[UIColor whiteColor]];
+    [tixingLabel setFont:fonttx];
+    tixingLabel.text = showtixing;
+    [tixingLabel setTextAlignment:NSTextAlignmentCenter];
+    [tixingLabel setTag:-1];
+    [self.centerView addSubview:tixingLabel];
     
     CGRect tixingLabelBundle = [tixingLabel frame];
     CGPoint centerText = [tixingLabel center];
@@ -107,6 +107,7 @@
 
     [self initialDrawerViewController];
 
+    [self reloadData];
 //    [self removeRightMaskView];
 //    UIImage *imgCenter = [self imageWithUIView:self.centerView];
 //    UIImage *imgRight = [self imageWithUIView:self.rightView];
@@ -223,7 +224,10 @@
 
 - (void)menuBtnPress
 {
-    [self showLeftView];
+#warning 测试用代码注意打开
+    
+    [self reloadData];
+//    [self showLeftView];
 }
 
 - (void)previewBtnPress
@@ -248,5 +252,32 @@
     self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
     
     [self.centerView addSubview:self.serachEquipView];
+}
+
+- (void)reloadData
+{
+    HTSuit *nowS = [[HTSuitManager sharedManager] nowSuit];
+    nowS.maozi = [[HTEquipManager sharedManager] allEquip][30];
+    nowS.shangyi = [[HTEquipManager sharedManager] allEquip][31];
+    nowS.jiezhi1 = [[HTEquipManager sharedManager] allEquip][32];
+    nowS.jiezhi2 = [[HTEquipManager sharedManager] allEquip][33];
+    nowS.yaozhui = [[HTEquipManager sharedManager] allEquip][34];
+    nowS.xianglian = [[HTEquipManager sharedManager] allEquip][35];
+    nowS.xiazhuang = [[HTEquipManager sharedManager] allEquip][65];
+    nowS.yaodai = [[HTEquipManager sharedManager] allEquip][1];
+
+
+    [self.centerView subviews];
+    for (UIView* view in [self.centerView subviews])
+    {
+        if ([view isKindOfClass:HTUILabel.class] && [view tag] != -1)
+        {
+            [view removeFromSuperview];
+        }
+    }
+    [self addSuitLabels];
+    NSLog(@"%@",nowS.maozi);
+    NSLog(@"%@",nowS.shangyi);
+
 }
 @end

@@ -16,4 +16,5 @@
     #import "HTBaseView.h"
     #import "HTEquip.h"
     #import "NSString+descption.h"
+    #import "HTEquipManager.h"
 #endif
