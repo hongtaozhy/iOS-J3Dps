@@ -107,7 +107,7 @@
 
     [self initialDrawerViewController];
 
-    [self reloadData];
+//    [self reloadData];
 //    [self removeRightMaskView];
 //    UIImage *imgCenter = [self imageWithUIView:self.centerView];
 //    UIImage *imgRight = [self imageWithUIView:self.rightView];

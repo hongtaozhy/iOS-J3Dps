@@ -11,6 +11,14 @@
 
 #define HT_NO_TAG -10010
 
+typedef NS_ENUM(NSInteger, HTXinfaType)
+{
+    HTNeiGong   = 0,
+    HTWaiGong   = 1,
+    HTZhiliao   = 2,
+    HTFangyu    = 3
+};
+
 typedef NS_ENUM(NSInteger, HTEquipProType)
 {
     HTALL       = 0,//全部

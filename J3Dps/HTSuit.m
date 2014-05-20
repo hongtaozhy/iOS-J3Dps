@@ -8,6 +8,16 @@
 
 #import "HTSuit.h"
 
+@interface HTSuit ()
+@property (nonatomic,assign) double bloodCoefficient;
+@property (nonatomic,assign) double attack;
+@property (nonatomic,assign) double huixin;
+@property (nonatomic,assign) HTXinfaType xinfaType;
+@property (nonatomic,assign) double attackMainPCoefficient;
+@property (nonatomic,assign) double huixinMainPCoefficient;
+
+@end
+
 @implementation HTSuit
 @synthesize bodyString = _bodyString;
 @synthesize body = _body;
@@ -22,6 +32,10 @@
         _body = -1;
         _xinFaString = @"未选择心法";
         self.suitName = @"未命名配装";
+        _bloodCoefficient = 1.0;
+        _xinfaType = HTWaiGong;
+        _attackMainPCoefficient = 0;
+        _huixin = 0;
     }
     return self;
 }
@@ -93,10 +107,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.08;
+                _attackMainPCoefficient = 2.85;
+                _xinfaType = HTNeiGong;
+                _attack = 1719;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"冰心诀";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.08;
+                _attackMainPCoefficient = 0;
+                _xinfaType = HTZhiliao;
+                _attack = 0;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"云裳心经";
             }
         }
@@ -105,10 +131,22 @@
         {
             if (isDefault)
             {
+                _huixin = 20;
+                _huixinMainPCoefficient = 0.15;
+                _attackMainPCoefficient = 2.25;
+                _xinfaType = HTWaiGong;
+                _attack = 1551;
+                _bloodCoefficient = 1.6;
                 _xinFaString = @"太虚剑意";
             }
             else
             {
+                _huixin = 23;
+                _huixinMainPCoefficient = 0.15;
+                _attackMainPCoefficient = 2.7;
+                _xinfaType = HTNeiGong;
+                _attack = 1726;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"紫霞功";
             }
         }
@@ -117,10 +155,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 2.4;
+                _xinfaType = HTWaiGong;
+                _attack = 1488;
+                _bloodCoefficient = 1.64;
                 _xinFaString = @"傲血战意";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 0;
+                _attack = 0;
+                _xinfaType = HTFangyu;
+                _bloodCoefficient = 1.96;
                 _xinFaString = @"铁牢律";
             }
         }
@@ -129,10 +179,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 2.85;
+                _xinfaType = HTNeiGong;
+                _attack = 1727;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"花间游";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.15;
+                _attackMainPCoefficient = 0;
+                _attack = 0;
+                _xinfaType = HTZhiliao;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"离经易道";
             }
         }
@@ -141,10 +203,22 @@
         {
             if (isDefault)
             {
+                _huixin = 14;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 2.4;
+                _xinfaType = HTWaiGong;
+                _attack = 1609;
+                _bloodCoefficient = 1.6;
                 _xinFaString = @"山居剑意";
             }
             else
             {
+                _huixin = 23;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 2.4;
+                _xinfaType = HTWaiGong;
+                _attack = 1609;
+                _bloodCoefficient = 1.6;
                 _xinFaString = @"问水诀";
             }
         }
@@ -153,10 +227,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.15;
+                _attackMainPCoefficient = 2.7;
+                _xinfaType = HTNeiGong;
+                _attack = 1711;
+                _bloodCoefficient = 1.8;
                 _xinFaString = @"易筋经";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 0;
+                _attack = 0;
+                _xinfaType = HTFangyu;
+                _bloodCoefficient = 1.96;
                 _xinFaString = @"洗髓经";
             }
         }
@@ -165,10 +251,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 2.85;
+                _xinfaType = HTNeiGong;
+                _attack = 1723;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"毒经";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 0;
+                _attack = 0;
+                _xinfaType = HTZhiliao;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"补天诀";
             }
         }
@@ -177,10 +275,22 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.2;
+                _attackMainPCoefficient = 2.6;
+                _xinfaType = HTNeiGong;
+                _attack = 1730;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"天罗诡道";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.15;
+                _attackMainPCoefficient = 2.25;
+                _xinfaType = HTWaiGong;
+                _attack = 1550;
+                _bloodCoefficient = 1.56;
                 _xinFaString = @"惊羽诀";
             }
         }
@@ -189,20 +299,39 @@
         {
             if (isDefault)
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0.08;
+                _attackMainPCoefficient = 2.85;
+                _xinfaType = HTNeiGong;
+                _attack = 1727;
+                _bloodCoefficient = 1.6;
                 _xinFaString = @"焚影圣决";
             }
             else
             {
+                _huixin = 0;
+                _huixinMainPCoefficient = 0;
+                _attackMainPCoefficient = 0;
+                _attack = 0;
+                _xinfaType = HTFangyu;
+                _bloodCoefficient = 1.96;
                 _xinFaString = @"明尊琉璃体";
             }
         }
             break;
         case HTGB:
         {
+            _huixin = 0;
+            _huixinMainPCoefficient = 0;
+            _attackMainPCoefficient = 2.3;
+            _xinfaType = HTWaiGong;
+            _attack = 1738;
+            _bloodCoefficient = 1.6;
             _xinFaString = @"笑尘诀";
         }
             break;
         default:
+            
             break;
     }
 }
@@ -326,4 +455,55 @@
     +_wuqi.yuanqi+_anqi.yuanqi;
 }
 
+- (NSInteger)bloodValue
+{
+    return (self.tizhi*10.0+2860.0)*self.bloodCoefficient
+        + 0 ;//镶嵌的气血未填
+}
+
+- (NSInteger)baseAttackValue
+{
+    int property = 0;
+    
+    if (self.xinfaType == HTWaiGong || self.menpai == HTTC)//外功心法或者铁牢
+    {
+        property = self.lidao * 0.25;
+    }
+    else
+    {
+        property = self.yuanqi * 0.3;
+    }
+    return self.attack + property +
+    _hushou.gongji+_maozi.gongji+_shangyi.gongji+_xiazhuang.gongji+_yaodai.gongji+_xiezi.gongji
+    +_jiezhi1.gongji+_jiezhi2.gongji+_xianglian.gongji+_yaozhui.gongji
+    +_wuqi.gongji+_anqi.gongji;
+}
+
+- (NSInteger)attackValue
+{
+    return self.baseAttackValue + (int)(self.mainProperty * self.attackMainPCoefficient);
+}
+
+- (double)huixinValue
+{
+    int huixinDj = 0;
+    int property = 0;
+    
+    if (self.xinfaType == HTWaiGong || self.menpai == HTTM || self.menpai == HTTC)//外功心法或者天罗或者铁牢
+    {
+        property = 0.3 * self.shenfa;
+    }
+    else
+    {
+        property = 0.3 * self.gengu;
+    }
+    huixinDj = self.huixin + property +
+    _hushou.huixin+_maozi.huixin+_shangyi.huixin+_xiazhuang.huixin+_yaodai.huixin+_xiezi.huixin
+    +_jiezhi1.huixin+_jiezhi2.huixin+_xianglian.huixin+_yaozhui.huixin
+    +_wuqi.huixin+_anqi.huixin
+    + (int)(self.mainProperty * self.huixinMainPCoefficient)
+    + property;
+    
+    return huixinDj/45.0;
+}
 @end
