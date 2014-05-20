@@ -44,6 +44,45 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    HTEquip *result = [[[self class] allocWithZone:zone] init];
+    result.name = [self.name copy];
+    result.menpai = self.menpai;
+    result.type = self.type;
+    result.buWei = self.buWei;
+    
+    result.quality = self.quality;
+    result.score = self.score;
+
+    result.tizhi = self.tizhi;
+    result.gengu = self.gengu;
+    result.lidao = self.lidao;
+    result.shenfa = self.shenfa;
+    result.yuanqi = self.yuanqi;
+    
+    result.gongji = self.gongji;
+    result.zhiliaoliang = self.zhiliaoliang;
+    
+    result.huixin = self.huixin;
+    result.huixiao = self.huixiao;
+    result.pofang = self.pofang;
+    result.mingzhong = self.mingzhong;
+    result.wushuang = self.wushuang;
+    result.jiasu = self.jiasu;
+    
+    result.yujin = self.yujin;
+    result.huajin = self.huajin;
+    
+    result.tuijian = self.tuijian;
+    result.xiangqian = self.xiangqian;
+    result.jinglianLevel = self.jinglianLevel;
+    result.diaoluo = [self.diaoluo copy];
+    result.texiao = self.texiao;
+    
+    return result;
+}
+
 - (NSString *)description
 {
     return  [NSString stringWithFormat:@"%@\n掉落:%@\n体质+%d\n根骨+%d\n力道+%d\n身法+%d\n元气+%d\n攻击+%d\n破防+%d\n会心+%d\n会效+%d\n命中+%d\n无双+%d\n御劲+%d\n化劲+%d\n",

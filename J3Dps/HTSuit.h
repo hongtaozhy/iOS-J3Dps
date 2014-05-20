@@ -38,19 +38,19 @@
 @property (nonatomic,assign) NSInteger baseshenfa;
 @property (nonatomic,assign) NSInteger baseyuanqi;
 
-@property (nonatomic,retain) HTEquip *hushou;
-@property (nonatomic,retain) HTEquip *shangyi;
-@property (nonatomic,retain) HTEquip *yaodai;
-@property (nonatomic,retain) HTEquip *maozi;
-@property (nonatomic,retain) HTEquip *xiazhuang;
-@property (nonatomic,retain) HTEquip *xiezi;
-@property (nonatomic,retain) HTEquip *wuqi;
-@property (nonatomic,retain) HTEquip *wuqi2;
-@property (nonatomic,retain) HTEquip *jiezhi1;
-@property (nonatomic,retain) HTEquip *jiezhi2;
-@property (nonatomic,retain) HTEquip *yaozhui;
-@property (nonatomic,retain) HTEquip *xianglian;
-@property (nonatomic,retain) HTEquip *anqi;
+@property (nonatomic,copy) HTEquip *hushou;
+@property (nonatomic,copy) HTEquip *shangyi;
+@property (nonatomic,copy) HTEquip *yaodai;
+@property (nonatomic,copy) HTEquip *maozi;
+@property (nonatomic,copy) HTEquip *xiazhuang;
+@property (nonatomic,copy) HTEquip *xiezi;
+@property (nonatomic,copy) HTEquip *wuqi;
+@property (nonatomic,copy) HTEquip *wuqi2;
+@property (nonatomic,copy) HTEquip *jiezhi1;
+@property (nonatomic,copy) HTEquip *jiezhi2;
+@property (nonatomic,copy) HTEquip *yaozhui;
+@property (nonatomic,copy) HTEquip *xianglian;
+@property (nonatomic,copy) HTEquip *anqi;
 
 
 @property (nonatomic,retain) NSString *suitName;

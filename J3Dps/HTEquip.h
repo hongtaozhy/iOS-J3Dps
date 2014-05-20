@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, HTTuiJianMenpai)
     HTCJdps        = 1 << 11 //藏剑
 };
 
-@interface HTEquip : NSObject
+@interface HTEquip : NSObject<NSCopying>
 
 @property (nonatomic,retain) NSString* name;
 @property (nonatomic,assign) HTMenpai menpai;
@@ -104,7 +104,6 @@ typedef NS_ENUM(NSInteger, HTTuiJianMenpai)
 @property (nonatomic,assign) NSInteger lidao;
 @property (nonatomic,assign) NSInteger shenfa;
 @property (nonatomic,assign) NSInteger yuanqi;
-
 
 @property (nonatomic,assign) NSInteger gongji;
 @property (nonatomic,assign) NSInteger zhiliaoliang;
