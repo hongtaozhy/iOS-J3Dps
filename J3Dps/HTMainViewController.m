@@ -147,18 +147,17 @@
     
     int tz = 2;
     addLabel([NSString descriptionWithInt:nowS.mainProperty baseString:nowS.mainPropertyString],23,390-tz++);
-    addLabel([NSString descriptionWithInt:nowS.baseAttackValue baseString:@"基础攻击"],23,410-tz++);
-    addLabel([NSString descriptionWithInt:nowS.attackValue baseString:@"面板攻击"],23,430-tz++);
-    addLabel([NSString descriptionWithDouble:nowS.mingzhongValue baseString:@"内功命中"],23,450-tz++);
-    addLabel([NSString descriptionWithDouble:nowS.huixinValue baseString:@"内功会心"],23,470-tz++);
+    addLabel([NSString descriptionWithInt:nowS.bloodValue baseString:@"气\x20\x20\x20\x20\x20\x20\x20\x20血"],23,410-tz++);
+    addLabel([NSString descriptionWithInt:nowS.baseAttackValue baseString:@"基础攻击"],23,430-tz++);
+    addLabel([NSString descriptionWithInt:nowS.attackValue baseString:@"面板攻击"],23,450-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.mingzhongValue baseString:@"命\x20\x20\x20\x20\x20\x20\x20\x20中"],23,470-tz++);
 
     tz = 2;
-    addLabel([NSString descriptionWithDouble:nowS.huixiaoValue baseString:@"会心效果"],173,390-tz++);
-    addLabel([NSString descriptionWithDouble:nowS.jiasuValue baseString:@"加\x20\x20\x20\x20\x20\x20\x20\x20速"],173,410-tz++);
-    addLabel([NSString descriptionWithDouble:nowS.wushuangValue baseString:@"无\x20\x20\x20\x20\x20\x20\x20\x20双"],173,430-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.huixinValue baseString:@"会\x20\x20\x20\x20\x20\x20\x20\x20心"],173,390-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.huixiaoValue baseString:@"会心效果"],173,410-tz++);
+    addLabel([NSString descriptionWithDouble:nowS.jiasuValue baseString:@"加\x20\x20\x20\x20\x20\x20\x20\x20速"],173,430-tz++);
     addLabel([NSString descriptionWithInt:nowS.pofangValue baseString:@"破\x20\x20\x20\x20\x20\x20\x20\x20防"],173,450-tz++);
-    addLabel([NSString descriptionWithInt:nowS.bloodValue baseString:@"气\x20\x20\x20\x20\x20\x20\x20\x20血"],173,470-tz++);
-
+    addLabel([NSString descriptionWithDouble:nowS.wushuangValue baseString:@"无\x20\x20\x20\x20\x20\x20\x20\x20双"],173,470-tz++);
 }
 
 - (void)addBuWeiButton
