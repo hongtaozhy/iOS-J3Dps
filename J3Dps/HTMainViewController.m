@@ -75,6 +75,7 @@
     [suitNameLable setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20.0]];
     suitNameLable.text = [[[HTSuitManager sharedManager] nowSuit] suitName];
     [suitNameLable setTextAlignment:NSTextAlignmentCenter];
+    [suitNameLable setTag:-1];
     [self.centerView addSubview:suitNameLable];
     
     HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
@@ -135,7 +136,7 @@
     addLabel = ^(NSString *string,CGFloat x,CGFloat y)
     {
         CGSize size = [string sizeWithFont:fontscore];
-        UILabel *lable = [[HTUILabel alloc] initWithFrame:CGRectMake(x, y, size.width, size.height)];
+        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(x, y, size.width, size.height)];
         [lable setBackgroundColor:[UIColor clearColor]];
         [lable setTextColor:[UIColor whiteColor]];
         [lable setFont:fontscore];
@@ -255,28 +256,13 @@
 
 - (void)reloadData
 {
-    HTSuit *nowS = [[HTSuitManager sharedManager] nowSuit];
-    nowS.maozi = [[HTEquipManager sharedManager] allEquip][30];
-    nowS.shangyi = [[HTEquipManager sharedManager] allEquip][31];
-    nowS.jiezhi1 = [[HTEquipManager sharedManager] allEquip][32];
-    nowS.jiezhi2 = [[HTEquipManager sharedManager] allEquip][33];
-    nowS.yaozhui = [[HTEquipManager sharedManager] allEquip][34];
-    nowS.xianglian = [[HTEquipManager sharedManager] allEquip][35];
-    nowS.xiazhuang = [[HTEquipManager sharedManager] allEquip][65];
-    nowS.yaodai = [[HTEquipManager sharedManager] allEquip][1];
-
-
-    [self.centerView subviews];
     for (UIView* view in [self.centerView subviews])
     {
-        if ([view isKindOfClass:HTUILabel.class] && [view tag] != -1)
+        if ([view isKindOfClass:UILabel.class] && [view tag] != -1)
         {
             [view removeFromSuperview];
         }
     }
     [self addSuitLabels];
-    NSLog(@"%@",nowS.maozi);
-    NSLog(@"%@",nowS.shangyi);
-
 }
 @end
