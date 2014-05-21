@@ -12,9 +12,12 @@
 @property (nonatomic,assign) double bloodCoefficient;
 @property (nonatomic,assign) double attack;
 @property (nonatomic,assign) double huixin;
+@property (nonatomic,assign) double mingzhong;
 @property (nonatomic,assign) HTXinfaType xinfaType;
 @property (nonatomic,assign) double attackMainPCoefficient;
 @property (nonatomic,assign) double huixinMainPCoefficient;
+@property (nonatomic,assign) double huixiaoMainPCoefficient;
+@property (nonatomic,assign) double pofangMainPCoefficient;
 
 @end
 
@@ -107,6 +110,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 119.0;
+                _huixiaoMainPCoefficient = 0.02;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.08;
                 _attackMainPCoefficient = 2.85;
@@ -117,6 +123,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0.02;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.08;
                 _attackMainPCoefficient = 0;
@@ -131,6 +140,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 109.0;
+                _huixiaoMainPCoefficient = 0.05;
                 _huixin = 20;
                 _huixinMainPCoefficient = 0.15;
                 _attackMainPCoefficient = 2.25;
@@ -141,6 +153,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 119.0;
+                _huixiaoMainPCoefficient = 0.05;
                 _huixin = 23;
                 _huixinMainPCoefficient = 0.15;
                 _attackMainPCoefficient = 2.7;
@@ -155,6 +170,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0.08;
+                _mingzhong = 94.0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 2.4;
@@ -165,6 +183,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 0;
@@ -179,6 +200,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0.08;
+                _mingzhong = 117.0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 2.85;
@@ -189,6 +213,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0.05;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.15;
                 _attackMainPCoefficient = 0;
@@ -203,6 +230,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0.08;
+                _mingzhong = 99.0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 14;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 2.4;
@@ -213,6 +243,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0.08;
+                _mingzhong = 96.0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 23;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 2.4;
@@ -227,6 +260,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 119.0;
+                _huixiaoMainPCoefficient = 0.05;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.15;
                 _attackMainPCoefficient = 2.7;
@@ -237,6 +273,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 0;
@@ -251,6 +290,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0.08;
+                _mingzhong = 115.0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 2.85;
@@ -261,6 +303,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 0;
@@ -275,6 +320,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 116.0;
+                _huixiaoMainPCoefficient = 0.08;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.2;
                 _attackMainPCoefficient = 2.6;
@@ -285,6 +333,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 96.0;
+                _huixiaoMainPCoefficient = 0.05;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.15;
                 _attackMainPCoefficient = 2.25;
@@ -299,6 +350,9 @@
         {
             if (isDefault)
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 117.0;
+                _huixiaoMainPCoefficient = 0.02;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0.08;
                 _attackMainPCoefficient = 2.85;
@@ -309,6 +363,9 @@
             }
             else
             {
+                _pofangMainPCoefficient = 0;
+                _mingzhong = 0;
+                _huixiaoMainPCoefficient = 0;
                 _huixin = 0;
                 _huixinMainPCoefficient = 0;
                 _attackMainPCoefficient = 0;
@@ -321,6 +378,9 @@
             break;
         case HTGB:
         {
+            _pofangMainPCoefficient = 0.15;
+            _mingzhong = 50.0;
+            _huixiaoMainPCoefficient = 0;
             _huixin = 0;
             _huixinMainPCoefficient = 0;
             _attackMainPCoefficient = 2.3;
@@ -501,9 +561,81 @@
     _hushou.huixin+_maozi.huixin+_shangyi.huixin+_xiazhuang.huixin+_yaodai.huixin+_xiezi.huixin
     +_jiezhi1.huixin+_jiezhi2.huixin+_xianglian.huixin+_yaozhui.huixin
     +_wuqi.huixin+_anqi.huixin
-    + (int)(self.mainProperty * self.huixinMainPCoefficient)
-    + property;
+    + (self.mainProperty * self.huixinMainPCoefficient)
+    ;
     
     return huixinDj/45.0;
 }
+
+- (double)huixiaoValue
+{
+    int huixiaoDj = 0;
+    int property = 0;
+    
+    if (self.xinfaType == HTWaiGong || self.menpai == HTTM || self.menpai == HTTC)//外功心法或者天罗或者铁牢
+    {
+        property = 0.15 * self.shenfa;
+    }
+    else
+    {
+        property = 0.15 * self.gengu;
+    }
+    
+    huixiaoDj = property +
+    _hushou.huixiao+_maozi.huixiao+_shangyi.huixiao+_xiazhuang.huixiao+_yaodai.huixiao+_xiezi.huixiao
+    +_jiezhi1.huixiao+_jiezhi2.huixiao+_xianglian.huixiao+_yaozhui.huixiao
+    +_wuqi.huixiao+_anqi.huixiao
+    +(self.mainProperty * self.huixiaoMainPCoefficient)
+    ;
+    
+    return huixiaoDj/18.0+1.75*100.0;
+}
+
+- (double)mingzhongValue
+{
+    int mingzhongDj = 0;
+    
+    mingzhongDj = self.mingzhong +
+    _hushou.mingzhong+_maozi.mingzhong+_shangyi.mingzhong+_xiazhuang.mingzhong+_yaodai.mingzhong+_xiezi.mingzhong
+    +_jiezhi1.mingzhong+_jiezhi2.mingzhong+_xianglian.mingzhong+_yaozhui.mingzhong
+    +_wuqi.mingzhong+_anqi.mingzhong
+    ;
+    return mingzhongDj/45.0 + 90;
+}
+
+- (double)wushuangValue
+{
+    return (_hushou.wushuang+_maozi.wushuang+_shangyi.wushuang+_xiazhuang.wushuang+_yaodai.wushuang+_xiezi.wushuang
+    +_jiezhi1.wushuang+_jiezhi2.wushuang+_xianglian.wushuang+_yaozhui.wushuang
+            +_wuqi.wushuang+_anqi.wushuang)/33.75;
+    
+}
+
+- (NSInteger)pofangValue
+{
+    int property = 0;
+    
+    if (self.xinfaType == HTWaiGong || self.menpai == HTTC)//外功心法或者铁牢
+    {
+        property = self.lidao * 0.25;
+    }
+    else
+    {
+        property = self.yuanqi * 0.25;
+    }
+    return property +
+    _hushou.pofang+_maozi.pofang+_shangyi.pofang+_xiazhuang.pofang+_yaodai.pofang+_xiezi.pofang
+    +_jiezhi1.pofang+_jiezhi2.pofang+_xianglian.pofang+_yaozhui.pofang
+    +_wuqi.pofang+_anqi.pofang
+    + (self.mainProperty * self.pofangMainPCoefficient);
+}
+
+- (double)jiasuValue
+{
+    return (_hushou.jiasu+_maozi.jiasu+_shangyi.jiasu+_xiazhuang.jiasu+_yaodai.jiasu+_xiezi.jiasu
+            +_jiezhi1.jiasu+_jiezhi2.jiasu+_xianglian.jiasu+_yaozhui.jiasu
+            +_wuqi.jiasu+_anqi.jiasu)/54.782;
+    
+}
+
 @end
