@@ -256,13 +256,51 @@
 
 - (void)sureDown:(UIButton *)sender
 {
+    if ([[HTSuitManager sharedManager] nowSuit].menpai != self.currenctMenPaiButton.tag
+        || [[HTSuitManager sharedManager] nowSuit].isDefaultXinFa != (sender == self.xf1Button))
+    {
+        if ([[HTSuitManager sharedManager] nowSuit].menpai >= 0)
+        {
+            NSString *title = @"切换门派将会清空当前配装，是否切换";
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                            message:nil
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"确定",nil];
+            alert.alertViewStyle = UIAlertViewStyleDefault;
+            
+            [alert show];
+            return;
+        }
+    }
+
     //必须先设置心法
     [[HTSuitManager sharedManager] nowSuit].isDefaultXinFa = sender == self.xf1Button;
     [[HTSuitManager sharedManager] nowSuit].menpai = self.currenctMenPaiButton.tag;
 
-    
+
     [self showLeftView];
     [[HTMenuView sharedView] changRowByCode:0];
+}
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [self showLeftView];
+        [[HTMenuView sharedView] changRowByCode:0];
+        return;
+    }
+    else
+    {
+        //必须先设置心法
+        [[[HTSuitManager sharedManager] nowSuit] clear];
+        [[HTSuitManager sharedManager] nowSuit].isDefaultXinFa = self.currenctXinfaButton == self.xf1Button;
+        [[HTSuitManager sharedManager] nowSuit].menpai = self.currenctMenPaiButton.tag;
+        
+        [self showLeftView];
+        [[HTMenuView sharedView] changRowByCode:0];
+    }
 }
 
 - (void)menpaiSelectButtonPress:(UIButton *)sender

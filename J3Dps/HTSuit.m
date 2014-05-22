@@ -39,6 +39,7 @@
         _xinfaType = HTWaiGong;
         _attackMainPCoefficient = 0;
         _huixin = 0;
+        _menpai = -1;
     }
     return self;
 }
@@ -638,4 +639,22 @@
     
 }
 
+
+- (void)clear
+{
+    self.maozi = nil;
+    self.xiezi = nil;
+    self.wuqi = nil;
+    self.wuqi2 = nil;
+    self.jiezhi1 = nil;
+    self.jiezhi2 = nil;
+    self.xianglian = nil;
+    self.yaozhui = nil;
+    self.yaodai = nil;
+    self.shangyi = nil;
+    self.xiazhuang = nil;
+    self.hushou = nil;
+    self.anqi = nil;
+    
+}
 @end

@@ -297,7 +297,71 @@
     {
         case HTwuqi:
             if (now.wuqi)
-                return [UIImage imageNamed:@"59888"];
+            {
+                switch (now.menpai)
+                {
+                    case HTXX:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59888"];
+                        else
+                            return [UIImage imageNamed:@"59887"];
+                        break;
+                    case HTCY:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59886"];
+                        else
+                            return [UIImage imageNamed:@"59885"];
+                        break;
+                    case HTCJ:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59893"];
+                        else
+                            return [UIImage imageNamed:@"59894"];
+                        break;
+                    case HTHH:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59881"];
+                        else
+                            return [UIImage imageNamed:@"59882"];
+                        break;
+                    case HTHS:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59879"];
+                        else
+                            return [UIImage imageNamed:@"59880"];
+                        break;
+                    case HTTC:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59883"];
+                        else
+                            return [UIImage imageNamed:@"59884"];
+                        break;
+                    case HTWD:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59889"];
+                        else
+                            return [UIImage imageNamed:@"59890"];
+                        break;
+                    case HTTM:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59892"];
+                        else
+                            return [UIImage imageNamed:@"59891"];
+                        break;
+                    case HTMJ:
+                        if (now.isDefaultXinFa)
+                            return [UIImage imageNamed:@"59897"];
+                        else
+                            return [UIImage imageNamed:@"59896"];
+                        break;
+                    case HTGB:
+                        return [UIImage imageNamed:@"53544"];
+                        break;
+                    default:
+                        break;
+                }
+                return nil;
+            }
             break;
         case HTanqi:
             if (now.anqi)

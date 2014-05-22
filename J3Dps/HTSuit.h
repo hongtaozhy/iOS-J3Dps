@@ -62,4 +62,5 @@
 - (void)setBodyStringWithHTBody:(HTBody)body;
 - (void)setxinFaStringWithHTMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault;
 
+- (void)clear;
 @end
