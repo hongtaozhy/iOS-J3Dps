@@ -12,6 +12,8 @@
 
 - (void)changedViewContorller:(NSInteger)index;
 
+@optional
+- (void)changedEquip;
 @end
 
 @interface HTMenuView : UITableView<UITableViewDataSource,UITableViewDelegate>

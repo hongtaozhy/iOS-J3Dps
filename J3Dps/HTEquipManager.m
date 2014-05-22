@@ -136,4 +136,24 @@
     [rs close];
 
 }
+
+- (NSArray *)searchByBuWei:(HTBuWei)buwei
+{
+    if (buwei == HTjiezhi +1 )
+    {
+        buwei = HTjiezhi;
+    }
+    
+    NSMutableArray *searchResult = [[NSMutableArray alloc] init];
+    
+    for (HTEquip *nowEquip in self.allEquip)
+    {
+        if ( nowEquip.buWei == buwei)
+        {
+            [searchResult addObject:nowEquip];
+        }
+    }
+    return [searchResult copy];
+}
+
 @end

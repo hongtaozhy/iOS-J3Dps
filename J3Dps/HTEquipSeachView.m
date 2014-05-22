@@ -7,6 +7,11 @@
 //
 
 #import "HTEquipSeachView.h"
+#import "HTSuitManager.h"
+
+@interface HTEquipSeachView()
+@property (nonatomic,retain) NSArray *searchResult;
+@end
 
 @implementation HTEquipSeachView
 
@@ -14,7 +19,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+        self.searchResult = nil;
+        
         [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"zbsousuobg"]]];
         
         [self addBtn];
@@ -23,7 +30,16 @@
         self.searchView.returnKeyType = UIReturnKeyDone;
         [self.searchView setDelegate:self];
         [self.searchView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"searchf"]]];
+        [self.searchView addTarget:self  action:@selector(searchTextChanged:)  forControlEvents:UIControlEventEditingChanged];
         [self addSubview:self.searchView];
+        
+        self.resultTable = [[UITableView alloc] initWithFrame:CGRectMake(50, 309-238, 220, 240) style:UITableViewStylePlain];
+        [self.resultTable setBackgroundColor:[UIColor clearColor]];
+        self.resultTable.dataSource = self;
+        self.resultTable.delegate = self;
+        self.resultTable.separatorColor = [UIColor clearColor];
+        [self.resultTable touchesBegan:0 withEvent:0];
+        [self addSubview:self.resultTable];
     }
     return self;
 }
@@ -102,4 +118,137 @@
 {
     [self.searchView resignFirstResponder];
 }
+
+- (void)searchTextChanged:(UITextField *)sender
+{
+//    NSString *name  = [sender text];
+    [self.resultTable reloadData];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.searchResult count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchViewCell"];
+    
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchViewCell"];
+        cell.backgroundColor = [UIColor clearColor];
+        UIImage *img = [UIImage imageNamed:@"xuanzhongbg"];
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, img.size.width, img.size.height)];
+        cell.selectedBackgroundView.backgroundColor = [UIColor clearColor];
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
+        [cell.selectedBackgroundView addSubview:imgView];
+        cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor blackColor]
+        ;
+        
+        cell.textLabel.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:11.0];
+    }
+    cell.textLabel.text = ((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).name;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 19.0;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.searchView resignFirstResponder];
+}
+
+- (void)setTag:(NSInteger)tag
+{
+    [super setTag:tag];
+    self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:tag];
+    [self.resultTable reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HTEquip *nowSelect = [self.searchResult objectAtIndex:indexPath.row];
+    
+    HTSuit *now = [[HTSuitManager sharedManager] nowSuit];
+    switch (self.tag)
+    {
+        case HTmaozi:
+        {
+            now.maozi = nowSelect;
+        }
+            break;
+        case HThushou:
+        {
+            now.hushou = nowSelect;
+        }
+            break;
+        case HTshangyi:
+        {
+            now.shangyi = nowSelect;
+        }
+            break;
+        case HTxiazhuang:
+        {
+            now.xiazhuang = nowSelect;
+        }
+            break;
+        case HTyaodai:
+        {
+            now.yaodai = nowSelect;
+        }
+            break;
+        case HTxiezi:
+        {
+            now.xiezi = nowSelect;
+        }
+            break;
+        case HTxianglian:
+        {
+            now.xianglian = nowSelect;
+        }
+            break;
+        case HTjiezhi:
+        {
+            now.jiezhi1 = nowSelect;
+        }
+            break;
+        case HTjiezhi+1:
+        {
+            now.jiezhi2 = nowSelect;
+        }
+            break;
+        case HTyaozhui:
+        {
+            now.yaozhui = nowSelect;
+        }
+            break;
+        case HTwuqi:
+        {
+            now.wuqi = nowSelect;
+        }
+            break;
+        case HTanqi:
+        {
+            now.anqi = nowSelect;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [self.centerDelegate changedEquip];
+}
+
 @end

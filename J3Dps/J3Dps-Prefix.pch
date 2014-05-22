@@ -17,4 +17,5 @@
     #import "HTEquip.h"
     #import "NSString+descption.h"
     #import "HTEquipManager.h"
+    #import "DrawerViewController.h"
 #endif

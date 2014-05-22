@@ -7,8 +7,12 @@
 //
 
 #import "HTBaseView.h"
+#import "HTMenuView.h"
 
-@interface HTEquipSeachView : HTBaseView<UITextFieldDelegate>
-@property UITextField *searchView;
-@property UIButton *currentCategoryBtn;
+@interface HTEquipSeachView : HTBaseView<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,retain) UITextField *searchView;
+@property (nonatomic,retain) UIButton *currentCategoryBtn;
+@property (nonatomic,retain) UITableView *resultTable;
+
+@property (nonatomic,assign) id<HTCenterViewDelegate> centerDelegate;
 @end

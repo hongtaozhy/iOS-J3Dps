@@ -82,10 +82,8 @@ static HTMenuView *__MenuView = NULL;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Step 1: Check to see if we can reuse a cell from a row that has just rolled off the screen
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:@"menuViewCell"];
     
-    // Step 2: If there are no cells to reuse, create a new one
     if(cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"menuViewCell"];
@@ -97,15 +95,9 @@ static HTMenuView *__MenuView = NULL;
         cell.textLabel.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:16.0];
     }
     
-    // Add a detail view accessory
-//    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
     [cell.imageView setImage:[UIImage imageNamed:[self.menuList objectAtIndex:indexPath.row]]];
-
-    // Step 3: Set the cell text
     cell.textLabel.text = [self.menuList objectAtIndex:indexPath.row];
-    
-    // Step 4: Return the cell
+
     return cell;
 }
 

@@ -50,6 +50,7 @@
     [menuBtn setBackgroundColor:[UIColor colorWithPatternImage:menu]];
     [menuBtn setFrame:CGRectMake(0, 25, menu.size.width, menu.size.height)];
     [menuBtn addTarget:self action:@selector(menuBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [menuBtn setTag:-1];
     [self.centerView addSubview:menuBtn];
     
     UIImage *previewImg = [UIImage imageNamed:@"zonglan"];
@@ -57,6 +58,7 @@
     [previewBtn setBackgroundColor:[UIColor colorWithPatternImage:previewImg]];
     [previewBtn setFrame:CGRectMake(261, 25, previewImg.size.width, previewImg.size.height)];
     [previewBtn addTarget:self action:@selector(previewBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [previewBtn setTag:-1];
     [self.centerView addSubview:previewBtn];
     
     UIImage *xftImg = [UIImage imageNamed:@"xinfatiao"];
@@ -108,7 +110,9 @@
 
     [self initialDrawerViewController];
 
-//    [self reloadData];
+    
+    [self reloadData];
+    [self reloadEquipImg];
 //    [self removeRightMaskView];
 //    UIImage *imgCenter = [self imageWithUIView:self.centerView];
 //    UIImage *imgRight = [self imageWithUIView:self.rightView];
@@ -167,8 +171,8 @@
     __block UIImage *buWeiSelected = nil;
     __block UIButton *buWeiBtn = nil;
     
-    void (^buweiBtn)(NSString *,NSString *,CGFloat,CGFloat);
-    buweiBtn = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y)
+    void (^buweiBtn)(NSString *,NSString *,CGFloat,CGFloat,HTBuWei);
+    buweiBtn = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y,HTBuWei buWeitag)
     {
         buWeiImg = [UIImage imageNamed:img1];
         buWeiSelected = [UIImage imageNamed:img2];
@@ -178,6 +182,7 @@
         [buWeiBtn setImage:buWeiSelected forState:UIControlStateSelected];
         [buWeiBtn setFrame:CGRectMake(x, y, buWeiImg.size.width, buWeiImg.size.height)];
         [buWeiBtn addTarget:self action:@selector(buweiBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+        [buWeiBtn setTag:buWeitag];
         [self.centerView addSubview:buWeiBtn];
     };
     
@@ -192,23 +197,24 @@
         [buWeiBtn setImage:buWeiImg forState:UIControlStateNormal];
         [buWeiBtn setImage:buWeiSelected forState:UIControlStateHighlighted];
         [buWeiBtn setFrame:CGRectMake(x, y, buWeiImg.size.width, buWeiImg.size.height)];
+        [buWeiBtn setTag:-1];
 //        [buWeiBtn addTarget:self action:@selector(buweiBtnPress:) forControlEvents:UIControlEventTouchUpInside];
         [self.centerView addSubview:buWeiBtn];
     };
     
 
-    buweiBtn(@"maozi",@"maozi-c",11,83);
-    buweiBtn(@"shangyi",@"shangyi-c",11,132);
-    buweiBtn(@"yaodai",@"yaodai-c",11,181);
-    buweiBtn(@"xianglian",@"xianglian-c",11,242);
-    buweiBtn(@"yaozhui",@"yaozhui-c",11,291);
-    buweiBtn(@"xiazhuang",@"xiazhuang-c",265,132);
-    buweiBtn(@"hushou",@"hushou-c",265,83);
-    buweiBtn(@"xiezi",@"xiezi-c",265,181);
-    buweiBtn(@"jiezhi",@"jiezhi-c",265,242);
-    buweiBtn(@"jiezhi",@"jiezhi-c",265,291);
-    buweiBtn(@"wuqi",@"wuqi-c",138,291);
-    buweiBtn(@"anqi",@"anqi-c",188,291);
+    buweiBtn(@"maozi",@"maozi-c",11,83,HTmaozi);
+    buweiBtn(@"shangyi",@"shangyi-c",11,132,HTshangyi);
+    buweiBtn(@"yaodai",@"yaodai-c",11,181,HTyaodai);
+    buweiBtn(@"xianglian",@"xianglian-c",11,242,HTxianglian);
+    buweiBtn(@"yaozhui",@"yaozhui-c",11,291,HTyaozhui);
+    buweiBtn(@"xiazhuang",@"xiazhuang-c",265,132,HTxiazhuang);
+    buweiBtn(@"hushou",@"hushou-c",265,83,HThushou);
+    buweiBtn(@"xiezi",@"xiezi-c",265,181,HTxiezi);
+    buweiBtn(@"jiezhi",@"jiezhi-c",265,242,HTjiezhi);
+    buweiBtn(@"jiezhi",@"jiezhi-c",265,291,HTjiezhi+1);//正好3没人用
+    buweiBtn(@"wuqi",@"wuqi-c",138,291,HTwuqi);
+    buweiBtn(@"anqi",@"anqi-c",188,291,HTanqi);
 
     otherBtn(@"jinglianall",@"jinglianall",11,346);
     otherBtn(@"xiaori",@"xiaori-c",281,346);
@@ -224,10 +230,7 @@
 
 - (void)menuBtnPress
 {
-#warning 测试用代码注意打开
-    
-    [self reloadData];
-//    [self showLeftView];
+    [self showLeftView];
 }
 
 - (void)previewBtnPress
@@ -250,7 +253,8 @@
         self.serachEquipView = nil;
     }
     self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
-    
+    [self.serachEquipView setTag:sender.tag];
+    [self.serachEquipView setCenterDelegate:self];
     [self.centerView addSubview:self.serachEquipView];
 }
 
@@ -264,5 +268,72 @@
         }
     }
     [self addSuitLabels];
+}
+
+- (void)reloadEquipImg
+{
+    NSArray *views = [self.centerView subviews];
+
+    for (UIView* view in views)
+    {
+        if ([view isKindOfClass:UIButton.class])
+        {
+            UIButton *btn = (UIButton *)view;
+            UIImage *equipImg = [self equipImg:[btn tag]];
+            if (equipImg)
+            {
+                [btn setImage:equipImg forState:UIControlStateNormal];
+                [btn setImage:equipImg forState:UIControlStateHighlighted];
+                [btn setImage:equipImg forState:UIControlStateSelected];
+            }
+        }
+    }
+}
+
+- (UIImage *)equipImg:(HTBuWei)buwei
+{
+    HTSuit *now = [[HTSuitManager sharedManager] nowSuit];
+    switch (buwei)
+    {
+        case HTwuqi:
+            if (now.wuqi)
+                return [UIImage imageNamed:@"59888"];
+            break;
+        case HTanqi:
+            if (now.anqi)
+                return [UIImage imageNamed:@"wpn_longdis26"];
+            break;
+        case HTyaozhui:
+            if (now.yaozhui)
+                return [UIImage imageNamed:@"tkt_pendant28"];
+            break;
+        case HTxianglian:
+            if (now.xianglian)
+                return [UIImage imageNamed:@"tkt_necklace17"];
+            break;
+        case HTjiezhi:
+            if (now.jiezhi1)
+                return [UIImage imageNamed:@"tkt_ring16"];
+            break;
+        default:
+            if (buwei == HTjiezhi +1 && now.jiezhi2)
+            {
+                return [UIImage imageNamed:@"tkt_ring13"];
+            }
+            break;
+    }
+    return nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.serachEquipView.searchView resignFirstResponder];
+}
+
+- (void)changedEquip
+{
+    [self.serachEquipView removeFromSuperview];
+    [self reloadData];
+    [self reloadEquipImg];
 }
 @end

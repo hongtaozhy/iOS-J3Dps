@@ -16,4 +16,6 @@
 
 - (void)initData;
 
+- (NSArray *)searchByBuWei:(HTBuWei)buwei;
+
 @end
