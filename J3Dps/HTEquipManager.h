@@ -18,4 +18,9 @@
 
 - (NSArray *)searchByBuWei:(HTBuWei)buwei;
 
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps;
+
+- (NSArray *)searchByBuWei:(HTBuWei)buwei haveProperty:(HTEquipProType)type;
+
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps haveProperty:(HTEquipProType)type;
 @end

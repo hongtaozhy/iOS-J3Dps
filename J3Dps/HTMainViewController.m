@@ -292,7 +292,46 @@
 
 - (UIImage *)equipImg:(HTBuWei)buwei
 {
+    
     HTSuit *now = [[HTSuitManager sharedManager] nowSuit];
+    NSString *menpaiString = @"";
+    switch (now.menpai)
+    {
+        case HTXX:
+            menpaiString = @"qx";
+            break;
+        case HTCY:
+            menpaiString = @"cy";
+            break;
+        case HTCJ:
+            menpaiString = @"cj";
+            break;
+        case HTHH:
+            menpaiString = @"wh";
+            break;
+        case HTHS:
+            menpaiString = @"sl";
+            break;
+        case HTTC:
+            menpaiString = @"tc";
+            break;
+        case HTWD:
+            menpaiString = @"wd";
+            break;
+        case HTTM:
+            menpaiString = @"tm";
+            break;
+        case HTMJ:
+            menpaiString = @"mj";
+            break;
+        case HTGB:
+            menpaiString = @"gb";
+            break;
+        default:
+            menpaiString = @"fb";
+            break;
+    }
+    
     switch (buwei)
     {
         case HTwuqi:
@@ -314,9 +353,9 @@
                         break;
                     case HTCJ:
                         if (now.isDefaultXinFa)
-                            return [UIImage imageNamed:@"59893"];
-                        else
                             return [UIImage imageNamed:@"59894"];
+                        else
+                            return [UIImage imageNamed:@"59893"];
                         break;
                     case HTHH:
                         if (now.isDefaultXinFa)
@@ -379,6 +418,37 @@
             if (now.jiezhi1)
                 return [UIImage imageNamed:@"tkt_ring16"];
             break;
+            
+        case HTmaozi:
+            if (now.maozi)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_01",menpaiString]];
+            break;
+
+        case HThushou:
+            if (now.hushou)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_02",menpaiString]];
+            break;
+
+        case HTyaodai:
+            if (now.yaodai)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_03",menpaiString]];
+            break;
+
+        case HTshangyi:
+            if (now.shangyi)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_04",menpaiString]];
+            break;
+
+        case HTxiazhuang:
+            if (now.xiazhuang)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_05",menpaiString]];
+            break;
+
+        case HTxiezi:
+            if (now.xiezi)
+                return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_06",menpaiString]];
+            break;
+
         default:
             if (buwei == HTjiezhi +1 && now.jiezhi2)
             {

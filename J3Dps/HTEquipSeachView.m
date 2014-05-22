@@ -107,6 +107,20 @@
         self.currentCategoryBtn = sender;
     }
     self.currentCategoryBtn.selected = YES;
+    
+    if ([[HTSuitManager sharedManager] nowSuit].menpai < 0)
+    {
+        self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:self.tag haveProperty:sender.tag];
+    }
+    else
+    {
+        self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:self.tag
+                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].menpai
+                                                                      dps:[[HTSuitManager sharedManager] nowSuit].isDefaultXinFa
+                                                             haveProperty:sender.tag];
+    }
+    
+    [self.resultTable reloadData];
 }
 
 - (void)closeBtnPress
@@ -173,7 +187,17 @@
 - (void)setTag:(NSInteger)tag
 {
     [super setTag:tag];
-    self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:tag];
+    
+    if ([[HTSuitManager sharedManager] nowSuit].menpai < 0)
+    {
+        self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:tag];
+    }
+    else
+    {
+        self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:tag
+                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].menpai
+                                                                      dps:[[HTSuitManager sharedManager] nowSuit].isDefaultXinFa];
+    }
     [self.resultTable reloadData];
 }
 

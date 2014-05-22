@@ -143,12 +143,11 @@
     {
         buwei = HTjiezhi;
     }
-    
     NSMutableArray *searchResult = [[NSMutableArray alloc] init];
     
     for (HTEquip *nowEquip in self.allEquip)
     {
-        if ( nowEquip.buWei == buwei)
+        if ( nowEquip.buWei == buwei )
         {
             [searchResult addObject:nowEquip];
         }
@@ -156,4 +155,113 @@
     return [searchResult copy];
 }
 
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps
+{
+    if (buwei == HTjiezhi +1 )
+    {
+        buwei = HTjiezhi;
+    }
+    int num = 0;
+    switch (menpai)
+    {
+        case HTXX:
+            num = HTXXdps;
+            break;
+        case HTCY:
+            if (dps)
+                num = HTJc;
+            else
+                num = HTQC;
+            break;
+        case HTHH:
+            num = HTHHdps;
+            break;
+        case HTHS:
+            num = HTHSdps;
+            break;
+        case HTCJ:
+            num = HTCJdps;
+            break;
+        case HTGB:
+            num = HTGBdps;
+            break;
+        case HTMJ:
+            num = HTMJdps;
+            break;
+        case HTTC:
+            num = HTTCdps;
+            break;
+        case HTTM:
+            if (dps)
+                num = HTTMdps1;
+            else
+                num = HTTMdps2;
+            break;
+        case HTWD:
+            num = HTWDdps;
+        default:
+            break;
+    }
+    NSMutableArray *searchResult = [[NSMutableArray alloc] init];
+    
+    for (HTEquip *nowEquip in self.allEquip)
+    {
+        if ( nowEquip.buWei == buwei && nowEquip.tuijian&num )
+        {
+            [searchResult addObject:nowEquip];
+        }
+    }
+    return [searchResult copy];
+}
+
+
+- (NSArray *)searchByBuWei:(HTBuWei)buwei haveProperty:(HTEquipProType)type
+{
+    NSMutableArray *searchResult = [[NSMutableArray alloc] init];
+    
+    NSArray *arr = [self searchByBuWei:buwei];
+    if (type == HTALL)
+    {
+        return arr;
+    }
+    for (HTEquip *nowEquip in arr)
+    {
+        if((type == HTHuiXin && nowEquip.huixin > 0)||
+           (type == HTPoFang && nowEquip.pofang > 0)||
+           (type == HTJiaSu && nowEquip.jiasu > 0)||
+           (type == HTMingZhong && nowEquip.mingzhong > 0)||
+           (type == HTWuShuang && nowEquip.wushuang > 0)
+           )
+        {
+            [searchResult addObject:nowEquip];
+        }
+        
+    }
+    return [searchResult copy];
+}
+
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps haveProperty:(HTEquipProType)type
+{
+    NSMutableArray *searchResult = [[NSMutableArray alloc] init];
+    
+    NSArray *arr = [self searchByBuWei:buwei xinfa:menpai dps:dps];
+    if (type == HTALL)
+    {
+        return arr;
+    }
+    for (HTEquip *nowEquip in arr)
+    {
+        if((type == HTHuiXin && nowEquip.huixin > 0)||
+           (type == HTPoFang && nowEquip.pofang > 0)||
+           (type == HTJiaSu && nowEquip.jiasu > 0)||
+           (type == HTMingZhong && nowEquip.mingzhong > 0)||
+           (type == HTWuShuang && nowEquip.wushuang > 0)
+           )
+        {
+            [searchResult addObject:nowEquip];
+        }
+        
+    }
+    return [searchResult copy];
+}
 @end
