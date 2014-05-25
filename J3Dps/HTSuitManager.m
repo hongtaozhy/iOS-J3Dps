@@ -8,6 +8,10 @@
 
 #import "HTSuitManager.h"
 
+@interface HTSuitManager()
+@property (nonatomic,retain) NSString *suitsFileName;
+@end
+
 @implementation HTSuitManager
 
 + (instancetype)sharedManager
@@ -17,7 +21,11 @@
     
     dispatch_once(&onceQueue, ^{
         sharedManager = [[self alloc] init];
-        sharedManager.allSuit = [[NSArray alloc] init];
+        sharedManager.allSuit = [NSKeyedUnarchiver unarchiveObjectWithFile:sharedManager.suitsFileName];
+        if (sharedManager.allSuit == nil || ![sharedManager.allSuit isKindOfClass:NSMutableDictionary.class])
+        {
+            sharedManager.allSuit = [[NSMutableDictionary alloc] init];
+        }
     });
     
     return sharedManager;
@@ -32,4 +40,24 @@
     return _nowSuit;
 }
 
+- (void)saveNowSuitWithName:(NSString *)name
+{
+    [self.nowSuit setSuitName:name];
+    [self.allSuit setObject:[self.nowSuit copy] forKey:name];
+    BOOL ok = [NSKeyedArchiver archiveRootObject:[self allSuit] toFile:self.suitsFileName];
+    NSLog(@"%d",ok);
+}
+
+- (void)loadSuitWithName:(NSString *)name
+{
+    self.nowSuit = [[self.allSuit objectForKey:name] copy];
+}
+
+- (NSString *)suitsFileName
+{
+    NSString *Path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filename = [Path stringByAppendingPathComponent:@"suits.plist"];
+
+    return filename;
+}
 @end

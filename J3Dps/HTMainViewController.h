@@ -8,6 +8,6 @@
 
 #import "DrawerViewController.h"
 
-@interface HTMainViewController : DrawerViewController
+@interface HTMainViewController : DrawerViewController <UIAlertViewDelegate>
 
 @end

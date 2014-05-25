@@ -11,6 +11,7 @@
 #import "HTMainViewController.h"
 #import "HTBodySelectViewController.h"
 #import "HTMenPaiSelectViewController.h"
+#import "HTSuitManagerViewController.h"
 
 #define CENTER_VIEW_TAG        3900
 
@@ -594,6 +595,12 @@
         {
             HTMenPaiSelectViewController *menpaiSelectCtrl = [[HTMenPaiSelectViewController alloc] initWithNibName:nil bundle:nil];
             [root pushViewController:menpaiSelectCtrl animated:YES];
+        }
+            break;
+        case 4:
+        {
+            HTSuitManagerViewController *suitManagerCtrl = [[HTSuitManagerViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:suitManagerCtrl animated:YES];
         }
             break;
         default://意外情况回配装首页

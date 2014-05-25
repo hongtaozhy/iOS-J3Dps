@@ -19,6 +19,7 @@
 @interface HTMainViewController ()
 @property (nonatomic,retain) UIButton *currenctButton;
 @property (nonatomic,retain) HTEquipSeachView *serachEquipView;
+@property (nonatomic,retain) UILabel *suitNameLable;
 @end
 
 @implementation HTMainViewController
@@ -72,15 +73,15 @@
     UIFont *fonttx = [UIFont fontWithName:@"STHeitiSC-Medium" size:19.0];
     CGSize size = [showtixing sizeWithFont:fonttx];
     
-    UILabel *suitNameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 39, 320, 60)];
-    [suitNameLable setCenter:CGPointMake(160, 38)];
-    [suitNameLable setBackgroundColor:[UIColor clearColor]];
-    [suitNameLable setTextColor:[UIColor whiteColor]];
-    [suitNameLable setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20.0]];
-    suitNameLable.text = [[[HTSuitManager sharedManager] nowSuit] suitName];
-    [suitNameLable setTextAlignment:NSTextAlignmentCenter];
-    [suitNameLable setTag:-1];
-    [self.centerView addSubview:suitNameLable];
+    self.suitNameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 39, 320, 60)];
+    [self.suitNameLable setCenter:CGPointMake(160, 38)];
+    [self.suitNameLable setBackgroundColor:[UIColor clearColor]];
+    [self.suitNameLable setTextColor:[UIColor whiteColor]];
+    [self.suitNameLable setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20.0]];
+    self.suitNameLable.text = [[[HTSuitManager sharedManager] nowSuit] suitName];
+    [self.suitNameLable setTextAlignment:NSTextAlignmentCenter];
+    [self.suitNameLable setTag:-1];
+    [self.centerView addSubview:self.suitNameLable];
     
     HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     [tixingLabel setCenter:CGPointMake(160-(xfsmallImg.size.width/2.0), 63)];
@@ -183,8 +184,8 @@
         [self.centerView addSubview:buWeiBtn];
     };
     
-    void (^otherBtn)(NSString *,NSString *,CGFloat,CGFloat);
-    otherBtn = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y)
+    void (^otherBtn)(NSString *,NSString *,CGFloat,CGFloat,SEL);
+    otherBtn = ^(NSString *img1,NSString *img2,CGFloat x,CGFloat y,SEL sel)
     {
         buWeiImg = [UIImage imageNamed:img1];
         buWeiSelected = [UIImage imageNamed:img2];
@@ -195,7 +196,7 @@
         [buWeiBtn setImage:buWeiSelected forState:UIControlStateHighlighted];
         [buWeiBtn setFrame:CGRectMake(x, y, buWeiImg.size.width, buWeiImg.size.height)];
         [buWeiBtn setTag:-1];
-//        [buWeiBtn addTarget:self action:@selector(buweiBtnPress:) forControlEvents:UIControlEventTouchUpInside];
+        [buWeiBtn addTarget:self action:sel forControlEvents:UIControlEventTouchUpInside];
         [self.centerView addSubview:buWeiBtn];
     };
     
@@ -213,17 +214,49 @@
     buweiBtn(@"wuqi",@"wuqi-c",138,291,HTwuqi);
     buweiBtn(@"anqi",@"anqi-c",188,291,HTanqi);
 
-    otherBtn(@"jinglianall",@"jinglianall",11,346);
-    otherBtn(@"xiaori",@"xiaori-c",281,346);
-    otherBtn(@"qianghua",@"qianghua-c",130,502);
-    otherBtn(@"duqu",@"duqu",79,514);
-    otherBtn(@"baocun",@"baocun",202,514);
-    otherBtn(@"fenxiang",@"fenxiang",254,522);
-    otherBtn(@"chongzhi",@"chongzhi",28,522);
+    otherBtn(@"jinglianall",@"jinglianall",11,346,@selector(allJinglianBtnPress));
+    otherBtn(@"xiaori",@"xiaori-c",281,346,@selector(allJinglianBtnPress));
+    otherBtn(@"qianghua",@"qianghua-c",130,502,@selector(allJinglianBtnPress));
+    otherBtn(@"duqu",@"duqu",79,514,@selector(loadBtnPress));
+    otherBtn(@"baocun",@"baocun",202,514,@selector(saveBtnPress));
+    otherBtn(@"fenxiang",@"fenxiang",254,522,@selector(allJinglianBtnPress));
+    otherBtn(@"chongzhi",@"chongzhi",28,522,@selector(allJinglianBtnPress));
 
 }
 
 #pragma mark - Btn Press
+
+- (void)allJinglianBtnPress
+{
+    
+}
+
+- (void)saveBtnPress
+{
+    UIAlertView *saveName = [[UIAlertView alloc] initWithTitle:@"请输入保存的套装名称为"
+                                                       message:@"名称重复将会覆盖原有套装信息"
+                                                      delegate:self
+                                             cancelButtonTitle:@"取消"
+                                             otherButtonTitles:@"确定", nil];
+    [saveName setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [[saveName textFieldAtIndex:0] setText:[[HTSuitManager sharedManager] nowSuit].suitName];
+    [saveName show];
+}
+
+- (void)loadBtnPress
+{
+    [self showLeftView];
+    [[HTMenuView sharedView] changRowByCode:4];
+
+//    UIAlertView *loadName = [[UIAlertView alloc] initWithTitle:@"请输入读取套装名称"
+//                                                       message:nil
+//                                                      delegate:self
+//                                             cancelButtonTitle:@"取消"
+//                                             otherButtonTitles:@"确定", nil];
+//    [loadName setTag:101];
+//    [loadName setAlertViewStyle:UIAlertViewStylePlainTextInput];
+//    [loadName show];
+}
 
 - (void)menuBtnPress
 {
@@ -508,5 +541,21 @@
     [bgView setImage:watermarkedImage];
     [bgView setContentMode:UIViewContentModeScaleToFill];
     [self.centerView addSubview:bgView];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *name = [[alertView textFieldAtIndex:0] text];
+    if (buttonIndex == 0)
+    {
+        return;
+    }
+    else
+    {
+        [self.suitNameLable setText:name];
+        [[HTSuitManager sharedManager] saveNowSuitWithName:name];
+    }
 }
 @end

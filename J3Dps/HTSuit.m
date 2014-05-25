@@ -30,6 +30,32 @@
 @synthesize xinFaString = _xinFaString;
 @synthesize mainPropertyString = _mainPropertyString;
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    HTSuit *result = [[[self class] allocWithZone:zone] init];
+    HTBody body = self.body;
+    [result setBody:body];
+    result.isDefaultXinFa = self.isDefaultXinFa;
+    HTMenpai menpai = self.menpai;
+    [result setMenpai:menpai];
+    
+    result.suitName = [self.suitName copy];
+    result.hushou = [self.hushou copy];
+    result.shangyi = [self.shangyi copy];
+    result.yaodai = [self.yaodai copy];
+    result.xiezi = [self.xiezi copy];
+    result.xiazhuang = [self.xiazhuang copy];
+    result.maozi = [self.maozi copy];
+    
+    result.jiezhi1 = [self.jiezhi1 copy];
+    result.jiezhi2 = [self.jiezhi2 copy];
+    result.yaozhui = [self.yaozhui copy];
+    result.xianglian = [self.xianglian copy];
+    result.wuqi = [self.wuqi copy];
+    result.anqi = [self.anqi copy];
+    return result;
+}
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 //    [aCoder encodeDouble:_bloodCoefficient forKey:@"bloodCoefficient"];
@@ -105,7 +131,12 @@
 {
     self = [super init];
     if (self) {
-        _bodyString = @"未选择体型";
+        _bodyString = @"未选择体型";//属性采用loli值
+        self.basetizhi = 95;
+        self.basegengu = 98;
+        self.baselidao = 96;
+        self.baseshenfa = 99;
+        self.baseyuanqi = 97;
         _body = -1;
         _xinFaString = @"未选择心法";
         self.suitName = @"未命名配装";
@@ -174,6 +205,13 @@
         }
             break;
         default:
+            self.basetizhi = 95;
+            self.basegengu = 98;
+            self.baselidao = 96;
+            self.baseshenfa = 99;
+            self.baseyuanqi = 97;
+            
+            _bodyString = @"未选择体型";
             break;
     }
 }

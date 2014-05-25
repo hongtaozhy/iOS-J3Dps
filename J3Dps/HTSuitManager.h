@@ -12,8 +12,10 @@
 @interface HTSuitManager : NSObject
 
 @property (nonatomic,retain) HTSuit *nowSuit;
-@property (nonatomic,retain) NSArray *allSuit;
+@property (nonatomic,retain) NSMutableDictionary *allSuit;
 
 + (instancetype)sharedManager;
 
+- (void)saveNowSuitWithName:(NSString *)name;
+- (void)loadSuitWithName:(NSString *)name;
 @end

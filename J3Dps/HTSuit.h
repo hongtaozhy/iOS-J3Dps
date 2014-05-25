@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTSuit : NSObject<NSCoding>
+@interface HTSuit : NSObject<NSCoding,NSCopying>
 
 //原始属性需要存
 @property (nonatomic,assign) HTBody body;
