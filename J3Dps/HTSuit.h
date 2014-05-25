@@ -14,17 +14,7 @@
 @property (nonatomic,assign) HTBody body;
 @property (nonatomic,assign) HTMenpai menpai;
 @property (nonatomic,assign) BOOL isDefaultXinFa;
-
-@property (nonatomic,assign) NSInteger basetizhi;
-@property (nonatomic,assign) NSInteger basegengu;
-@property (nonatomic,assign) NSInteger baselidao;
-@property (nonatomic,assign) NSInteger baseshenfa;
-@property (nonatomic,assign) NSInteger baseyuanqi;
-
 @property (nonatomic,retain) NSString *suitName;
-
-@property (nonatomic,retain,readonly) NSString *bodyString;
-@property (nonatomic,retain,readonly) NSString *xinFaString;
 
 @property (nonatomic,copy) HTEquip *hushou;
 @property (nonatomic,copy) HTEquip *shangyi;
@@ -39,6 +29,20 @@
 @property (nonatomic,copy) HTEquip *yaozhui;
 @property (nonatomic,copy) HTEquip *xianglian;
 @property (nonatomic,copy) HTEquip *anqi;
+
+
+//私有计算用属性是定值 不需要存 走如下两方法
+// setBaseValueWithMenpai:isDefaultXinfa:
+// setBasePropertyWithBody:
+@property (nonatomic,assign) NSInteger basetizhi;
+@property (nonatomic,assign) NSInteger basegengu;
+@property (nonatomic,assign) NSInteger baselidao;
+@property (nonatomic,assign) NSInteger baseshenfa;
+@property (nonatomic,assign) NSInteger baseyuanqi;
+
+@property (nonatomic,retain,readonly) NSString *bodyString;
+@property (nonatomic,retain,readonly) NSString *xinFaString;
+
 
 //计算出来的属性不存
 @property (nonatomic,assign) NSInteger suitScores;

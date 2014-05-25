@@ -9,7 +9,9 @@
 #import "HTSuit.h"
 
 @interface HTSuit ()
-//私有计算用属性要存
+//私有计算用属性是定值 不需要存 走如下两方法
+// setBaseValueWithMenpai:isDefaultXinfa:
+// setBasePropertyWithBody:
 @property (nonatomic,assign) double bloodCoefficient;
 @property (nonatomic,assign) double attack;
 @property (nonatomic,assign) double huixin;
@@ -30,22 +32,70 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+//    [aCoder encodeDouble:_bloodCoefficient forKey:@"bloodCoefficient"];
+//    [aCoder encodeDouble:_attack forKey:@"attack"];
+//    [aCoder encodeDouble:_huixin forKey:@"huixin"];
+//    [aCoder encodeDouble:_mingzhong forKey:@"mingzhong"];
+//    [aCoder encodeInteger:_xinfaType forKey:@"xinfatype"];
+//    [aCoder encodeDouble:_attackMainPCoefficient forKey:@"attackMainPCoefficient"];
+//    [aCoder encodeDouble:_huixinMainPCoefficient forKey:@"huixinMainPCoefficient"];
+//    [aCoder encodeDouble:_huixiaoMainPCoefficient forKey:@"huixiaoMainPCoefficient"];
+//    [aCoder encodeDouble:_pofangMainPCoefficient forKey:@"pofangMainPCoefficient"];
+    [aCoder encodeInteger:self.body forKey:@"body"];
+    [aCoder encodeBool:self.isDefaultXinFa forKey:@"isdefaultxinfa"];
+    [aCoder encodeInteger:self.menpai forKey:@"menpai"];
+    
+    [aCoder encodeObject:self.suitName forKey:@"suitname"];
+    [aCoder encodeObject:self.hushou forKey:@"hushou"];
+    [aCoder encodeObject:self.shangyi forKey:@"shangyi"];
+    [aCoder encodeObject:self.yaodai forKey:@"yaodai"];
+    [aCoder encodeObject:self.xiezi forKey:@"xiezi"];
+    [aCoder encodeObject:self.xiazhuang forKey:@"xiazhuang"];
+    [aCoder encodeObject:self.maozi forKey:@"maozi"];
+    
+    [aCoder encodeObject:self.jiezhi1 forKey:@"jiezhi1"];
+    [aCoder encodeObject:self.jiezhi2 forKey:@"jiezhi2"];
+    [aCoder encodeObject:self.yaozhui forKey:@"yaozhui"];
+    [aCoder encodeObject:self.xianglian forKey:@"xianglian"];
+    [aCoder encodeObject:self.wuqi forKey:@"wuqi"];
+    [aCoder encodeObject:self.anqi forKey:@"anqi"];
+
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        _bloodCoefficient = [aDecoder decodeDoubleForKey:@"bloodCoefficient"];
-        _attack = [aDecoder decodeDoubleForKey:@"attack"];
-        _huixin = [aDecoder decodeDoubleForKey:@"huixin"];
-        _mingzhong = [aDecoder decodeDoubleForKey:@"mingzhong"];
-        _xinfaType = [aDecoder decodeIntegerForKey:@"xinfatype"];
-        _attackMainPCoefficient = [aDecoder decodeDoubleForKey:@"attackMainPCoefficient"];
-        _huixinMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixinMainPCoefficient"];
-        _huixiaoMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixiaoMainPCoefficient"];
-        _pofangMainPCoefficient = [aDecoder decodeDoubleForKey:@"pofangMainPCoefficient"];
+//        _bloodCoefficient = [aDecoder decodeDoubleForKey:@"bloodCoefficient"];
+//        _attack = [aDecoder decodeDoubleForKey:@"attack"];
+//        _huixin = [aDecoder decodeDoubleForKey:@"huixin"];
+//        _mingzhong = [aDecoder decodeDoubleForKey:@"mingzhong"];
+//        _xinfaType = [aDecoder decodeIntegerForKey:@"xinfatype"];
+//        _attackMainPCoefficient = [aDecoder decodeDoubleForKey:@"attackMainPCoefficient"];
+//        _huixinMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixinMainPCoefficient"];
+//        _huixiaoMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixiaoMainPCoefficient"];
+//        _pofangMainPCoefficient = [aDecoder decodeDoubleForKey:@"pofangMainPCoefficient"];
         
+        HTBody body = [aDecoder decodeIntegerForKey:@"body"];
+        [self setBody:body];
+        self.isDefaultXinFa = [aDecoder decodeBoolForKey:@"isdefaultxinfa"];
+        HTMenpai menpai = [aDecoder decodeIntegerForKey:@"menpai"];
+        [self setMenpai:menpai];
+        
+        self.suitName = [aDecoder decodeObjectForKey:@"suitname"];
+        self.hushou = [aDecoder decodeObjectForKey:@"hushou"];
+        self.shangyi = [aDecoder decodeObjectForKey:@"shangyi"];
+        self.yaodai = [aDecoder decodeObjectForKey:@"yaodai"];
+        self.xiezi = [aDecoder decodeObjectForKey:@"xiezi"];
+        self.xiazhuang = [aDecoder decodeObjectForKey:@"xiazhuang"];
+        self.maozi = [aDecoder decodeObjectForKey:@"maozi"];
+        
+        self.jiezhi1 = [aDecoder decodeObjectForKey:@"jiezhi1"];
+        self.jiezhi2 = [aDecoder decodeObjectForKey:@"jiezhi2"];
+        self.yaozhui = [aDecoder decodeObjectForKey:@"yaozhui"];
+        self.xianglian = [aDecoder decodeObjectForKey:@"xianglian"];
+        self.wuqi = [aDecoder decodeObjectForKey:@"wuqi"];
+        self.anqi = [aDecoder decodeObjectForKey:@"anqi"];
         
     }
     return self;
@@ -416,7 +466,11 @@
         }
             break;
         default:
-            
+            _xinFaString = @"未选择心法";
+            _bloodCoefficient = 1.0;
+            _xinfaType = HTWaiGong;
+            _attackMainPCoefficient = 0;
+            _huixin = 0;
             break;
     }
 }
