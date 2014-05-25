@@ -13,6 +13,8 @@
 #import "UIImage+AddUIImage.h"
 #import "UIImage+HTMenPaiImg.h"
 #import "HTEquipSeachView.h"
+#import "UIImage+Draw.h"
+#import "UIColor+Helper.h"
 
 @interface HTMainViewController ()
 @property (nonatomic,retain) UIButton *currenctButton;
@@ -113,11 +115,6 @@
     
     [self reloadData];
     [self reloadEquipImg];
-//    [self removeRightMaskView];
-//    UIImage *imgCenter = [self imageWithUIView:self.centerView];
-//    UIImage *imgRight = [self imageWithUIView:self.rightView];
-//    UIImageWriteToSavedPhotosAlbum([imgRight addImageView:imgCenter], nil, nil, nil);
-
 }
 
 - (void)dealloc
@@ -212,7 +209,7 @@
     buweiBtn(@"hushou",@"hushou-c",265,83,HThushou);
     buweiBtn(@"xiezi",@"xiezi-c",265,181,HTxiezi);
     buweiBtn(@"jiezhi",@"jiezhi-c",265,242,HTjiezhi);
-    buweiBtn(@"jiezhi",@"jiezhi-c",265,291,HTjiezhi+1);//正好3没人用
+    buweiBtn(@"jiezhi",@"jiezhi-c",265,291,HTjiezhi2);
     buweiBtn(@"wuqi",@"wuqi-c",138,291,HTwuqi);
     buweiBtn(@"anqi",@"anqi-c",188,291,HTanqi);
 
@@ -247,15 +244,23 @@
     }
     self.currenctButton.selected = YES;
     
-    if (self.serachEquipView)
+    if ([sender imageForState:UIControlStateNormal] == [self equipImg:[sender tag]])
     {
-        [self.serachEquipView removeFromSuperview];
-        self.serachEquipView = nil;
+        [self drawTextInbgWithBuwei:sender.tag];
+        return;
     }
-    self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
-    [self.serachEquipView setTag:sender.tag];
-    [self.serachEquipView setCenterDelegate:self];
-    [self.centerView addSubview:self.serachEquipView];
+    else
+    {
+        if (self.serachEquipView)
+        {
+            [self.serachEquipView removeFromSuperview];
+            self.serachEquipView = nil;
+        }
+        self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
+        [self.serachEquipView setTag:sender.tag];
+        [self.serachEquipView setCenterDelegate:self];
+        [self.centerView addSubview:self.serachEquipView];
+    }
 }
 
 - (void)reloadData
@@ -449,11 +454,10 @@
                 return [UIImage imageNamed:[NSString stringWithFormat:@"def_%@_0408_06",menpaiString]];
             break;
 
-        default:
-            if (buwei == HTjiezhi +1 && now.jiezhi2)
-            {
+        case HTjiezhi2:
+            if (now.jiezhi2)
                 return [UIImage imageNamed:@"tkt_ring13"];
-            }
+        default:
             break;
     }
     return nil;
@@ -469,5 +473,40 @@
     [self.serachEquipView removeFromSuperview];
     [self reloadData];
     [self reloadEquipImg];
+}
+
+- (void)drawTextInbgWithBuwei:(HTBuWei)buwei
+{
+    if (buwei != HTmaozi || ![[HTSuitManager sharedManager] nowSuit].maozi)
+    {
+        return;
+    }
+    UIImage *bg = [UIImage imageNamed:@"bg4"];
+    UIImageView *equipShow = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,bg.size.width*2,bg.size.height*2)];
+    [equipShow setBackgroundColor:[UIColor clearColor]];
+//    [equipShow setImage:bg];
+    [equipShow setContentMode:UIViewContentModeScaleToFill];
+    NSString *showtixing = [[HTSuitManager sharedManager] nowSuit].maozi.name;
+    UIFont *fonttx = [UIFont fontWithName:@"STHeitiSC-Medium" size:26.0];
+    CGSize size = [showtixing sizeWithFont:fonttx];
+
+    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, 100*2, size.width, size.height)];
+    [tixingLabel setMiaobianColor:[UIColor blackColor]];
+    [tixingLabel setBackgroundColor:[UIColor clearColor]];
+    [tixingLabel setTextColor:RGBCOLOR(255, 50, 205)];
+    [tixingLabel setFont:fonttx];
+    tixingLabel.text = showtixing;
+    [tixingLabel setTextAlignment:NSTextAlignmentCenter];
+    [equipShow addSubview:tixingLabel];
+    
+
+    UIImage *watermarkedImage = [UIImage imageWithUIView:equipShow];
+    UIImageWriteToSavedPhotosAlbum(watermarkedImage, nil, nil, nil);
+    UIImageWriteToSavedPhotosAlbum(bg, nil, nil, nil);
+//    [self.centerView setBackgroundColor:[UIColor clearColor]];
+    UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.centerView.frame];
+    [bgView setImage:watermarkedImage];
+    [bgView setContentMode:UIViewContentModeScaleToFill];
+    [self.centerView addSubview:bgView];
 }
 @end

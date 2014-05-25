@@ -248,7 +248,7 @@
             now.jiezhi1 = nowSelect;
         }
             break;
-        case HTjiezhi+1:
+        case HTjiezhi2:
         {
             now.jiezhi2 = nowSelect;
         }

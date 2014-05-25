@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HTUILabel : UILabel
+@property (nonatomic,copy) UIColor *miaobianColor;
+@property (nonatomic,assign) int miaobianPx;
 
 @end

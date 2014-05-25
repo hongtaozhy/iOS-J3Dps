@@ -139,7 +139,7 @@
 
 - (NSArray *)searchByBuWei:(HTBuWei)buwei
 {
-    if (buwei == HTjiezhi +1 )
+    if (buwei == HTjiezhi2 )
     {
         buwei = HTjiezhi;
     }
@@ -157,7 +157,7 @@
 
 - (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps
 {
-    if (buwei == HTjiezhi +1 )
+    if (buwei == HTjiezhi2 )
     {
         buwei = HTjiezhi;
     }

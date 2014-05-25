@@ -16,6 +16,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSLog(@"isRetina %d",isRetina);
+    NSLog(@"isPad %d",isPad);
+    NSLog(@"isIphone5 %d",iPhone5);
 //    if ([UIDevice systemVersionIsMoreThanOrEuqal7])
 //    {
         [application setStatusBarStyle:UIStatusBarStyleLightContent];

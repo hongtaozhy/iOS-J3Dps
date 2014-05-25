@@ -32,7 +32,7 @@
     return resultingImage;
 }
 
-- (UIImage *)imageWithUIView:(UIView*)view
++ (UIImage *)imageWithUIView:(UIView*)view
 {
     // 创建一个bitmap的context
     // 并把它设置成为当前正在使用的context
@@ -48,6 +48,12 @@
     
     // 使当前的context出堆栈
     UIGraphicsEndImageContext();
+    
+    //    [self removeRightMaskView];
+    //    UIImage *imgCenter = [self imageWithUIView:self.centerView];
+    //    UIImage *imgRight = [self imageWithUIView:self.rightView];
+    //    UIImageWriteToSavedPhotosAlbum([imgRight addImageView:imgCenter], nil, nil, nil);
+
     return tImage;
 }
 @end

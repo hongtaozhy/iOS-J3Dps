@@ -8,12 +8,39 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTSuit : NSObject
+@interface HTSuit : NSObject<NSCoding>
 
+//原始属性需要存
 @property (nonatomic,assign) HTBody body;
 @property (nonatomic,assign) HTMenpai menpai;
 @property (nonatomic,assign) BOOL isDefaultXinFa;
 
+@property (nonatomic,assign) NSInteger basetizhi;
+@property (nonatomic,assign) NSInteger basegengu;
+@property (nonatomic,assign) NSInteger baselidao;
+@property (nonatomic,assign) NSInteger baseshenfa;
+@property (nonatomic,assign) NSInteger baseyuanqi;
+
+@property (nonatomic,retain) NSString *suitName;
+
+@property (nonatomic,retain,readonly) NSString *bodyString;
+@property (nonatomic,retain,readonly) NSString *xinFaString;
+
+@property (nonatomic,copy) HTEquip *hushou;
+@property (nonatomic,copy) HTEquip *shangyi;
+@property (nonatomic,copy) HTEquip *yaodai;
+@property (nonatomic,copy) HTEquip *maozi;
+@property (nonatomic,copy) HTEquip *xiazhuang;
+@property (nonatomic,copy) HTEquip *xiezi;
+@property (nonatomic,copy) HTEquip *wuqi;
+@property (nonatomic,copy) HTEquip *wuqi2;
+@property (nonatomic,copy) HTEquip *jiezhi1;
+@property (nonatomic,copy) HTEquip *jiezhi2;
+@property (nonatomic,copy) HTEquip *yaozhui;
+@property (nonatomic,copy) HTEquip *xianglian;
+@property (nonatomic,copy) HTEquip *anqi;
+
+//计算出来的属性不存
 @property (nonatomic,assign) NSInteger suitScores;
 @property (nonatomic,assign) NSInteger mainProperty;
 @property (nonatomic,assign) NSInteger attackValue;
@@ -32,35 +59,13 @@
 @property (nonatomic,assign) NSInteger shenfa;
 @property (nonatomic,assign) NSInteger yuanqi;
 
-@property (nonatomic,assign) NSInteger basetizhi;
-@property (nonatomic,assign) NSInteger basegengu;
-@property (nonatomic,assign) NSInteger baselidao;
-@property (nonatomic,assign) NSInteger baseshenfa;
-@property (nonatomic,assign) NSInteger baseyuanqi;
-
-@property (nonatomic,copy) HTEquip *hushou;
-@property (nonatomic,copy) HTEquip *shangyi;
-@property (nonatomic,copy) HTEquip *yaodai;
-@property (nonatomic,copy) HTEquip *maozi;
-@property (nonatomic,copy) HTEquip *xiazhuang;
-@property (nonatomic,copy) HTEquip *xiezi;
-@property (nonatomic,copy) HTEquip *wuqi;
-@property (nonatomic,copy) HTEquip *wuqi2;
-@property (nonatomic,copy) HTEquip *jiezhi1;
-@property (nonatomic,copy) HTEquip *jiezhi2;
-@property (nonatomic,copy) HTEquip *yaozhui;
-@property (nonatomic,copy) HTEquip *xianglian;
-@property (nonatomic,copy) HTEquip *anqi;
-
-
-@property (nonatomic,retain) NSString *suitName;
-
-@property (nonatomic,retain,readonly) NSString *bodyString;
-@property (nonatomic,retain,readonly) NSString *xinFaString;
 @property (nonatomic,retain,readonly) NSString *mainPropertyString;
 
-- (void)setBodyStringWithHTBody:(HTBody)body;
-- (void)setxinFaStringWithHTMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault;
+- (void)setBasePropertyWithBody:(HTBody)body;
+- (void)setBaseValueWithMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault;
 
 - (void)clear;
+
+- (HTEquip *)equipWithBuwei:(HTBuWei)buwei;
+
 @end

@@ -9,6 +9,7 @@
 #import "HTSuit.h"
 
 @interface HTSuit ()
+//私有计算用属性要存
 @property (nonatomic,assign) double bloodCoefficient;
 @property (nonatomic,assign) double attack;
 @property (nonatomic,assign) double huixin;
@@ -26,6 +27,29 @@
 @synthesize body = _body;
 @synthesize xinFaString = _xinFaString;
 @synthesize mainPropertyString = _mainPropertyString;
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        _bloodCoefficient = [aDecoder decodeDoubleForKey:@"bloodCoefficient"];
+        _attack = [aDecoder decodeDoubleForKey:@"attack"];
+        _huixin = [aDecoder decodeDoubleForKey:@"huixin"];
+        _mingzhong = [aDecoder decodeDoubleForKey:@"mingzhong"];
+        _xinfaType = [aDecoder decodeIntegerForKey:@"xinfatype"];
+        _attackMainPCoefficient = [aDecoder decodeDoubleForKey:@"attackMainPCoefficient"];
+        _huixinMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixinMainPCoefficient"];
+        _huixiaoMainPCoefficient = [aDecoder decodeDoubleForKey:@"huixiaoMainPCoefficient"];
+        _pofangMainPCoefficient = [aDecoder decodeDoubleForKey:@"pofangMainPCoefficient"];
+        
+        
+    }
+    return self;
+}
 
 - (instancetype)init
 {
@@ -47,16 +71,16 @@
 - (void)setMenpai:(HTMenpai)menpai
 {
     _menpai = menpai;
-    [self setxinFaStringWithHTMenpai:menpai isDefaultXinfa:self.isDefaultXinFa];
+    [self setBaseValueWithMenpai:menpai isDefaultXinfa:self.isDefaultXinFa];
 }
 
 - (void)setBody:(HTBody)body
 {
     _body = body;
-    [self setBodyStringWithHTBody:body];
+    [self setBasePropertyWithBody:body];
 }
 
-- (void)setBodyStringWithHTBody:(HTBody)body;
+- (void)setBasePropertyWithBody:(HTBody)body;
 {
     switch (body) {
         case HTBodyLoli:
@@ -104,7 +128,7 @@
     }
 }
 
-- (void)setxinFaStringWithHTMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault
+- (void)setBaseValueWithMenpai:(HTMenpai)menpai isDefaultXinfa:(BOOL)isDefault
 {
     switch (menpai) {
         case HTXX:
@@ -639,7 +663,6 @@
     
 }
 
-
 - (void)clear
 {
     self.maozi = nil;
@@ -655,6 +678,53 @@
     self.xiazhuang = nil;
     self.hushou = nil;
     self.anqi = nil;
-    
 }
+
+- (HTEquip *)equipWithBuwei:(HTBuWei)buwei
+{
+    switch (buwei)
+    {
+        case HTxianglian:
+            return self.xianglian;
+            break;
+        case HTanqi:
+            return self.anqi;
+            break;
+        case HThushou:
+            return self.hushou;
+            break;
+        case HTjiezhi:
+            return self.jiezhi1;
+            break;
+        case HTjiezhi2:
+            return self.jiezhi2;
+            break;
+        case HTmaozi:
+            return self.maozi;
+            break;
+        case HTshangyi:
+            return self.shangyi;
+            break;
+        case HTwuqi:
+            return self.wuqi;
+            break;
+        case HTxiazhuang:
+            return self.xiazhuang;
+            break;
+        case HTxiezi:
+            return self.xiezi;
+            break;
+        case HTyaodai:
+            return self.yaodai;
+            break;
+        case HTyaozhui:
+            return self.yaozhui;
+            break;
+        default:
+            return nil;
+            break;
+    }
+    return nil;
+}
+
 @end

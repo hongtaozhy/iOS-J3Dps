@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTXiangqian : NSObject
+@interface HTXiangqian : NSObject <NSCopying,NSCoding>
 
 - (instancetype)initWithString:(NSString *)str;
 

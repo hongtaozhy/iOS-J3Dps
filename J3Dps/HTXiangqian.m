@@ -20,4 +20,18 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return nil;
+}
 @end

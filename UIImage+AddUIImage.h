@@ -11,6 +11,6 @@
 @interface UIImage (AddUIImage)
 
 - (UIImage *)addImageView:(UIImage *)image_2;
-- (UIImage *)imageWithUIView:(UIView*)view;
++ (UIImage *)imageWithUIView:(UIView*)view;
 
 @end
