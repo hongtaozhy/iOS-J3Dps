@@ -39,6 +39,7 @@
 		43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A08CD41919379C00A3AF6A /* HTEquipManager.m */; };
 		43C3BFFD193316A200F304D1 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C3BFFA193316A200F304D1 /* libWeiboSDK.a */; };
 		43C3BFFE193316A200F304D1 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43C3BFFB193316A200F304D1 /* WeiboSDK.bundle */; };
+		43CE03701933963C0022AAF2 /* jx3_sqlite3.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 43CE036F1933963C0022AAF2 /* jx3_sqlite3.sqlite */; };
 		43D1792D1918F76E003E0035 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1792C1918F76E003E0035 /* libsqlite3.dylib */; };
 		43D1793A1918F801003E0035 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179301918F801003E0035 /* FMDatabase.m */; };
 		43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179321918F801003E0035 /* FMDatabaseAdditions.m */; };
@@ -46,7 +47,6 @@
 		43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179361918F801003E0035 /* FMDatabaseQueue.m */; };
 		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
 		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
-		43D179491918FD7B003E0035 /* j3dps.db in Resources */ = {isa = PBXBuildFile; fileRef = 43D179481918FD7B003E0035 /* j3dps.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +110,7 @@
 		43C3BFFA193316A200F304D1 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		43C3BFFB193316A200F304D1 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		43C3BFFC193316A200F304D1 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		43CE036F1933963C0022AAF2 /* jx3_sqlite3.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = jx3_sqlite3.sqlite; path = J3Dps/jx3_sqlite3.sqlite; sourceTree = "<group>"; };
 		43D1792C1918F76E003E0035 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		43D1792F1918F801003E0035 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		43D179301918F801003E0035 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		43D179391918F801003E0035 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		43D179441918FCEA003E0035 /* HTDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDBManager.h; sourceTree = "<group>"; };
 		43D179451918FCEA003E0035 /* HTDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDBManager.m; sourceTree = "<group>"; };
-		43D179481918FD7B003E0035 /* j3dps.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = j3dps.db; path = J3Dps/j3dps.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,7 +331,7 @@
 		43D179471918FD65003E0035 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				43D179481918FD7B003E0035 /* j3dps.db */,
+				43CE036F1933963C0022AAF2 /* jx3_sqlite3.sqlite */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -389,7 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D179491918FD7B003E0035 /* j3dps.db in Resources */,
+				43CE03701933963C0022AAF2 /* jx3_sqlite3.sqlite in Resources */,
 				4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */,
 				43C3BFFE193316A200F304D1 /* WeiboSDK.bundle in Resources */,
 				4321913E1917450B002AD4AB /* InfoPlist.strings in Resources */,

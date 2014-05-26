@@ -39,8 +39,7 @@ typedef NS_ENUM(NSInteger, HTBody)
 
 typedef NS_ENUM(NSInteger, HTMenpai)
 {
-    HTCommon    = 0, //通用类
-    HTJingjian  = 1, //精简类
+    //从2开始是照顾原数据库结构
     HTHH        = 2, //万花
     HTHS        = 3, //少林
     HTTM        = 4, //唐门
@@ -53,17 +52,31 @@ typedef NS_ENUM(NSInteger, HTMenpai)
     HTCJ        = 11 //藏剑
 };
 
-typedef NS_ENUM(NSInteger, HTType)
+//0	   1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17
+//花间 易筋	天罗	焚影	冰心	紫霞	毒经	惊羽	笑尘	傲血	藏剑	太虚	离经	云裳	补天	铁牢	洗髓	明尊
+//数字其实是反的。。。。0 就是没选择
+typedef NS_ENUM(NSInteger, HTXinFa)
 {
-    HTNjj       = 0,//内功精简（当字段「门派」不为1时用于区分内外功心法）
-    HTWjj       = 1,//外功精简（当字段「门派」不为1时用于区分内外功心法）
-    HTYQ        = 2,//元气通用Spunk
-    HTGG        = 3,//根骨通用
-    HTLD        = 4,//力道
-    HTSF        = 5,//身法
-    HTTherapy   = 6,//治疗
-    HTVitality  = 7 //防御
+    HTMingZun           =   1 << 0,
+    HTXiSui             =   1 << 1,
+    HTTieLao            =   1 << 2,
+    HTBuTian            =   1 << 3,
+    HTYunShang          =   1 << 4,
+    HTLiJing            =   1 << 5,
+    HTTaiXu             =   1 << 6,
+    HTWenShuiAndShanju  =   1 << 7,
+    HTAoXue             =   1 << 8,
+    HTXiaoChen          =   1 << 9,
+    HTJingYu            =   1 << 10,
+    HTDujing            =   1 << 11,
+    HTZiXia             =   1 << 12,
+    HTBingXin           =   1 << 13,
+    HTFenYing           =   1 << 14,
+    HTTianLuo           =   1 << 15,
+    HTYiJin             =   1 << 16,
+    HTHuaJian           =   1 << 17
 };
+
 
 typedef NS_ENUM(NSInteger, HTBuWei)
 {
@@ -79,59 +92,80 @@ typedef NS_ENUM(NSInteger, HTBuWei)
     HTmaozi         = 9,
     HTyaodai        = 10,
     HTwuqi          = 11,
+    HTZhongJian     = 12
 };
 
-typedef NS_ENUM(NSInteger, HTTuiJianMenpai)
-{
-    HTNoTuijian    = 0,      //无推荐门派
-    HTJc           = 1 << 0, //剑纯
-    HTHHdps        = 1 << 1, //万花
-    HTHSdps        = 1 << 2, //少林
-    HTTMdps1       = 1 << 3, //天罗
-    HTTMdps2       = 1 << 4, //鲸鱼
-    HTMJdps        = 1 << 5, //明教
-    HTXXdps        = 1 << 6, //七秀
-    HTWDdps        = 1 << 7, //毒经
-    HTQC           = 1 << 8, //气纯
-    HTTCdps        = 1 << 9, //天策
-    HTGBdps        = 1 << 10,//丐帮
-    HTCJdps        = 1 << 11 //藏剑
-};
+//typedef NS_ENUM(NSInteger, HTTuiJianMenpai)
+//{
+//    HTNoTuijian    = 0,      //无推荐门派
+//    HTJc           = 1 << 0, //剑纯
+//    HTHHdps        = 1 << 1, //万花
+//    HTHSdps        = 1 << 2, //少林
+//    HTTMdps1       = 1 << 3, //天罗
+//    HTTMdps2       = 1 << 4, //鲸鱼
+//    HTMJdps        = 1 << 5, //明教
+//    HTXXdps        = 1 << 6, //七秀
+//    HTWDdps        = 1 << 7, //毒经
+//    HTQC           = 1 << 8, //气纯
+//    HTTCdps        = 1 << 9, //天策
+//    HTGBdps        = 1 << 10,//丐帮
+//    HTCJdps        = 1 << 11 //藏剑
+//};
 
 @interface HTEquip : NSObject<NSCopying,NSCoding>
 
-@property (nonatomic,retain) NSString* name;
-@property (nonatomic,assign) HTMenpai menpai;
-@property (nonatomic,assign) HTType type;
-@property (nonatomic,assign) HTBuWei buWei;
+@property (nonatomic,assign) NSInteger p_id;//装备ID，自增，此值唯一
+@property (nonatomic,assign) NSInteger uiid;//剑网3中该装备的UIID，此值唯一
+@property (nonatomic,assign) NSInteger iconID;//剑网3中该装备的图标id
 
-@property (nonatomic,assign) NSInteger quality;
-@property (nonatomic,assign) NSInteger score;
+@property (nonatomic,retain) NSString* name;//装备名
+//@property (nonatomic,assign) HTMenpai menpai;
 
-@property (nonatomic,assign) NSInteger tizhi;
-@property (nonatomic,assign) NSInteger gengu;
-@property (nonatomic,assign) NSInteger lidao;
-@property (nonatomic,assign) NSInteger shenfa;
-@property (nonatomic,assign) NSInteger yuanqi;
+//心法
+//可转为18位二进制，分别代表可选此装备的心法，分别是元气4职业，根骨3职业，力道3职业，身法2职业，治疗3职业，防御3职业
+//0	   1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17
+//花间 易筋	天罗	焚影	冰心	紫霞	毒经	惊羽	笑尘	傲血	藏剑	太虚	离经	云裳	补天	铁牢	洗髓	明尊
+@property (nonatomic,assign) NSInteger xinfatype;//心法
 
-@property (nonatomic,assign) NSInteger gongji;
-@property (nonatomic,assign) NSInteger zhiliaoliang;
+//0     1	2	3	4	5	6	7	8	9	10	11	12
+//项链	腰坠	戒指		暗器	鞋子	护腕	下装	上衣	帽子	腰带	武器	重兵
+@property (nonatomic,assign) HTBuWei buWei;//部位类型
 
-@property (nonatomic,assign) NSInteger huixin;
-@property (nonatomic,assign) NSInteger huixiao;
-@property (nonatomic,assign) NSInteger mingzhong;
-@property (nonatomic,assign) NSInteger pofang;
-@property (nonatomic,assign) NSInteger wushuang;
-@property (nonatomic,assign) NSInteger jiasu;
+@property (nonatomic,assign) NSInteger quality;//品质
+@property (nonatomic,assign) NSInteger score;//分数
 
-@property (nonatomic,assign) NSInteger yujin;
-@property (nonatomic,assign) NSInteger huajin;
+@property (nonatomic,assign) NSInteger tizhi;//体质
+@property (nonatomic,assign) NSInteger gengu;//根骨
+@property (nonatomic,assign) NSInteger lidao;//力道
+@property (nonatomic,assign) NSInteger shenfa;//身法
+@property (nonatomic,assign) NSInteger yuanqi;//元气
 
-@property (nonatomic,retain) HTXiangqian *xiangqian;
-@property (nonatomic,assign) NSInteger tuijian;// A|B
+@property (nonatomic,assign) NSInteger basicPhysicsSheild;//白字防御
+@property (nonatomic,assign) NSInteger basicMagicSheild;//白字内防
+@property (nonatomic,assign) NSInteger physicsShield;//外防
+@property (nonatomic,assign) NSInteger magicSheild;//内防
+@property (nonatomic,assign) NSInteger dodge;//闪避
+@property (nonatomic,assign) NSInteger parryBase;//招架
+@property (nonatomic,assign) NSInteger parryValue;//拆招
 
-@property (nonatomic,assign) NSInteger jinglianLevel;
-@property (nonatomic,retain) NSString *diaoluo;
+@property (nonatomic,assign) NSInteger yujin;//御劲
 
-@property (nonatomic,assign) NSInteger texiao;
+@property (nonatomic,assign) NSInteger gongji;//攻击
+@property (nonatomic,assign) NSInteger zhiliaoliang;//治疗
+
+@property (nonatomic,assign) NSInteger huixin;//会心
+@property (nonatomic,assign) NSInteger huixiao;//会效
+@property (nonatomic,assign) NSInteger pofang;//破防
+@property (nonatomic,assign) NSInteger jiasu;//加速
+@property (nonatomic,assign) NSInteger mingzhong;//命中
+@property (nonatomic,assign) NSInteger wushuang;//无双
+@property (nonatomic,assign) NSInteger huajin;//化劲
+@property (nonatomic,assign) double threat;//威胁
+
+@property (nonatomic,assign) NSInteger texiao;//特效
+
+@property (nonatomic,retain) HTXiangqian *xiangqian;//镶嵌
+@property (nonatomic,assign) NSInteger jinglianLevel;//最大强化等级
+@property (nonatomic,retain) NSString *diaoluo;//掉落
+
 @end

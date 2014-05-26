@@ -34,6 +34,8 @@
 //私有计算用属性是定值 不需要存 走如下两方法
 // setBaseValueWithMenpai:isDefaultXinfa:
 // setBasePropertyWithBody:
+@property (nonatomic,assign) HTXinFa xinfa;
+
 @property (nonatomic,assign) NSInteger basetizhi;
 @property (nonatomic,assign) NSInteger basegengu;
 @property (nonatomic,assign) NSInteger baselidao;

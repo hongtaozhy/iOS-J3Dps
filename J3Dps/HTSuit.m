@@ -138,6 +138,7 @@
         self.baseshenfa = 99;
         self.baseyuanqi = 97;
         _body = -1;
+        _xinfa = 0;
         _xinFaString = @"未选择心法";
         self.suitName = @"未命名配装";
         _bloodCoefficient = 1.0;
@@ -223,6 +224,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTBingXin;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 119.0;
                 _huixiaoMainPCoefficient = 0.02;
@@ -236,6 +238,7 @@
             }
             else
             {
+                _xinfa = HTYunShang;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0.02;
@@ -253,6 +256,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTTaiXu;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 109.0;
                 _huixiaoMainPCoefficient = 0.05;
@@ -266,6 +270,7 @@
             }
             else
             {
+                _xinfa = HTZiXia;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 119.0;
                 _huixiaoMainPCoefficient = 0.05;
@@ -283,6 +288,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTAoXue;
                 _pofangMainPCoefficient = 0.08;
                 _mingzhong = 94.0;
                 _huixiaoMainPCoefficient = 0;
@@ -296,6 +302,7 @@
             }
             else
             {
+                _xinfa = HTTieLao;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0;
@@ -313,6 +320,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTHuaJian;
                 _pofangMainPCoefficient = 0.08;
                 _mingzhong = 117.0;
                 _huixiaoMainPCoefficient = 0;
@@ -326,6 +334,7 @@
             }
             else
             {
+                _xinfa = HTLiJing;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0.05;
@@ -343,6 +352,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTWenShuiAndShanju;
                 _pofangMainPCoefficient = 0.08;
                 _mingzhong = 99.0;
                 _huixiaoMainPCoefficient = 0;
@@ -356,6 +366,7 @@
             }
             else
             {
+                _xinfa = HTWenShuiAndShanju;
                 _pofangMainPCoefficient = 0.08;
                 _mingzhong = 96.0;
                 _huixiaoMainPCoefficient = 0;
@@ -373,6 +384,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTYiJin;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 119.0;
                 _huixiaoMainPCoefficient = 0.05;
@@ -386,6 +398,7 @@
             }
             else
             {
+                _xinfa = HTXiSui;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0;
@@ -403,6 +416,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTDujing;
                 _pofangMainPCoefficient = 0.08;
                 _mingzhong = 115.0;
                 _huixiaoMainPCoefficient = 0;
@@ -416,6 +430,7 @@
             }
             else
             {
+                _xinfa = HTBuTian;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0;
@@ -433,6 +448,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTTianLuo;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 116.0;
                 _huixiaoMainPCoefficient = 0.08;
@@ -446,6 +462,7 @@
             }
             else
             {
+                _xinfa = HTJingYu;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 96.0;
                 _huixiaoMainPCoefficient = 0.05;
@@ -463,6 +480,7 @@
         {
             if (isDefault)
             {
+                _xinfa = HTFenYing;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 117.0;
                 _huixiaoMainPCoefficient = 0.02;
@@ -476,6 +494,7 @@
             }
             else
             {
+                _xinfa = HTMingZun;
                 _pofangMainPCoefficient = 0;
                 _mingzhong = 0;
                 _huixiaoMainPCoefficient = 0;
@@ -491,6 +510,7 @@
             break;
         case HTGB:
         {
+            _xinfa = HTXiaoChen;
             _pofangMainPCoefficient = 0.15;
             _mingzhong = 50.0;
             _huixiaoMainPCoefficient = 0;
@@ -504,6 +524,7 @@
         }
             break;
         default:
+            _xinfa = 0;
             _xinFaString = @"未选择心法";
             _bloodCoefficient = 1.0;
             _xinfaType = HTWaiGong;

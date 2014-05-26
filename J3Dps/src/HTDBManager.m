@@ -14,13 +14,13 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *documentLibraryFolderPath = [documentsDirectory stringByAppendingPathComponent:@"j3dps"];
+    NSString *documentLibraryFolderPath = [documentsDirectory stringByAppendingPathComponent:@"jx3_sqlite3"];
     if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath]) {
         NSLog(@"文件已经存在了");
     }else {
         NSString *resourceSampleImagesFolderPath =[[NSBundle mainBundle]
-                                                   pathForResource:@"j3dps"
-                                                   ofType:@"db"];
+                                                   pathForResource:@"jx3_sqlite3"
+                                                   ofType:@"sqlite"];
         NSData *mainBundleFile = [NSData dataWithContentsOfFile:resourceSampleImagesFolderPath];
         [[NSFileManager defaultManager] createFileAtPath:documentLibraryFolderPath
                                                 contents:mainBundleFile

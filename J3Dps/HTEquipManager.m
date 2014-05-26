@@ -34,7 +34,7 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
-    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"j3dps"];
+    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"jx3_sqlite3"];
     FMDatabase *db = [FMDatabase databaseWithPath:dbPath] ;
     if (![db open])
     {
@@ -43,93 +43,53 @@
     
     NSMutableArray *equipArr = [[NSMutableArray alloc] init];
     
-    FMResultSet *rs = [db executeQuery:@"select * FROM equipment"];
+    FMResultSet *rs = [db executeQuery:@"select * FROM equip"];
     while ([rs next])
     {
         HTEquip *now = [[HTEquip alloc] init];
-        now.name = [rs stringForColumn:@"name"];
-        now.diaoluo = [rs stringForColumn:@"diaoluo"];
+        now.p_id = [rs intForColumn:@"P_ID"];
+        now.uiid = [rs intForColumn:@"uiID"];
+        now.iconID = [rs intForColumn:@"iconID"];
         
-        now.menpai = [rs intForColumn:@"menpai"];
-        now.type = [rs intForColumn:@"xinfatype"];
+        now.name = [rs stringForColumn:@"name"];
+        now.xinfatype = [rs intForColumn:@"xinfatype"];
         now.buWei = [rs intForColumn:@"type"];
         
         now.quality = [rs intForColumn:@"quality"];
         now.score = [rs intForColumn:@"score"];
 
         now.tizhi = [rs intForColumn:@"body"];
-        now.gengu = [rs intForColumn:@"gengu"];
-        now.lidao = [rs intForColumn:@"lidao"];
-        now.shenfa = [rs intForColumn:@"shenfa"];
-        now.yuanqi = [rs intForColumn:@"yuanqi"];
+        now.gengu = [rs intForColumn:@"spirit"];
+        now.lidao = [rs intForColumn:@"strength"];
+        now.shenfa = [rs intForColumn:@"agility"];
+        now.yuanqi = [rs intForColumn:@"spunk"];
+        
+        now.basicPhysicsSheild = [rs intForColumn:@"basicPhysicsSheild"];
+        now.basicMagicSheild = [rs intForColumn:@"basicMagicSheild"];
+        now.physicsShield = [rs intForColumn:@"physicsShield"];
+        now.magicSheild = [rs intForColumn:@"magicSheild"];
+        now.dodge = [rs intForColumn:@"dodge"];
+        now.parryBase = [rs intForColumn:@"parryBase"];
+        now.parryValue = [rs intForColumn:@"parryValue"];
+        now.yujin = [rs intForColumn:@"toughness"];
         
         now.gongji = [rs intForColumn:@"attack"];
         now.zhiliaoliang = [rs intForColumn:@"heal"];
         now.huixin = [rs intForColumn:@"crit"];
         now.huixiao = [rs intForColumn:@"critEffect"];
-        now.pofang = [rs intForColumn:@"break"];
-        now.jiasu = [rs intForColumn:@"jiasu"];
-        now.mingzhong = [rs intForColumn:@"mingzhong"];
-        now.wushuang = [rs intForColumn:@"wushuang"];
-        
-        now.yujin = [rs intForColumn:@"yujing"];
+        now.pofang = [rs intForColumn:@"overcome"];
+        now.jiasu = [rs intForColumn:@"acce"];
+        now.mingzhong = [rs intForColumn:@"hit"];
+        now.wushuang = [rs intForColumn:@"strain"];
         now.huajin = [rs intForColumn:@"huajing"];
-        
+        now.threat = [rs doubleForColumn:@"threat"];
         now.texiao = [rs intForColumn:@"texiao"];
         
         now.xiangqian = [[HTXiangqian alloc] initWithString:[rs stringForColumn:@"xiangqian"]];
         
-        if ([rs intForColumn:@"huajian"] > 0)
-        {
-            now.tuijian = now.tuijian | HTHHdps ;
-        }
-        if ([rs intForColumn:@"bingxin"] > 0)
-        {
-            now.tuijian = now.tuijian | HTXXdps ;
-        }
-        if ([rs intForColumn:@"dujing"] > 0)
-        {
-            now.tuijian = now.tuijian | HTWDdps ;
-        }
-        if ([rs intForColumn:@"zixia"] > 0)
-        {
-            now.tuijian = now.tuijian | HTQC ;
-        }
-        if ([rs intForColumn:@"cangjian"] > 0)
-        {
-            now.tuijian = now.tuijian | HTCJdps ;
-        }
-        if ([rs intForColumn:@"xiaochen"] > 0)
-        {
-            now.tuijian = now.tuijian | HTGBdps ;
-        }
-        if ([rs intForColumn:@"taixu"] > 0)
-        {
-            now.tuijian = now.tuijian | HTJc ;
-        }
-        if ([rs intForColumn:@"aoxue"] > 0)
-        {
-            now.tuijian = now.tuijian | HTTCdps ;
-        }
-        if ([rs intForColumn:@"tianluo"] > 0)
-        {
-            now.tuijian = now.tuijian | HTTMdps1 ;
-        }
-        if ([rs intForColumn:@"jingyu"] > 0)
-        {
-            now.tuijian = now.tuijian | HTTMdps2 ;
-        }
-        if ([rs intForColumn:@"yijin"] > 0)
-        {
-            now.tuijian = now.tuijian | HTHSdps ;
-        }
-        if ([rs intForColumn:@"fenying"] > 0)
-        {
-            now.tuijian = now.tuijian | HTMJdps ;
-        }
-        
-        now.jinglianLevel = [rs intForColumn:@"jinglian"];
-        
+        now.jinglianLevel = [rs intForColumn:@"strengthen"];
+        now.diaoluo = [rs stringForColumn:@"dropSource"];
+
         [equipArr addObject:now];
     }
     self.allEquip = [equipArr copy];
@@ -155,58 +115,17 @@
     return [searchResult copy];
 }
 
-- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTXinFa)xinfa
 {
     if (buwei == HTjiezhi2 )
     {
         buwei = HTjiezhi;
     }
-    int num = 0;
-    switch (menpai)
-    {
-        case HTXX:
-            num = HTXXdps;
-            break;
-        case HTCY:
-            if (dps)
-                num = HTJc;
-            else
-                num = HTQC;
-            break;
-        case HTHH:
-            num = HTHHdps;
-            break;
-        case HTHS:
-            num = HTHSdps;
-            break;
-        case HTCJ:
-            num = HTCJdps;
-            break;
-        case HTGB:
-            num = HTGBdps;
-            break;
-        case HTMJ:
-            num = HTMJdps;
-            break;
-        case HTTC:
-            num = HTTCdps;
-            break;
-        case HTTM:
-            if (dps)
-                num = HTTMdps1;
-            else
-                num = HTTMdps2;
-            break;
-        case HTWD:
-            num = HTWDdps;
-        default:
-            break;
-    }
     NSMutableArray *searchResult = [[NSMutableArray alloc] init];
     
     for (HTEquip *nowEquip in self.allEquip)
     {
-        if ( nowEquip.buWei == buwei && nowEquip.tuijian&num )
+        if ( nowEquip.buWei == buwei && nowEquip.xinfatype&xinfa )
         {
             [searchResult addObject:nowEquip];
         }
@@ -240,11 +159,11 @@
     return [searchResult copy];
 }
 
-- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTMenpai)menpai dps:(BOOL)dps haveProperty:(HTEquipProType)type
+- (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTXinFa)xinfa haveProperty:(HTEquipProType)type
 {
     NSMutableArray *searchResult = [[NSMutableArray alloc] init];
     
-    NSArray *arr = [self searchByBuWei:buwei xinfa:menpai dps:dps];
+    NSArray *arr = [self searchByBuWei:buwei xinfa:xinfa];
     if (type == HTALL)
     {
         return arr;

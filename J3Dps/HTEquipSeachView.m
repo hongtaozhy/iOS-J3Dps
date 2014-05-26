@@ -115,8 +115,7 @@
     else
     {
         self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:self.tag
-                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].menpai
-                                                                      dps:[[HTSuitManager sharedManager] nowSuit].isDefaultXinFa
+                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].xinfa
                                                              haveProperty:sender.tag];
     }
     
@@ -195,8 +194,8 @@
     else
     {
         self.searchResult = [[HTEquipManager sharedManager] searchByBuWei:tag
-                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].menpai
-                                                                      dps:[[HTSuitManager sharedManager] nowSuit].isDefaultXinFa];
+                                                                    xinfa:[[HTSuitManager sharedManager] nowSuit].xinfa
+                                                                      ];
     }
     [self.resultTable reloadData];
 }
