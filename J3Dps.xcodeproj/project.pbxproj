@@ -70,9 +70,6 @@
 		432191431917450B002AD4AB /* HTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAppDelegate.m; sourceTree = "<group>"; };
 		432191461917450B002AD4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		432191521917450B002AD4AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4321915A1917450B002AD4AB /* J3DpsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "J3DpsTests-Info.plist"; sourceTree = "<group>"; };
-		4321915C1917450B002AD4AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4321915E1917450B002AD4AB /* J3DpsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = J3DpsTests.m; sourceTree = "<group>"; };
 		4321917E1917EB8C002AD4AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		432B22651919F84600EB7A0A /* HTMenPaiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMenPaiSelectViewController.h; path = ../HTMenPaiSelectViewController.h; sourceTree = "<group>"; };
 		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
@@ -186,7 +183,6 @@
 				43173DF5191E63B300B14BF6 /* DrawerViewController */,
 				43D179471918FD65003E0035 /* Resources */,
 				432191391917450B002AD4AB /* J3Dps */,
-				432191581917450B002AD4AB /* J3DpsTests */,
 				432191321917450B002AD4AB /* Frameworks */,
 				432191311917450B002AD4AB /* Products */,
 			);
@@ -238,24 +234,6 @@
 				4321913C1917450B002AD4AB /* InfoPlist.strings */,
 				4321913F1917450B002AD4AB /* main.m */,
 				432191411917450B002AD4AB /* J3Dps-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		432191581917450B002AD4AB /* J3DpsTests */ = {
-			isa = PBXGroup;
-			children = (
-				4321915E1917450B002AD4AB /* J3DpsTests.m */,
-				432191591917450B002AD4AB /* Supporting Files */,
-			);
-			path = J3DpsTests;
-			sourceTree = "<group>";
-		};
-		432191591917450B002AD4AB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4321915A1917450B002AD4AB /* J3DpsTests-Info.plist */,
-				4321915B1917450B002AD4AB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -450,14 +428,6 @@
 				432191461917450B002AD4AB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4321915B1917450B002AD4AB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4321915C1917450B002AD4AB /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

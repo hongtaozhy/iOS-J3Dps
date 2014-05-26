@@ -44,8 +44,7 @@
 {
     [self.nowSuit setSuitName:name];
     [self.allSuit setObject:[self.nowSuit copy] forKey:name];
-    BOOL ok = [NSKeyedArchiver archiveRootObject:[self allSuit] toFile:self.suitsFileName];
-    NSLog(@"%d",ok);
+    [NSKeyedArchiver archiveRootObject:[self allSuit] toFile:self.suitsFileName];
 }
 
 - (void)loadSuitWithName:(NSString *)name

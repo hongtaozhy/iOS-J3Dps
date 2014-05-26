@@ -16,19 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    NSLog(@"isRetina %d",isRetina);
-    NSLog(@"isPad %d",isPad);
-    NSLog(@"isIphone5 %d",iPhone5);
-//    if ([UIDevice systemVersionIsMoreThanOrEuqal7])
-//    {
-        [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-//    }
-//    else
-//    {
-//        [application setStatusBarHidden:YES];
-//    }
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
 
     // Override point for customization after application launch.
     [[HTEquipManager sharedManager] initData];
