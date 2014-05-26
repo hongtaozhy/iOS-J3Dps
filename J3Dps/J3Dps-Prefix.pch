@@ -18,4 +18,5 @@
     #import "NSString+descption.h"
     #import "HTEquipManager.h"
     #import "DrawerViewController.h"
+    #import "WeiboSDK.h"
 #endif

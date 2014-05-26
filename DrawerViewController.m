@@ -603,6 +603,12 @@
             [root pushViewController:suitManagerCtrl animated:YES];
         }
             break;
+        case 7:
+        {
+            [[HTMenuView sharedView] changRowByCode:0];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:hongtaozhy@qq.com?subject=j3dps"]];
+        }
+            break;
         default://意外情况回配装首页
         {
 //            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];

@@ -219,12 +219,37 @@
     otherBtn(@"qianghua",@"qianghua-c",130,502,@selector(allJinglianBtnPress));
     otherBtn(@"duqu",@"duqu",79,514,@selector(loadBtnPress));
     otherBtn(@"baocun",@"baocun",202,514,@selector(saveBtnPress));
-    otherBtn(@"fenxiang",@"fenxiang",254,522,@selector(allJinglianBtnPress));
-    otherBtn(@"chongzhi",@"chongzhi",28,522,@selector(allJinglianBtnPress));
+    otherBtn(@"fenxiang",@"fenxiang",254,522,@selector(shareBtnPress));
+    otherBtn(@"chongzhi",@"chongzhi",28,522,@selector(clearBtnPress));
 
 }
 
 #pragma mark - Btn Press
+
+- (void)shareBtnPress
+{
+    [self removeRightMaskView];
+    UIImage *imgCenter = [UIImage imageWithUIView:self.centerView];
+    UIImage *imgRight = [UIImage imageWithUIView:self.rightView];
+    UIImage *imgShare = [imgRight addImageView:imgCenter];
+    UIImageWriteToSavedPhotosAlbum(imgShare, nil, nil, nil);
+    WBImageObject *image = [WBImageObject object];
+    image.imageData = UIImagePNGRepresentation(imgShare);
+
+    WBMessageObject *message = [WBMessageObject message];
+    [message setText:[NSString stringWithFormat:@"剑网3配装器"]];
+    [message setImageObject:image];
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message];
+    [WeiboSDK sendRequest:request];
+}
+
+- (void)clearBtnPress
+{
+    [HTSuitManager sharedManager].nowSuit = nil;
+    [self showLeftView];
+    [[HTMenuView sharedView] changRowByCode:0];
+
+}
 
 - (void)allJinglianBtnPress
 {
