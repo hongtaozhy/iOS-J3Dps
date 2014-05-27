@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, HTEquipProType)
 
 typedef NS_ENUM(NSInteger, HTBody)
 {
+    HTNoSelect  = -1,
     HTBodyLoli  = 0,
     HTBodyWoman = 1,
     HTBodyMan   = 2,

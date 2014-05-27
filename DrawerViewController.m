@@ -62,6 +62,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self navigationController] setDelegate:[HTMenuView sharedView]];
     [[HTMenuView sharedView] setCenterDelegate:self];
 }
 
@@ -571,52 +572,57 @@
 }
 
 #pragma mark - HTCenterViewContorller
-- (void)changedViewContorller:(NSInteger)index
+
+- (void)changedViewContorller:(NSInteger)index animated:(BOOL)animated
 {
-//    [self dismissViewControllerAnimated:NO
-//                             completion:^{
     UINavigationController *root = (UINavigationController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
     [root popToRootViewControllerAnimated:NO];
     switch (index) {
         case 0:
         {
             HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
-            [root pushViewController:mainViewCtrller animated:YES];
+            [root pushViewController:mainViewCtrller animated:animated];
         }
             break;
             
         case 1:
         {
-            HTBodySelectViewController *bodySelectViewController = [[HTBodySelectViewController alloc] initWithNibName:nil bundle:nil];            
-            [root pushViewController:bodySelectViewController animated:YES];
+            HTBodySelectViewController *bodySelectViewController = [[HTBodySelectViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:bodySelectViewController animated:animated];
         }
             break;
         case 2:
         {
             HTMenPaiSelectViewController *menpaiSelectCtrl = [[HTMenPaiSelectViewController alloc] initWithNibName:nil bundle:nil];
-            [root pushViewController:menpaiSelectCtrl animated:YES];
+            [root pushViewController:menpaiSelectCtrl animated:animated];
         }
             break;
         case 4:
         {
             HTSuitManagerViewController *suitManagerCtrl = [[HTSuitManagerViewController alloc] initWithNibName:nil bundle:nil];
-            [root pushViewController:suitManagerCtrl animated:YES];
+            [root pushViewController:suitManagerCtrl animated:animated];
         }
             break;
         case 7:
         {
-            [[HTMenuView sharedView] changRowByCode:0];
+            [[HTMenuView sharedView] changRowByCode:0 animated:YES];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:hongtaozhy@qq.com?subject=j3dps"]];
         }
             break;
         default://意外情况回配装首页
         {
-//            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
-//            [root pushViewController:mainViewCtrller animated:YES];
-            [[HTMenuView sharedView] changRowByCode:0];
+            //            HTMainViewController *mainViewCtrller = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
+            //            [root pushViewController:mainViewCtrller animated:YES];
+            [[HTMenuView sharedView] changRowByCode:0 animated:YES];
         }
             break;
     }
-//                             }];
 }
+//
+//
+//- (void)changedViewContorller:(NSInteger)index
+//{
+//    [self changedViewContorller:index animated:YES];
+//}
+
 @end

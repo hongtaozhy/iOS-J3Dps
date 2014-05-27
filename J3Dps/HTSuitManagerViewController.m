@@ -91,7 +91,7 @@
     [[HTSuitManager sharedManager] loadSuitWithName:name];
     
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0];
+    [[HTMenuView sharedView] changRowByCode:0 animated:YES];
 }
 
 @end

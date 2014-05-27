@@ -18,11 +18,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [WeiboSDK registerApp:WB_APPKEY];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
 
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [WeiboSDK registerApp:WB_APPKEY];
+        [[HTEquipManager sharedManager] initData];
+    });
+    
     // Override point for customization after application launch.
-    [[HTEquipManager sharedManager] initData];
     
     HTMainViewController *rootctrl = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];
 

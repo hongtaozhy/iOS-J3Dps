@@ -37,6 +37,22 @@
 {   
     [super viewDidLoad];
 
+//    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC);
+    
+    if ([[HTSuitManager sharedManager] nowSuit].xinfa == 0)
+    {
+//        dispatch_after(time, dispatch_get_main_queue(), ^{
+            [[HTMenuView sharedView] changRowByCode:2 animated:YES];
+//        });
+        return;
+    }
+    if ([[HTSuitManager sharedManager] nowSuit].body == HTNoSelect)
+    {
+//        dispatch_after(time, dispatch_get_main_queue(), ^{
+        [[HTMenuView sharedView] changRowByCode:1 animated:YES];
+//        });
+        return;
+    }
     // Create left view
     self.leftView = [HTMenuView sharedView];
     // Create right view
@@ -113,7 +129,7 @@
 
     [self initialDrawerViewController];
 
-    
+
     [self reloadData];
     [self reloadEquipImg];
 }
@@ -247,7 +263,7 @@
 {
     [HTSuitManager sharedManager].nowSuit = nil;
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0];
+    [[HTMenuView sharedView] changRowByCode:0 animated:NO];
 
 }
 
@@ -271,7 +287,7 @@
 - (void)loadBtnPress
 {
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:4];
+    [[HTMenuView sharedView] changRowByCode:4 animated:YES];
 
 //    UIAlertView *loadName = [[UIAlertView alloc] initWithTitle:@"请输入读取套装名称"
 //                                                       message:nil

@@ -61,12 +61,12 @@ static HTMenuView *__MenuView = NULL;
     return self;
 }
 
-- (void)changRowByCode:(NSInteger)index
+- (void)changRowByCode:(NSInteger)index animated:(BOOL)animated
 {
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
-    [[self centerDelegate] changedViewContorller:index];
+    [[self centerDelegate] changedViewContorller:index animated:animated];
 
 }
 #pragma mark - TableView Methods
@@ -108,7 +108,7 @@ static HTMenuView *__MenuView = NULL;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[self centerDelegate] changedViewContorller:indexPath.row];
+    [[self centerDelegate] changedViewContorller:indexPath.row animated:YES];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -118,5 +118,23 @@ static HTMenuView *__MenuView = NULL;
     // Drawing code
 }
 */
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+//    if (animated)
+//    {
+//        self.canAnimated = NO;
+//    }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+//    if (animated)
+//    {
+//        self.canAnimated = YES;
+//    }
+}
 
 @end

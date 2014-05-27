@@ -10,18 +10,19 @@
 
 @protocol HTCenterViewDelegate <NSObject>
 
-- (void)changedViewContorller:(NSInteger)index;
+//- (void)changedViewContorller:(NSInteger)index;
+- (void)changedViewContorller:(NSInteger)index animated:(BOOL)animated;
 
 @optional
 - (void)changedEquip;
 @end
 
-@interface HTMenuView : UITableView<UITableViewDataSource,UITableViewDelegate>
+@interface HTMenuView : UITableView<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,assign) id<HTCenterViewDelegate> centerDelegate;
 
 + (instancetype)sharedView;
 
-- (void)changRowByCode:(NSInteger)index;
+- (void)changRowByCode:(NSInteger)index animated:(BOOL)animated;
 
 @end

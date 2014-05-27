@@ -13,6 +13,7 @@
 @property (nonatomic,retain) UIButton *currenctMenPaiButton;
 @property (nonatomic,retain) UIButton *currenctXinfaButton;
 
+@property (nonatomic,assign) BOOL isNoSelectBefore;
 @end
 
 @implementation HTMenPaiSelectViewController
@@ -229,10 +230,15 @@
     }
     if (self.currenctMenPaiButton)
     {
+        self.isNoSelectBefore = NO;
         self.currenctMenPaiButton.selected = YES;
         [self changeXFImgWithTag:[self.currenctMenPaiButton tag]];
         [self.xf1Button setHidden:NO];
         [self.xf2Button setHidden:NO];
+    }
+    else
+    {
+        self.isNoSelectBefore = YES;
     }
 }
 
@@ -280,7 +286,7 @@
 
 
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0];
+    [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
 }
 
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -288,7 +294,7 @@
     if (buttonIndex == 0)
     {
         [self showLeftView];
-        [[HTMenuView sharedView] changRowByCode:0];
+        [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
         return;
     }
     else
@@ -299,7 +305,7 @@
         [[HTSuitManager sharedManager] nowSuit].menpai = self.currenctMenPaiButton.tag;
         
         [self showLeftView];
-        [[HTMenuView sharedView] changRowByCode:0];
+        [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
     }
 }
 

@@ -19,6 +19,7 @@
 
 @property (nonatomic,retain) UIButton *currenctButton;
 
+@property (nonatomic,assign) BOOL isNoSelectBefore;
 @end
 
 @implementation HTBodySelectViewController
@@ -116,6 +117,7 @@
 
 - (void)nowSelectWithTag:(NSInteger)tag
 {
+    self.isNoSelectBefore = NO;
     switch (tag)
     {
         case HTBodyLoli:
@@ -131,6 +133,7 @@
             self.currenctButton = self.woman;
             break;
         default:
+            self.isNoSelectBefore = YES;
             self.currenctButton = nil;
             break;
     }
@@ -155,7 +158,7 @@
     [[HTSuitManager sharedManager] nowSuit].body = self.currenctButton.tag;
     
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0];
+    [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
 }
 
 

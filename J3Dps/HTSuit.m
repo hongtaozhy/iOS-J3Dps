@@ -137,7 +137,7 @@
         self.baselidao = 96;
         self.baseshenfa = 99;
         self.baseyuanqi = 97;
-        _body = -1;
+        _body = HTNoSelect;
         _xinfa = 0;
         _xinFaString = @"未选择心法";
         self.suitName = @"未命名配装";
