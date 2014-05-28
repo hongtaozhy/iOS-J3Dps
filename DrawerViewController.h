@@ -26,6 +26,8 @@
 @property (strong, nonatomic) UIView *rightView;
 @property (strong, nonatomic) UIScrollView *scrollView;
 
+@property (nonatomic) BOOL isCtrlNextAnimation;
+
 - (void)showRightView;
 - (void)showCenterView:(BOOL)animate;
 - (void)showLeftView;

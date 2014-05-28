@@ -19,7 +19,6 @@
 
 @property (nonatomic,retain) UIButton *currenctButton;
 
-@property (nonatomic,assign) BOOL isNoSelectBefore;
 @end
 
 @implementation HTBodySelectViewController
@@ -28,7 +27,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -106,6 +104,24 @@
     
     [self initialDrawerViewController];
     
+    if ([[HTSuitManager sharedManager] nowSuit].menpai != HTHS &&
+        [[HTSuitManager sharedManager] nowSuit].menpai != HTGB &&
+        [[HTSuitManager sharedManager] nowSuit].menpai != HTXX) {
+        [self.boy setEnabled:NO];
+        [self.boy setAlpha:0.4];
+    }
+    if ([[HTSuitManager sharedManager] nowSuit].menpai == HTXX)
+    {
+        [self.man setEnabled:NO];
+        [self.man setAlpha:0.4];
+    }
+    if ([[HTSuitManager sharedManager] nowSuit].menpai == HTHS)
+    {
+        [self.loli setEnabled:NO];
+        [self.loli setAlpha:0.4];
+        [self.woman setEnabled:NO];
+        [self.woman setAlpha:0.4];
+    }
     [self nowSelectWithTag:[[HTSuitManager sharedManager] nowSuit].body];
 }
 
@@ -117,7 +133,6 @@
 
 - (void)nowSelectWithTag:(NSInteger)tag
 {
-    self.isNoSelectBefore = NO;
     switch (tag)
     {
         case HTBodyLoli:
@@ -133,7 +148,6 @@
             self.currenctButton = self.woman;
             break;
         default:
-            self.isNoSelectBefore = YES;
             self.currenctButton = nil;
             break;
     }
@@ -155,10 +169,19 @@
 #pragma mark - Test DB
 - (void)sureDown:(UIButton *)sender
 {
-    [[HTSuitManager sharedManager] nowSuit].body = self.currenctButton.tag;
+    HTSuit *nowSuit = [[HTSuitManager sharedManager] nowSuit];
+    nowSuit.body = self.currenctButton.tag;
     
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
+    if (nowSuit.isConflict || nowSuit.isNoSelectXinfa)
+    {
+        [[HTMenuView sharedView] changRowByCode:0 animated:NO];
+    }
+    else
+    {
+        [[HTMenuView sharedView] changRowByCode:0 animated:YES];
+    }
+    
 }
 
 

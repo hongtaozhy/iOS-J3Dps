@@ -74,4 +74,7 @@
 
 - (HTEquip *)equipWithBuwei:(HTBuWei)buwei;
 
+- (BOOL)isConflict;
+- (BOOL)isNoSelectXinfa;
+- (BOOL)isNoSelectBody;
 @end

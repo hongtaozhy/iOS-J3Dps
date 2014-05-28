@@ -840,4 +840,34 @@
     return nil;
 }
 
+- (BOOL)isConflict
+{
+    if (self.menpai == HTXX && self.body == HTBodyMan)
+    {
+        return YES;
+    }
+    if (self.menpai == HTHS && (self.body == HTBodyWoman
+        || self.body == HTBodyLoli))
+    {
+        return YES;
+    }
+    if (self.menpai != HTHS && self.menpai != HTGB && self.menpai != HTXX)
+    {
+        if (self.body == HTBodyBoy)
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isNoSelectXinfa
+{
+    return self.xinfa <= 0 || self.xinfa > HTHuaJian;
+}
+
+- (BOOL)isNoSelectBody
+{
+    return self.body <= HTNoSelect || self.body >= HTBodyBoy;
+}
 @end

@@ -20,6 +20,8 @@
 @property (nonatomic,retain) UIButton *currenctButton;
 @property (nonatomic,retain) HTEquipSeachView *serachEquipView;
 @property (nonatomic,retain) UILabel *suitNameLable;
+@property (nonatomic,retain) UIImageView *equipShowView;
+@property (nonatomic,retain) UIImageView *zbGlKuangImg;
 @end
 
 @implementation HTMainViewController
@@ -36,21 +38,16 @@
 - (void)viewDidLoad
 {   
     [super viewDidLoad];
-
-//    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC);
     
-    if ([[HTSuitManager sharedManager] nowSuit].xinfa == 0)
+    if ([[HTSuitManager sharedManager] nowSuit].isNoSelectXinfa)
     {
-//        dispatch_after(time, dispatch_get_main_queue(), ^{
-            [[HTMenuView sharedView] changRowByCode:2 animated:YES];
-//        });
+        [[HTMenuView sharedView] changRowByCode:2 animated:YES];
         return;
     }
-    if ([[HTSuitManager sharedManager] nowSuit].body == HTNoSelect)
+    if ([[HTSuitManager sharedManager] nowSuit].isNoSelectBody ||
+        [[HTSuitManager sharedManager] nowSuit].isConflict)
     {
-//        dispatch_after(time, dispatch_get_main_queue(), ^{
         [[HTMenuView sharedView] changRowByCode:1 animated:YES];
-//        });
         return;
     }
     // Create left view
@@ -120,6 +117,16 @@
     [self addBuWeiButton];
     [self addSuitLabels];
    
+    UIImage *zbGlKuang = [UIImage imageNamed:@"zbkuang2"];
+    self.zbGlKuangImg = [[UIImageView alloc] initWithImage:zbGlKuang];
+    [self.zbGlKuangImg setHidden:YES];
+    [self.centerView addSubview:self.zbGlKuangImg];
+    
+    self.equipShowView = [[UIImageView alloc] initWithFrame:self.centerView.frame];
+    [self.equipShowView setBackgroundColor:[UIColor clearColor]];
+    [self.equipShowView setContentMode:UIViewContentModeScaleToFill];
+    [self.centerView addSubview:self.equipShowView];
+
     // Set parameters
     self.leftViewVisibleWidth = 200;
     self.rightViewVisibleWidth = 300;
@@ -318,18 +325,24 @@
     }
     self.currenctButton.selected = YES;
     
+    if (self.serachEquipView)
+    {
+        [self.serachEquipView removeFromSuperview];
+        self.serachEquipView = nil;
+    }
+    [self.equipShowView setImage:nil];
+    
     if ([sender imageForState:UIControlStateNormal] == [self equipImg:[sender tag]])
     {
+        [self.zbGlKuangImg setFrame:[sender frame]];
+        [self.zbGlKuangImg setHidden:NO];
         [self drawTextInbgWithBuwei:sender.tag];
         return;
     }
     else
     {
-        if (self.serachEquipView)
-        {
-            [self.serachEquipView removeFromSuperview];
-            self.serachEquipView = nil;
-        }
+        [self.zbGlKuangImg setHidden:YES];
+
         self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
         [self.serachEquipView setTag:sender.tag];
         [self.serachEquipView setCenterDelegate:self];
@@ -551,7 +564,8 @@
 
 - (void)drawTextInbgWithBuwei:(HTBuWei)buwei
 {
-    if (buwei != HTmaozi || ![[HTSuitManager sharedManager] nowSuit].maozi)
+    HTEquip *equip = [[[HTSuitManager sharedManager] nowSuit] equipWithBuwei:buwei];
+    if (!equip)
     {
         return;
     }
@@ -560,7 +574,7 @@
     [equipShow setBackgroundColor:[UIColor clearColor]];
 //    [equipShow setImage:bg];
     [equipShow setContentMode:UIViewContentModeScaleToFill];
-    NSString *showtixing = [[HTSuitManager sharedManager] nowSuit].maozi.name;
+    NSString *showtixing = [[equip.name componentsSeparatedByString:@"("] objectAtIndex:0];
     UIFont *fonttx = [UIFont fontWithName:@"STHeitiSC-Medium" size:26.0];
     CGSize size = [showtixing sizeWithFont:fonttx];
 
@@ -578,10 +592,7 @@
     UIImageWriteToSavedPhotosAlbum(watermarkedImage, nil, nil, nil);
     UIImageWriteToSavedPhotosAlbum(bg, nil, nil, nil);
 //    [self.centerView setBackgroundColor:[UIColor clearColor]];
-    UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.centerView.frame];
-    [bgView setImage:watermarkedImage];
-    [bgView setContentMode:UIViewContentModeScaleToFill];
-    [self.centerView addSubview:bgView];
+    [self.equipShowView setImage:watermarkedImage];
 }
 
 #pragma mark - UIAlertViewDelegate

@@ -12,8 +12,6 @@
 @interface HTMenPaiSelectViewController ()
 @property (nonatomic,retain) UIButton *currenctMenPaiButton;
 @property (nonatomic,retain) UIButton *currenctXinfaButton;
-
-@property (nonatomic,assign) BOOL isNoSelectBefore;
 @end
 
 @implementation HTMenPaiSelectViewController
@@ -22,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -230,15 +227,10 @@
     }
     if (self.currenctMenPaiButton)
     {
-        self.isNoSelectBefore = NO;
         self.currenctMenPaiButton.selected = YES;
         [self changeXFImgWithTag:[self.currenctMenPaiButton tag]];
         [self.xf1Button setHidden:NO];
         [self.xf2Button setHidden:NO];
-    }
-    else
-    {
-        self.isNoSelectBefore = YES;
     }
 }
 
@@ -281,12 +273,21 @@
     }
 
     //必须先设置心法
-    [[HTSuitManager sharedManager] nowSuit].isDefaultXinFa = sender == self.xf1Button;
-    [[HTSuitManager sharedManager] nowSuit].menpai = self.currenctMenPaiButton.tag;
+    HTSuit *nowSuit = [[HTSuitManager sharedManager] nowSuit];
+    nowSuit.isDefaultXinFa = sender == self.xf1Button;
+    nowSuit.menpai = self.currenctMenPaiButton.tag;
 
 
     [self showLeftView];
-    [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
+    
+    if (nowSuit.isConflict || nowSuit.isNoSelectBody)
+    {
+        [[HTMenuView sharedView] changRowByCode:0 animated:NO];
+    }
+    else
+    {
+        [[HTMenuView sharedView] changRowByCode:0 animated:YES];
+    }
 }
 
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -294,18 +295,36 @@
     if (buttonIndex == 0)
     {
         [self showLeftView];
-        [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
+        HTSuit *nowSuit = [[HTSuitManager sharedManager] nowSuit];
+        if (nowSuit.isConflict || nowSuit.isNoSelectBody)
+        {
+            [[HTMenuView sharedView] changRowByCode:0 animated:NO];
+        }
+        else
+        {
+            [[HTMenuView sharedView] changRowByCode:0 animated:YES];
+        }
         return;
     }
     else
     {
         //必须先设置心法
-        [[[HTSuitManager sharedManager] nowSuit] clear];
-        [[HTSuitManager sharedManager] nowSuit].isDefaultXinFa = self.currenctXinfaButton == self.xf1Button;
-        [[HTSuitManager sharedManager] nowSuit].menpai = self.currenctMenPaiButton.tag;
+        HTSuit *nowSuit = [[HTSuitManager sharedManager] nowSuit];
+
+        [nowSuit clear];
+        nowSuit.isDefaultXinFa = self.currenctXinfaButton == self.xf1Button;
+        nowSuit.menpai = self.currenctMenPaiButton.tag;
         
         [self showLeftView];
-        [[HTMenuView sharedView] changRowByCode:0 animated:!self.isNoSelectBefore];
+
+        if (nowSuit.isConflict || nowSuit.isNoSelectBody)
+        {
+            [[HTMenuView sharedView] changRowByCode:0 animated:NO];
+        }
+        else
+        {
+            [[HTMenuView sharedView] changRowByCode:0 animated:YES];
+        }
     }
 }
 
