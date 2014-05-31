@@ -11,7 +11,7 @@
 #import "HTEquipManager.h"
 #import "HTMainViewController.h"
 #import "UIDevice+Extension.h"
-#import "WeiboSDK.h"
+
 
 @implementation HTAppDelegate
 
@@ -22,6 +22,7 @@
 
     dispatch_async(dispatch_get_main_queue(), ^{
         [WeiboSDK registerApp:WB_APPKEY];
+        [WXApi registerApp:WX_AppID];
         [[HTEquipManager sharedManager] initData];
     });
     
@@ -67,6 +68,35 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    if (![WeiboSDK handleOpenURL:url delegate:self])
+    {
+        return [WXApi handleOpenURL:url delegate:self];
+    }
     return YES;
 }
+
+
+#pragma mark - 3RD delegate
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
+{
+    
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
+{
+    
+}
+
+
+- (void)onReq:(BaseReq*)req
+{
+    
+}
+
+- (void)onResp:(BaseResp*)resp
+{
+    
+}
+
 @end

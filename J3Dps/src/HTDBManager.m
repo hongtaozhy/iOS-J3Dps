@@ -15,7 +15,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *documentLibraryFolderPath = [documentsDirectory stringByAppendingPathComponent:@"jx3_sqlite3"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath]) {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath])
+    {
         NSLog(@"文件已经存在了");
     }else {
         NSString *resourceSampleImagesFolderPath =[[NSBundle mainBundle]

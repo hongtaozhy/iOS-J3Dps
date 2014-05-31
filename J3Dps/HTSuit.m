@@ -868,6 +868,6 @@
 
 - (BOOL)isNoSelectBody
 {
-    return self.body <= HTNoSelect || self.body >= HTBodyBoy;
+    return self.body <= HTNoSelect || self.body > HTBodyBoy;
 }
 @end

@@ -47,6 +47,7 @@
 		43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179361918F801003E0035 /* FMDatabaseQueue.m */; };
 		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
 		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
+		43E66E00193A5DC3008E21D9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,9 @@
 		43D179391918F801003E0035 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		43D179441918FCEA003E0035 /* HTDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDBManager.h; sourceTree = "<group>"; };
 		43D179451918FCEA003E0035 /* HTDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDBManager.m; sourceTree = "<group>"; };
+		43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		43E66DFE193A5DC3008E21D9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		43E66DFF193A5DC3008E21D9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 			files = (
 				43C3BFFD193316A200F304D1 /* libWeiboSDK.a in Frameworks */,
 				43D1792D1918F76E003E0035 /* libsqlite3.dylib in Frameworks */,
+				43E66E00193A5DC3008E21D9 /* libWeChatSDK.a in Frameworks */,
 				432191361917450B002AD4AB /* CoreGraphics.framework in Frameworks */,
 				432191381917450B002AD4AB /* UIKit.framework in Frameworks */,
 				432191341917450B002AD4AB /* Foundation.framework in Frameworks */,
@@ -293,6 +298,7 @@
 		43C3BFF8193312E700F304D1 /* shareSDK */ = {
 			isa = PBXGroup;
 			children = (
+				43E66DFC193A5DC3008E21D9 /* WeChatSDK_1.4.2.1 */,
 				43C3BFF9193316A200F304D1 /* libWeiboSDK */,
 			);
 			name = shareSDK;
@@ -334,6 +340,16 @@
 				43CE036F1933963C0022AAF2 /* jx3_sqlite3.sqlite */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		43E66DFC193A5DC3008E21D9 /* WeChatSDK_1.4.2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */,
+				43E66DFE193A5DC3008E21D9 /* WXApi.h */,
+				43E66DFF193A5DC3008E21D9 /* WXApiObject.h */,
+			);
+			path = WeChatSDK_1.4.2.1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,20 +548,23 @@
 		432191631917450B002AD4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Hong (9WLQ25DW6P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)/WeChatSDK_1.4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "08A565ED-7C77-44C5-BEFA-5F7C57560525";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -553,20 +572,23 @@
 		432191641917450B002AD4AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tao Hong (4SFU2N9L2C)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)/WeChatSDK_1.4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "90A0D674-B7E4-41E4-8780-EDAEC61D8782";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

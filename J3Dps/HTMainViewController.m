@@ -251,19 +251,14 @@
 
 - (void)shareBtnPress
 {
-    [self removeRightMaskView];
-    UIImage *imgCenter = [UIImage imageWithUIView:self.centerView];
-    UIImage *imgRight = [UIImage imageWithUIView:self.rightView];
-    UIImage *imgShare = [imgRight addImageView:imgCenter];
-    UIImageWriteToSavedPhotosAlbum(imgShare, nil, nil, nil);
-    WBImageObject *image = [WBImageObject object];
-    image.imageData = UIImagePNGRepresentation(imgShare);
-
-    WBMessageObject *message = [WBMessageObject message];
-    [message setText:[NSString stringWithFormat:@"剑网3配装器"]];
-    [message setImageObject:image];
-    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message];
-    [WeiboSDK sendRequest:request];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"快给小伙伴们看看你的配装方案吧！"
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:@"仅保存到本地相册"
+                                  otherButtonTitles:@"分享到微博", @"分享给微信好友", @"分享至微信朋友圈",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
 }
 
 - (void)clearBtnPress
@@ -608,6 +603,78 @@
     {
         [self.suitNameLable setText:name];
         [[HTSuitManager sharedManager] saveNowSuitWithName:name];
+    }
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    UIImage *imgShare = nil;
+    if (buttonIndex >= 0 && buttonIndex <= 3)
+    {
+        [self removeRightMaskView];
+        UIImage *imgCenter = [UIImage imageWithUIView:self.centerView];
+        UIImage *imgRight = [UIImage imageWithUIView:self.rightView];
+        imgShare = [imgRight addImageView:imgCenter];
+        UIImageWriteToSavedPhotosAlbum(imgShare, nil, nil, nil);
+    }
+    
+    if (buttonIndex == 1)
+    {
+        //微博
+        WBImageObject *image = [WBImageObject object];
+        image.imageData = UIImagePNGRepresentation(imgShare);
+
+        WBMessageObject *message = [WBMessageObject message];
+        [message setText:[NSString stringWithFormat:@"剑网3配装器"]];
+        [message setImageObject:image];
+        WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message];
+        [WeiboSDK sendRequest:request];
+    }
+    else if (buttonIndex == 2)
+    {
+        //微信好友
+        WXMediaMessage *message = [WXMediaMessage message];
+        message.title = @"剑网3配装器";
+        message.description = @"剑3配装器下载地址 http://www.hongtaozhy.com ";
+        [message setThumbImage:[UIImage imageNamed:@"59885"]];
+        
+        WXImageObject *ext = [WXImageObject object];
+        ext.imageData = UIImagePNGRepresentation(imgShare);
+        
+        message.mediaObject = ext;
+        
+        SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+        req.bText = NO;
+        req.message = message;
+        req.scene = WXSceneSession;
+        
+        [WXApi sendReq:req];
+    }
+    else if(buttonIndex == 3)
+    {
+        //微信朋友圈
+        WXMediaMessage *message = [WXMediaMessage message];
+        message.title = @"剑网3配装器";
+        message.description = @"剑3配装器下载地址 http://www.hongtaozhy.com ";
+        [message setThumbImage:[UIImage imageNamed:@"59885"]];
+        
+        WXImageObject *ext = [WXImageObject object];
+        ext.imageData = UIImagePNGRepresentation(imgShare);
+        
+        message.mediaObject = ext;
+        
+        SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+        req.bText = NO;
+        req.message = message;
+        req.scene = WXSceneTimeline;
+        
+        [WXApi sendReq:req];
+    }
+    else if(buttonIndex == 4)
+    {
+        //取消
     }
 }
 @end

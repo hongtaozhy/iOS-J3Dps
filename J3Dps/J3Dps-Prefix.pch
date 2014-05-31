@@ -19,4 +19,5 @@
     #import "HTEquipManager.h"
     #import "DrawerViewController.h"
     #import "WeiboSDK.h"
+    #import "WXApi.h"
 #endif

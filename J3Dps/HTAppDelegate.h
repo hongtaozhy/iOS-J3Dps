@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeiboSDK.h"
+#import "WXApi.h"
 
-@interface HTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface HTAppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate,WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
