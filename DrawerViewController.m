@@ -12,6 +12,11 @@
 #import "HTBodySelectViewController.h"
 #import "HTMenPaiSelectViewController.h"
 #import "HTSuitManagerViewController.h"
+#import "HTMangeAuthViewController.h"
+#import "HTAboutUsViewController.h"
+#import "HTSettingViewController.h"
+#import "HTIntroduceViewController.h"
+
 
 #define CENTER_VIEW_TAG        3900
 
@@ -598,16 +603,40 @@
             [root pushViewController:menpaiSelectCtrl animated:animated];
         }
             break;
+        case 3:
+        {
+            HTSettingViewController *setting = [[HTSettingViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:setting animated:animated];
+        }
+            break;
         case 4:
         {
             HTSuitManagerViewController *suitManagerCtrl = [[HTSuitManagerViewController alloc] initWithNibName:nil bundle:nil];
             [root pushViewController:suitManagerCtrl animated:animated];
         }
             break;
+        case 5:
+        {
+            HTIntroduceViewController *info = [[HTIntroduceViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:info animated:animated];
+        }
+            break;
+        case 6:
+        {
+            HTMangeAuthViewController *authManager = [[HTMangeAuthViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:authManager animated:animated];
+        }
+            break;
         case 7:
         {
             [[HTMenuView sharedView] changRowByCode:0 animated:YES];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:hongtaozhy@qq.com?subject=j3dps"]];
+        }
+            break;
+        case 8:
+        {
+            HTAboutUsViewController *about = [[HTAboutUsViewController alloc] initWithNibName:nil bundle:nil];
+            [root pushViewController:about animated:animated];
         }
             break;
         default://意外情况回配装首页

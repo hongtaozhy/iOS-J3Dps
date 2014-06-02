@@ -48,6 +48,10 @@
 		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
 		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
 		43E66E00193A5DC3008E21D9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */; };
+		43E66E03193A7F60008E21D9 /* HTMangeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E02193A7F60008E21D9 /* HTMangeAuthViewController.m */; };
+		43E66E06193A7F96008E21D9 /* HTIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E05193A7F96008E21D9 /* HTIntroduceViewController.m */; };
+		43E66E09193A803F008E21D9 /* HTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E08193A803F008E21D9 /* HTSettingViewController.m */; };
+		43E66E0C193A809F008E21D9 /* HTAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E0B193A809F008E21D9 /* HTAboutUsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +132,14 @@
 		43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		43E66DFE193A5DC3008E21D9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		43E66DFF193A5DC3008E21D9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		43E66E01193A7F60008E21D9 /* HTMangeAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTMangeAuthViewController.h; path = J3Dps/HTMangeAuthViewController.h; sourceTree = SOURCE_ROOT; };
+		43E66E02193A7F60008E21D9 /* HTMangeAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMangeAuthViewController.m; path = J3Dps/HTMangeAuthViewController.m; sourceTree = SOURCE_ROOT; };
+		43E66E04193A7F96008E21D9 /* HTIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTIntroduceViewController.h; path = J3Dps/HTIntroduceViewController.h; sourceTree = SOURCE_ROOT; };
+		43E66E05193A7F96008E21D9 /* HTIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTIntroduceViewController.m; path = J3Dps/HTIntroduceViewController.m; sourceTree = SOURCE_ROOT; };
+		43E66E07193A803F008E21D9 /* HTSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTSettingViewController.h; path = J3Dps/HTSettingViewController.h; sourceTree = SOURCE_ROOT; };
+		43E66E08193A803F008E21D9 /* HTSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTSettingViewController.m; path = J3Dps/HTSettingViewController.m; sourceTree = SOURCE_ROOT; };
+		43E66E0A193A809F008E21D9 /* HTAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTAboutUsViewController.h; path = J3Dps/HTAboutUsViewController.h; sourceTree = SOURCE_ROOT; };
+		43E66E0B193A809F008E21D9 /* HTAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAboutUsViewController.m; path = J3Dps/HTAboutUsViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,14 @@
 				432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */,
 				436779B91931DD6E003F6D9E /* HTSuitManagerViewController.h */,
 				436779BA1931DD6E003F6D9E /* HTSuitManagerViewController.m */,
+				43E66E01193A7F60008E21D9 /* HTMangeAuthViewController.h */,
+				43E66E02193A7F60008E21D9 /* HTMangeAuthViewController.m */,
+				43E66E04193A7F96008E21D9 /* HTIntroduceViewController.h */,
+				43E66E05193A7F96008E21D9 /* HTIntroduceViewController.m */,
+				43E66E07193A803F008E21D9 /* HTSettingViewController.h */,
+				43E66E08193A803F008E21D9 /* HTSettingViewController.m */,
+				43E66E0A193A809F008E21D9 /* HTAboutUsViewController.h */,
+				43E66E0B193A809F008E21D9 /* HTAboutUsViewController.m */,
 			);
 			name = ViewController;
 			path = src;
@@ -426,8 +446,10 @@
 				436779BB1931DD6E003F6D9E /* HTSuitManagerViewController.m in Sources */,
 				439C8B7E1924D515004DD8FE /* HTPreviewView.m in Sources */,
 				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
+				43E66E0C193A809F008E21D9 /* HTAboutUsViewController.m in Sources */,
 				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
+				43E66E09193A803F008E21D9 /* HTSettingViewController.m in Sources */,
 				432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */,
 				43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */,
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,
@@ -448,7 +470,9 @@
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
 				432CE01519290976006E226C /* HTEquipSeachView.m in Sources */,
 				439C8B811924D963004DD8FE /* UIImage+AddUIImage.m in Sources */,
+				43E66E03193A7F60008E21D9 /* HTMangeAuthViewController.m in Sources */,
 				43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */,
+				43E66E06193A7F96008E21D9 /* HTIntroduceViewController.m in Sources */,
 				43173E03191E65A500B14BF6 /* HTMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
