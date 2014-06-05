@@ -47,6 +47,7 @@
 		43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179361918F801003E0035 /* FMDatabaseQueue.m */; };
 		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
 		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
+		43D840871940673B00869890 /* UIButton+HaveEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D840861940673B00869890 /* UIButton+HaveEquip.m */; };
 		43E66E00193A5DC3008E21D9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */; };
 		43E66E03193A7F60008E21D9 /* HTMangeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E02193A7F60008E21D9 /* HTMangeAuthViewController.m */; };
 		43E66E06193A7F96008E21D9 /* HTIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E05193A7F96008E21D9 /* HTIntroduceViewController.m */; };
@@ -129,6 +130,8 @@
 		43D179391918F801003E0035 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		43D179441918FCEA003E0035 /* HTDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDBManager.h; sourceTree = "<group>"; };
 		43D179451918FCEA003E0035 /* HTDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDBManager.m; sourceTree = "<group>"; };
+		43D840851940673B00869890 /* UIButton+HaveEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HaveEquip.h"; sourceTree = "<group>"; };
+		43D840861940673B00869890 /* UIButton+HaveEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HaveEquip.m"; sourceTree = "<group>"; };
 		43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		43E66DFE193A5DC3008E21D9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		43E66DFF193A5DC3008E21D9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */,
 				4341D9E7192A10A000B5ADC5 /* NSString+descption.h */,
 				4341D9E8192A10A000B5ADC5 /* NSString+descption.m */,
+				43D840851940673B00869890 /* UIButton+HaveEquip.h */,
+				43D840861940673B00869890 /* UIButton+HaveEquip.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				43173E08191E816F00B14BF6 /* HTBodySelectViewController.m in Sources */,
 				436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */,
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
+				43D840871940673B00869890 /* UIButton+HaveEquip.m in Sources */,
 				43442CE51930D0FE00C99756 /* UIColor+Helper.m in Sources */,
 				436F433C1922584800ECDD31 /* HTManager.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,

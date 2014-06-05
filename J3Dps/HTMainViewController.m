@@ -327,7 +327,7 @@
     }
     [self.equipShowView setImage:nil];
     
-    if ([sender imageForState:UIControlStateNormal] == [self equipImg:[sender tag]])
+    if ([self equipImg:[sender tag]] != nil)
     {
         [self.zbGlKuangImg setFrame:[sender frame]];
         [self.zbGlKuangImg setHidden:NO];
@@ -584,8 +584,6 @@
     
 
     UIImage *watermarkedImage = [UIImage imageWithUIView:equipShow];
-    UIImageWriteToSavedPhotosAlbum(watermarkedImage, nil, nil, nil);
-    UIImageWriteToSavedPhotosAlbum(bg, nil, nil, nil);
 //    [self.centerView setBackgroundColor:[UIColor clearColor]];
     [self.equipShowView setImage:watermarkedImage];
 }
