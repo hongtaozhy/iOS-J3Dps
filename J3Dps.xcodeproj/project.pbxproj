@@ -23,6 +23,9 @@
 		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
 		432CE01519290976006E226C /* HTEquipSeachView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CE01419290976006E226C /* HTEquipSeachView.m */; };
 		4341D9E9192A10A000B5ADC5 /* NSString+descption.m in Sources */ = {isa = PBXBuildFile; fileRef = 4341D9E8192A10A000B5ADC5 /* NSString+descption.m */; };
+		434294D11941743F001F0723 /* HTFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D01941743F001F0723 /* HTFM.m */; };
+		434294D419418737001F0723 /* HTWucaiStone.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D319418737001F0723 /* HTWucaiStone.m */; };
+		434294D91941A91F001F0723 /* HTWuxingStone.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D81941A91F001F0723 /* HTWuxingStone.m */; };
 		43442CE21930C86F00C99756 /* UIImage+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 43442CE11930C86F00C99756 /* UIImage+Draw.m */; };
 		43442CE51930D0FE00C99756 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43442CE41930D0FE00C99756 /* UIColor+Helper.m */; };
 		435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */; };
@@ -85,6 +88,12 @@
 		432CE01419290976006E226C /* HTEquipSeachView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquipSeachView.m; sourceTree = "<group>"; };
 		4341D9E7192A10A000B5ADC5 /* NSString+descption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+descption.h"; sourceTree = "<group>"; };
 		4341D9E8192A10A000B5ADC5 /* NSString+descption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+descption.m"; sourceTree = "<group>"; };
+		434294CF1941743F001F0723 /* HTFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTFM.h; sourceTree = "<group>"; };
+		434294D01941743F001F0723 /* HTFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTFM.m; sourceTree = "<group>"; };
+		434294D219418737001F0723 /* HTWucaiStone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTWucaiStone.h; sourceTree = "<group>"; };
+		434294D319418737001F0723 /* HTWucaiStone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTWucaiStone.m; sourceTree = "<group>"; };
+		434294D71941A91F001F0723 /* HTWuxingStone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTWuxingStone.h; sourceTree = "<group>"; };
+		434294D81941A91F001F0723 /* HTWuxingStone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTWuxingStone.m; sourceTree = "<group>"; };
 		43442CE01930C86F00C99756 /* UIImage+Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Draw.h"; sourceTree = "<group>"; };
 		43442CE11930C86F00C99756 /* UIImage+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Draw.m"; sourceTree = "<group>"; };
 		43442CE31930D0FE00C99756 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
@@ -316,6 +325,12 @@
 				43A08CC71919326200A3AF6A /* HTXiangqian.m */,
 				43A08CD31919379C00A3AF6A /* HTEquipManager.h */,
 				43A08CD41919379C00A3AF6A /* HTEquipManager.m */,
+				434294CF1941743F001F0723 /* HTFM.h */,
+				434294D01941743F001F0723 /* HTFM.m */,
+				434294D219418737001F0723 /* HTWucaiStone.h */,
+				434294D319418737001F0723 /* HTWucaiStone.m */,
+				434294D71941A91F001F0723 /* HTWuxingStone.h */,
+				434294D81941A91F001F0723 /* HTWuxingStone.m */,
 			);
 			name = EquipManager;
 			sourceTree = "<group>";
@@ -448,6 +463,7 @@
 				436F434319225DAF00ECDD31 /* HTSuit.m in Sources */,
 				43A08CC81919326200A3AF6A /* HTXiangqian.m in Sources */,
 				43895CFA1921F905005D83CF /* HTBaseView.m in Sources */,
+				434294D91941A91F001F0723 /* HTWuxingStone.m in Sources */,
 				436779BB1931DD6E003F6D9E /* HTSuitManagerViewController.m in Sources */,
 				439C8B7E1924D515004DD8FE /* HTPreviewView.m in Sources */,
 				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
@@ -465,6 +481,7 @@
 				436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */,
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
 				43D840871940673B00869890 /* UIButton+HaveEquip.m in Sources */,
+				434294D11941743F001F0723 /* HTFM.m in Sources */,
 				43442CE51930D0FE00C99756 /* UIColor+Helper.m in Sources */,
 				436F433C1922584800ECDD31 /* HTManager.m in Sources */,
 				43D1793A1918F801003E0035 /* FMDatabase.m in Sources */,
@@ -475,6 +492,7 @@
 				4341D9E9192A10A000B5ADC5 /* NSString+descption.m in Sources */,
 				43A08CD51919379C00A3AF6A /* HTEquipManager.m in Sources */,
 				432CE01519290976006E226C /* HTEquipSeachView.m in Sources */,
+				434294D419418737001F0723 /* HTWucaiStone.m in Sources */,
 				439C8B811924D963004DD8FE /* UIImage+AddUIImage.m in Sources */,
 				43E66E03193A7F60008E21D9 /* HTMangeAuthViewController.m in Sources */,
 				43D1793B1918F801003E0035 /* FMDatabaseAdditions.m in Sources */,
@@ -521,7 +539,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -538,8 +556,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -572,13 +591,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
 		432191631917450B002AD4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Hong (9WLQ25DW6P)";
@@ -602,7 +621,6 @@
 		432191641917450B002AD4AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tao Hong (4SFU2N9L2C)";

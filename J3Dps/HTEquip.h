@@ -11,6 +11,16 @@
 
 #define HT_NO_TAG -10010
 
+typedef NS_ENUM(NSInteger, HTWuXing)
+{
+    HT_None     = 0,
+    HT_Jin      = 1,
+    HT_Mu       = 2,
+    HT_Shui     = 3,
+    HT_Huo      = 4,
+    HT_Tu       = 5
+};
+
 typedef NS_ENUM(NSInteger, HTXinfaType)
 {
     HTNeiGong   = 0,

@@ -11,6 +11,8 @@
 #import "FMDatabaseAdditions.h"
 #import "HTDBManager.h"
 #import "HTEquip.h"
+#import "HTFM.h"
+#import "HTWucaiStone.h"
 #import "HTXiangqian.h"
 
 @implementation HTEquipManager
@@ -95,6 +97,40 @@
     self.allEquip = [equipArr copy];
     [rs close];
 
+    FMResultSet *rs_fm = [db executeQuery:@"select * FROM enhance"];
+    while ([rs_fm next])
+    {
+        HTFM *new = [[HTFM alloc] init];
+        new.type = [rs_fm stringForColumn:@"type"];
+        new.name = [rs_fm stringForColumn:@"name"];
+#warning TODO
+        new.tizhi = [rs_fm intForColumn:@"body"];
+        new.mainPro = [rs_fm intForColumn:@"yuanqi"];
+        new.gongji = [rs_fm intForColumn:@"attack"];
+        new.huixin = [rs_fm intForColumn:@"crit"];
+        new.huixiao = [rs_fm intForColumn:@"critEffect"];
+        new.mingzhong = [rs_fm intForColumn:@"hit"];
+        new.wushuang = [rs_fm intForColumn:@"musou"];
+        new.pofang = [rs_fm intForColumn:@"break"];
+        new.jiasu = [rs_fm intForColumn:@"acce"];
+        
+        new.canUseByTianluo = [rs_fm intForColumn:@"tianluo"] == 1 ? YES : NO;
+        new.canUseByNeiGong = [rs_fm intForColumn:@"nei"] == 1 ? YES : NO;
+        new.canUseByWaigong = [rs_fm intForColumn:@"wai"] == 1 ? YES : NO;
+        new.canUseByZhiliao = [rs_fm intForColumn:@"zhiliao"] == 1 ? YES : NO;
+    }
+    [rs_fm close];
+    
+    FMResultSet *rs_wucai = [db executeQuery:@"select * FROM attributestone"];
+    while ([rs_wucai next])
+    {
+        HTWucaiStone *stone = [[HTWucaiStone alloc] init];
+        stone.name = [rs_wucai stringForColumn:@"name"];
+#warning TODO
+//        NSLog(@"%@",stone.name);
+    }
+    [rs_wucai close];
+    
 }
 
 - (NSArray *)searchByBuWei:(HTBuWei)buwei

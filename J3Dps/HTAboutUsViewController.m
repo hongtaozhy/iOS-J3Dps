@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.leftView = [HTMenuView sharedView];
     // Create right view
     //    self.rightView = [HTMenuView sharedView];
