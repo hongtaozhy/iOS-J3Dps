@@ -22,6 +22,7 @@
 		4321917F1917EB8C002AD4AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4321917E1917EB8C002AD4AB /* Images.xcassets */; };
 		432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */; };
 		432CE01519290976006E226C /* HTEquipSeachView.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CE01419290976006E226C /* HTEquipSeachView.m */; };
+		43344E5219489C32003BFD70 /* NSObject+AssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 43344E5119489C32003BFD70 /* NSObject+AssociatedObject.m */; };
 		4341D9E9192A10A000B5ADC5 /* NSString+descption.m in Sources */ = {isa = PBXBuildFile; fileRef = 4341D9E8192A10A000B5ADC5 /* NSString+descption.m */; };
 		434294D11941743F001F0723 /* HTFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D01941743F001F0723 /* HTFM.m */; };
 		434294D419418737001F0723 /* HTWucaiStone.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D319418737001F0723 /* HTWucaiStone.m */; };
@@ -50,7 +51,6 @@
 		43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179361918F801003E0035 /* FMDatabaseQueue.m */; };
 		43D1793F1918F801003E0035 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179391918F801003E0035 /* FMResultSet.m */; };
 		43D179461918FCEA003E0035 /* HTDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D179451918FCEA003E0035 /* HTDBManager.m */; };
-		43D840871940673B00869890 /* UIButton+HaveEquip.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D840861940673B00869890 /* UIButton+HaveEquip.m */; };
 		43E66E00193A5DC3008E21D9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */; };
 		43E66E03193A7F60008E21D9 /* HTMangeAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E02193A7F60008E21D9 /* HTMangeAuthViewController.m */; };
 		43E66E06193A7F96008E21D9 /* HTIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E66E05193A7F96008E21D9 /* HTIntroduceViewController.m */; };
@@ -86,6 +86,8 @@
 		432B22661919F84600EB7A0A /* HTMenPaiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMenPaiSelectViewController.m; path = ../HTMenPaiSelectViewController.m; sourceTree = "<group>"; };
 		432CE01319290976006E226C /* HTEquipSeachView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEquipSeachView.h; sourceTree = "<group>"; };
 		432CE01419290976006E226C /* HTEquipSeachView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEquipSeachView.m; sourceTree = "<group>"; };
+		43344E5019489C32003BFD70 /* NSObject+AssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociatedObject.h"; sourceTree = "<group>"; };
+		43344E5119489C32003BFD70 /* NSObject+AssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObject.m"; sourceTree = "<group>"; };
 		4341D9E7192A10A000B5ADC5 /* NSString+descption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+descption.h"; sourceTree = "<group>"; };
 		4341D9E8192A10A000B5ADC5 /* NSString+descption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+descption.m"; sourceTree = "<group>"; };
 		434294CF1941743F001F0723 /* HTFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTFM.h; sourceTree = "<group>"; };
@@ -139,8 +141,6 @@
 		43D179391918F801003E0035 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		43D179441918FCEA003E0035 /* HTDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDBManager.h; sourceTree = "<group>"; };
 		43D179451918FCEA003E0035 /* HTDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDBManager.m; sourceTree = "<group>"; };
-		43D840851940673B00869890 /* UIButton+HaveEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HaveEquip.h"; sourceTree = "<group>"; };
-		43D840861940673B00869890 /* UIButton+HaveEquip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HaveEquip.m"; sourceTree = "<group>"; };
 		43E66DFD193A5DC3008E21D9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		43E66DFE193A5DC3008E21D9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		43E66DFF193A5DC3008E21D9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -310,8 +310,8 @@
 				435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */,
 				4341D9E7192A10A000B5ADC5 /* NSString+descption.h */,
 				4341D9E8192A10A000B5ADC5 /* NSString+descption.m */,
-				43D840851940673B00869890 /* UIButton+HaveEquip.h */,
-				43D840861940673B00869890 /* UIButton+HaveEquip.m */,
+				43344E5019489C32003BFD70 /* NSObject+AssociatedObject.h */,
+				43344E5119489C32003BFD70 /* NSObject+AssociatedObject.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -421,6 +421,11 @@
 				CLASSPREFIX = HT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = hongtao5;
+				TargetAttributes = {
+					4321912F1917450B002AD4AB = {
+						DevelopmentTeam = 4SFU2N9L2C;
+					};
+				};
 			};
 			buildConfigurationList = 4321912B1917450B002AD4AB /* Build configuration list for PBXProject "J3Dps" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -474,13 +479,13 @@
 				432B22671919F84600EB7A0A /* HTMenPaiSelectViewController.m in Sources */,
 				43D1793C1918F801003E0035 /* FMDatabasePool.m in Sources */,
 				432191441917450B002AD4AB /* HTAppDelegate.m in Sources */,
+				43344E5219489C32003BFD70 /* NSObject+AssociatedObject.m in Sources */,
 				43D1793D1918F801003E0035 /* FMDatabaseQueue.m in Sources */,
 				43442CE21930C86F00C99756 /* UIImage+Draw.m in Sources */,
 				432191401917450B002AD4AB /* main.m in Sources */,
 				43173E08191E816F00B14BF6 /* HTBodySelectViewController.m in Sources */,
 				436F43471922F2C200ECDD31 /* HTUILabel.m in Sources */,
 				43D1793F1918F801003E0035 /* FMResultSet.m in Sources */,
-				43D840871940673B00869890 /* UIButton+HaveEquip.m in Sources */,
 				434294D11941743F001F0723 /* HTFM.m in Sources */,
 				43442CE51930D0FE00C99756 /* UIColor+Helper.m in Sources */,
 				436F433C1922584800ECDD31 /* HTManager.m in Sources */,
@@ -600,7 +605,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Hong (9WLQ25DW6P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
 				INFOPLIST_FILE = "J3Dps/J3Dps-Info.plist";
@@ -611,7 +617,7 @@
 					"$(PROJECT_DIR)/WeChatSDK_1.4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "08A565ED-7C77-44C5-BEFA-5F7C57560525";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -623,6 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tao Hong (4SFU2N9L2C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tao Hong (4SFU2N9L2C)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "J3Dps/J3Dps-Prefix.pch";
@@ -634,7 +641,7 @@
 					"$(PROJECT_DIR)/WeChatSDK_1.4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90A0D674-B7E4-41E4-8780-EDAEC61D8782";
+				PROVISIONING_PROFILE = "21217401-BE8B-4652-96DA-8C9C6D18E946";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

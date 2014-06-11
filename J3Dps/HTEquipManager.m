@@ -103,7 +103,7 @@
         HTFM *new = [[HTFM alloc] init];
         new.type = [rs_fm stringForColumn:@"type"];
         new.name = [rs_fm stringForColumn:@"name"];
-#warning TODO
+
         new.tizhi = [rs_fm intForColumn:@"body"];
         new.mainPro = [rs_fm intForColumn:@"yuanqi"];
         new.gongji = [rs_fm intForColumn:@"attack"];
@@ -126,7 +126,7 @@
     {
         HTWucaiStone *stone = [[HTWucaiStone alloc] init];
         stone.name = [rs_wucai stringForColumn:@"name"];
-#warning TODO
+#warning TODO 五彩数据库导入
 //        NSLog(@"%@",stone.name);
     }
     [rs_wucai close];

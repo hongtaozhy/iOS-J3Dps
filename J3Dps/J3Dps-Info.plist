@@ -61,5 +61,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>DBVersion</key>
+	<integer>3</integer>
 </dict>
 </plist>

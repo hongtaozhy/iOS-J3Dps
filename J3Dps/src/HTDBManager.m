@@ -15,17 +15,38 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *documentLibraryFolderPath = [documentsDirectory stringByAppendingPathComponent:@"jx3_sqlite3"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath])
+    NSNumber *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"DBVersion"];
+
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath]
+        && [version integerValue] == [[NSUserDefaults standardUserDefaults] integerForKey:@"DBVersion"])
     {
         NSLog(@"文件已经存在了");
-    }else {
+        NSLog(@"无需更新");
+    }
+    else
+    {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:documentLibraryFolderPath])
+        {
+            NSError *err = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:documentLibraryFolderPath error:&err];
+        }
+        
         NSString *resourceSampleImagesFolderPath =[[NSBundle mainBundle]
                                                    pathForResource:@"jx3_sqlite3"
                                                    ofType:@"sqlite"];
         NSData *mainBundleFile = [NSData dataWithContentsOfFile:resourceSampleImagesFolderPath];
-        [[NSFileManager defaultManager] createFileAtPath:documentLibraryFolderPath
+        BOOL success = [[NSFileManager defaultManager] createFileAtPath:documentLibraryFolderPath
                                                 contents:mainBundleFile
                                               attributes:nil];
+        if (!success)
+        {
+            NSLog(@"未复制成功数据库");
+        }
+        else
+        {
+            [[NSUserDefaults standardUserDefaults] setInteger:[version integerValue] forKey:@"DBVersion"];
+        }
     }
 }
 
