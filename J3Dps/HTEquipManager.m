@@ -219,4 +219,40 @@
     }
     return [searchResult copy];
 }
+
+- (NSString *)typeName:(HTBuWei)buwei
+{
+    switch (buwei)
+    {
+        case HTxianglian:
+            return @"项链";
+            break;
+        case HTyaozhui:
+            return @"腰坠";
+        case HTanqi:
+            return @"远程武器";
+        case HTwuqi:
+            return @"近身武器";
+        case HTZhongJian:
+            return @"重剑";
+        case HThushou:
+            return @"护手";
+        case HTjiezhi:
+        case HTjiezhi2:
+            return @"戒指";
+        case HTmaozi:
+            return @"帽子";
+        case HTshangyi:
+            return @"上装";
+        case HTxiazhuang:
+            return @"下装";
+        case HTxiezi:
+            return @"鞋子";
+        case HTyaodai:
+            return @"腰带";
+        default:
+            break;
+    }
+    return nil;
+}
 @end

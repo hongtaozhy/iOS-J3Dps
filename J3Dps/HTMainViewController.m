@@ -77,6 +77,15 @@
     [previewBtn setTag:-1];
     [self.centerView addSubview:previewBtn];
     
+    UIImage *ghzhuangbeiImg = [UIImage imageNamed:@"ghzhuangbei"];
+    UIButton *ghzhuangbeiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [ghzhuangbeiBtn setBackgroundColor:[UIColor colorWithPatternImage:ghzhuangbeiImg]];
+    [ghzhuangbeiBtn setFrame:CGRectMake(225, 110, ghzhuangbeiImg.size.width, ghzhuangbeiImg.size.height)];
+    [ghzhuangbeiBtn addTarget:self action:@selector(changeEquipBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [ghzhuangbeiBtn setTag:-1];
+    [self.centerView addSubview:ghzhuangbeiBtn];
+  
+    
     UIImage *xftImg = [UIImage imageNamed:@"xinfatiao"];
     UIImageView *xztx = [[UIImageView alloc] initWithImage:xftImg];
     [xztx setFrame:CGRectMake(60.5, 58, xftImg.size.width, xftImg.size.height)];
@@ -309,6 +318,17 @@
 - (void)previewBtnPress
 {
     [self showRightView];
+}
+
+- (void)changeEquipBtnPress
+{
+//    [self buweiBtnPress:self.currenctButton];
+//    [self.zbGlKuangImg setHidden:YES];
+    
+    self.serachEquipView = [[HTEquipSeachView alloc] initWithFrame:CGRectMake(0, 238, 320, 330)];
+    [self.serachEquipView setTag:self.currenctButton.tag];
+    [self.serachEquipView setCenterDelegate:self];
+    [self.centerView addSubview:self.serachEquipView];
 }
 
 - (void)buweiBtnPress:(UIButton *)sender
@@ -555,6 +575,7 @@
     [self.serachEquipView removeFromSuperview];
     [self reloadData];
     [self reloadEquipImg];
+    [self drawTextInbgWithBuwei:[self.currenctButton tag]];
 }
 
 - (void)drawTextInbgWithBuwei:(HTBuWei)buwei
@@ -573,7 +594,8 @@
     UIFont *fonttx = [UIFont fontWithName:@"STHeitiSC-Medium" size:26.0];
     CGSize size = [showtixing sizeWithFont:fonttx];
 
-    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, 100*2, size.width, size.height)];
+    CGFloat nowY = 100 * 2;
+    HTUILabel *tixingLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, size.width, size.height)];
     [tixingLabel setMiaobianColor:[UIColor blackColor]];
     [tixingLabel setBackgroundColor:[UIColor clearColor]];
     [tixingLabel setTextColor:RGBCOLOR(255, 50, 205)];
@@ -582,7 +604,272 @@
     [tixingLabel setTextAlignment:NSTextAlignmentCenter];
     [equipShow addSubview:tixingLabel];
     
+    NSString *showtype = [[HTEquipManager sharedManager] typeName:equip.buWei];
+    UIFont *fonttx2 = [UIFont fontWithName:@"STHeitiSC-Medium" size:20.0];
+    CGSize size2 = [showtype sizeWithFont:fonttx2];
 
+    nowY += size.height;
+    HTUILabel *typeLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, size2.width, size2.height)];
+    [typeLabel setMiaobianColor:[UIColor blackColor]];
+    [typeLabel setBackgroundColor:[UIColor clearColor]];
+    [typeLabel setTextColor:RGBCOLOR(255,255,255)];
+    [typeLabel setFont:fonttx2];
+    typeLabel.text = showtype;
+    [typeLabel setTextAlignment:NSTextAlignmentCenter];
+    [equipShow addSubview:typeLabel];
+
+    UIFont *fonttx3 = [UIFont fontWithName:@"STHeitiSC-Medium" size:24.0];
+    
+    NSString *tizhi = [NSString stringWithFormat:@"体质+%d",(int)equip.tizhi];
+
+    CGSize tizhi_size = [tizhi sizeWithFont:fonttx3];
+
+    nowY += size2.height;
+    HTUILabel *tizhiLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, tizhi_size.width, tizhi_size.height)];
+    [tizhiLabel setMiaobianColor:[UIColor blackColor]];
+    [tizhiLabel setBackgroundColor:[UIColor clearColor]];
+    [tizhiLabel setTextColor:RGBCOLOR(255, 255, 255)];
+    [tizhiLabel setFont:fonttx3];
+    tizhiLabel.text = tizhi;
+    [tizhiLabel setTextAlignment:NSTextAlignmentCenter];
+    [equipShow addSubview:tizhiLabel];
+    nowY += tizhi_size.height;
+    
+    if (equip.gengu > 0)
+    {
+        NSString *gengu = [NSString stringWithFormat:@"根骨+%d",(int)equip.gengu];
+        
+        CGSize gengu_size = [gengu sizeWithFont:fonttx3];
+        
+        HTUILabel *genguLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, gengu_size.width, gengu_size.height)];
+        [genguLabel setMiaobianColor:[UIColor blackColor]];
+        [genguLabel setBackgroundColor:[UIColor clearColor]];
+        [genguLabel setTextColor:RGBCOLOR(255, 255, 255)];
+        [genguLabel setFont:fonttx3];
+        genguLabel.text = gengu;
+        [genguLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:genguLabel];
+        nowY += gengu_size.height;
+    }
+    
+    if (equip.lidao > 0)
+    {
+        NSString *gengu = [NSString stringWithFormat:@"力道+%d",(int)equip.lidao];
+        
+        CGSize gengu_size = [gengu sizeWithFont:fonttx3];
+        
+        HTUILabel *genguLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, gengu_size.width, gengu_size.height)];
+        [genguLabel setMiaobianColor:[UIColor blackColor]];
+        [genguLabel setBackgroundColor:[UIColor clearColor]];
+        [genguLabel setTextColor:RGBCOLOR(255, 255, 255)];
+        [genguLabel setFont:fonttx3];
+        genguLabel.text = gengu;
+        [genguLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:genguLabel];
+        nowY += gengu_size.height;
+    }
+
+    if (equip.yuanqi > 0)
+    {
+        NSString *gengu = [NSString stringWithFormat:@"元气+%d",(int)equip.yuanqi];
+        
+        CGSize gengu_size = [gengu sizeWithFont:fonttx3];
+        
+        HTUILabel *genguLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, gengu_size.width, gengu_size.height)];
+        [genguLabel setMiaobianColor:[UIColor blackColor]];
+        [genguLabel setBackgroundColor:[UIColor clearColor]];
+        [genguLabel setTextColor:RGBCOLOR(255, 255, 255)];
+        [genguLabel setFont:fonttx3];
+        genguLabel.text = gengu;
+        [genguLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:genguLabel];
+        nowY += gengu_size.height;
+    }
+    if (equip.shenfa > 0)
+    {
+        NSString *gengu = [NSString stringWithFormat:@"身法+%d",(int)equip.shenfa];
+        
+        CGSize gengu_size = [gengu sizeWithFont:fonttx3];
+        
+        HTUILabel *genguLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, gengu_size.width, gengu_size.height)];
+        [genguLabel setMiaobianColor:[UIColor blackColor]];
+        [genguLabel setBackgroundColor:[UIColor clearColor]];
+        [genguLabel setTextColor:RGBCOLOR(255, 255, 255)];
+        [genguLabel setFont:fonttx3];
+        genguLabel.text = gengu;
+        [genguLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:genguLabel];
+        nowY += gengu_size.height;
+    }
+    if (equip.gongji > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"攻击提高%d",(int)equip.gongji];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.zhiliaoliang > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"治疗成效提高%d",(int)equip.zhiliaoliang];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.huixin > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"会心等级提高%d",(int)equip.huixin];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.huixiao > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"会心效果等级提高%d",(int)equip.huixiao];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.pofang > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"破防提高%d",(int)equip.pofang];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.jiasu > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"加速等级提高%d",(int)equip.jiasu];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.mingzhong > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"命中等级提高%d",(int)equip.mingzhong];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    if (equip.wushuang > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"无双等级提高%d",(int)equip.wushuang];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor greenColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    
+    nowY += 2;
+    if (equip.quality > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"品质等级%d",(int)equip.quality];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor yellowColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    nowY += 2;
+    if (equip.score > 0)
+    {
+        NSString *property = [NSString stringWithFormat:@"装备分数%d",(int)equip.score];
+        CGSize propertySize = [property sizeWithFont:fonttx3];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor yellowColor]];
+        [propertyLabel setFont:fonttx3];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
+    nowY += 2;
+    if (equip.diaoluo)
+    {
+        NSString *property = [NSString stringWithFormat:@"出处：%@",equip.diaoluo];
+        CGSize propertySize = [property sizeWithFont:fonttx2];
+        
+        HTUILabel *propertyLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, propertySize.width, propertySize.height)];
+        [propertyLabel setMiaobianColor:[UIColor blackColor]];
+        [propertyLabel setBackgroundColor:[UIColor clearColor]];
+        [propertyLabel setTextColor:[UIColor whiteColor]];
+        [propertyLabel setFont:fonttx2];
+        propertyLabel.text = property;
+        [propertyLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:propertyLabel];
+        nowY += propertySize.height;
+    }
     UIImage *watermarkedImage = [UIImage imageWithUIView:equipShow];
 //    [self.centerView setBackgroundColor:[UIColor clearColor]];
     [self.equipShowView setImage:watermarkedImage];

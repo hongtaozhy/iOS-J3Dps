@@ -23,4 +23,6 @@
 - (NSArray *)searchByBuWei:(HTBuWei)buwei haveProperty:(HTEquipProType)type;
 
 - (NSArray *)searchByBuWei:(HTBuWei)buwei xinfa:(HTXinFa)xinfa haveProperty:(HTEquipProType)type;
+
+- (NSString *)typeName:(HTBuWei)buwei;
 @end
