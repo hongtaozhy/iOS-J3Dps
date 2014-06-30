@@ -26,6 +26,8 @@
         [[HTEquipManager sharedManager] initData];
     });
     
+    [[HTSuitManager sharedManager] loadFirstSuit];
+    
     // Override point for customization after application launch.
     
     HTMainViewController *rootctrl = [[HTMainViewController alloc] initWithNibName:nil bundle:nil];

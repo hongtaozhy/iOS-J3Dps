@@ -18,4 +18,6 @@
 
 - (void)saveNowSuitWithName:(NSString *)name;
 - (void)loadSuitWithName:(NSString *)name;
+
+- (void)loadFirstSuit;
 @end

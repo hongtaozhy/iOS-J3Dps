@@ -59,4 +59,13 @@
 
     return filename;
 }
+
+- (void)loadFirstSuit
+{
+    if (self.allSuit.count > 0)
+    {
+        self.nowSuit = [[[[HTSuitManager sharedManager] allSuit] allValues] objectAtIndex:0];
+    }
+}
+
 @end
