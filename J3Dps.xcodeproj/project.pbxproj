@@ -29,6 +29,7 @@
 		434294D91941A91F001F0723 /* HTWuxingStone.m in Sources */ = {isa = PBXBuildFile; fileRef = 434294D81941A91F001F0723 /* HTWuxingStone.m */; };
 		43442CE21930C86F00C99756 /* UIImage+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 43442CE11930C86F00C99756 /* UIImage+Draw.m */; };
 		43442CE51930D0FE00C99756 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43442CE41930D0FE00C99756 /* UIColor+Helper.m */; };
+		434893A81961490100E7A9F3 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 434893A71961490100E7A9F3 /* NSString+Utilities.m */; };
 		435EE0941927BD11000DC8D0 /* UIImage+HTMenPaiImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */; };
 		436779BB1931DD6E003F6D9E /* HTSuitManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436779BA1931DD6E003F6D9E /* HTSuitManagerViewController.m */; };
 		436F433C1922584800ECDD31 /* HTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436F433B1922584800ECDD31 /* HTManager.m */; };
@@ -100,6 +101,8 @@
 		43442CE11930C86F00C99756 /* UIImage+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Draw.m"; sourceTree = "<group>"; };
 		43442CE31930D0FE00C99756 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		43442CE41930D0FE00C99756 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
+		434893A61961490100E7A9F3 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		434893A71961490100E7A9F3 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		435EE0921927BD11000DC8D0 /* UIImage+HTMenPaiImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTMenPaiImg.h"; sourceTree = "<group>"; };
 		435EE0931927BD11000DC8D0 /* UIImage+HTMenPaiImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTMenPaiImg.m"; sourceTree = "<group>"; };
 		436779B91931DD6E003F6D9E /* HTSuitManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTSuitManagerViewController.h; path = J3Dps/HTSuitManagerViewController.h; sourceTree = SOURCE_ROOT; };
@@ -296,6 +299,8 @@
 		436F43441922F2A500ECDD31 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				434893A61961490100E7A9F3 /* NSString+Utilities.h */,
+				434893A71961490100E7A9F3 /* NSString+Utilities.m */,
 				43442CE31930D0FE00C99756 /* UIColor+Helper.h */,
 				43442CE41930D0FE00C99756 /* UIColor+Helper.m */,
 				43442CE01930C86F00C99756 /* UIImage+Draw.h */,
@@ -473,6 +478,7 @@
 				439C8B7E1924D515004DD8FE /* HTPreviewView.m in Sources */,
 				43173DFF191E646700B14BF6 /* HTMainViewController.m in Sources */,
 				43E66E0C193A809F008E21D9 /* HTAboutUsViewController.m in Sources */,
+				434893A81961490100E7A9F3 /* NSString+Utilities.m in Sources */,
 				43173DFB191E63E800B14BF6 /* UIDevice+Extension.m in Sources */,
 				43D179461918FCEA003E0035 /* HTDBManager.m in Sources */,
 				43E66E09193A803F008E21D9 /* HTSettingViewController.m in Sources */,

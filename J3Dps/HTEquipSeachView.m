@@ -8,9 +8,11 @@
 
 #import "HTEquipSeachView.h"
 #import "HTSuitManager.h"
+#import "NSString+Utilities.h"
 
 @interface HTEquipSeachView()
 @property (nonatomic,retain) NSArray *searchResult;
+@property (nonatomic,assign) int minLevel;
 @end
 
 @implementation HTEquipSeachView
@@ -21,7 +23,7 @@
     if (self) {
         
         self.searchResult = nil;
-        
+        self.minLevel = 0;
         [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"zbsousuobg"]]];
         
         [self addBtn];
@@ -134,7 +136,7 @@
 
 - (void)searchTextChanged:(UITextField *)sender
 {
-//    NSString *name  = [sender text];
+    self.minLevel = [[sender text] intValue];
     [self.resultTable reloadData];
 }
 
@@ -170,11 +172,44 @@
     }
     cell.textLabel.text = ((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).name;
     
+    if (self.minLevel > 0)
+    {
+        if (((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).quality < self.minLevel)
+        {
+            [cell setHidden:YES];
+        }
+        else
+        {
+            [cell setHidden:NO];
+        }
+    }
+    else
+    {
+        if ([self.searchView text].length <= 0 || [((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).name hasSubstring:[self.searchView text]])
+        {
+            [cell setHidden:NO];
+        }
+        else
+        {
+            [cell setHidden:YES];
+        }
+    }
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.minLevel > 0 && ((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).quality < self.minLevel)
+    {
+        return 0;
+    }
+
+    if ([self.searchView text].length > 0 && self.minLevel <= 0 && ![((HTEquip *)[self.searchResult objectAtIndex:indexPath.row]).name hasSubstring:[self.searchView text]])
+    {
+        return 0;
+    }
+    
     return 19.0;
 }
 
