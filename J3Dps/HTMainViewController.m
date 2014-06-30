@@ -603,12 +603,13 @@
     tixingLabel.text = showtixing;
     [tixingLabel setTextAlignment:NSTextAlignmentCenter];
     [equipShow addSubview:tixingLabel];
-    
+    nowY += size.height;
     NSString *showtype = [[HTEquipManager sharedManager] typeName:equip.buWei];
     UIFont *fonttx2 = [UIFont fontWithName:@"STHeitiSC-Medium" size:20.0];
     CGSize size2 = [showtype sizeWithFont:fonttx2];
 
-    nowY += size.height;
+    
+    nowY += 5;
     HTUILabel *typeLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, size2.width, size2.height)];
     [typeLabel setMiaobianColor:[UIColor blackColor]];
     [typeLabel setBackgroundColor:[UIColor clearColor]];
@@ -617,14 +618,14 @@
     typeLabel.text = showtype;
     [typeLabel setTextAlignment:NSTextAlignmentCenter];
     [equipShow addSubview:typeLabel];
-
+    nowY += size2.height;
     UIFont *fonttx3 = [UIFont fontWithName:@"STHeitiSC-Medium" size:24.0];
     
     NSString *tizhi = [NSString stringWithFormat:@"体质+%d",(int)equip.tizhi];
 
     CGSize tizhi_size = [tizhi sizeWithFont:fonttx3];
 
-    nowY += size2.height;
+    nowY += 5;
     HTUILabel *tizhiLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, tizhi_size.width, tizhi_size.height)];
     [tizhiLabel setMiaobianColor:[UIColor blackColor]];
     [tizhiLabel setBackgroundColor:[UIColor clearColor]];
