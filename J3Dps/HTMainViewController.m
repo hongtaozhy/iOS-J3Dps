@@ -620,21 +620,22 @@
     [equipShow addSubview:typeLabel];
     nowY += size2.height;
     UIFont *fonttx3 = [UIFont fontWithName:@"STHeitiSC-Medium" size:24.0];
-    
-    NSString *tizhi = [NSString stringWithFormat:@"体质+%d",(int)equip.tizhi];
-
-    CGSize tizhi_size = [tizhi sizeWithFont:fonttx3];
-
     nowY += 5;
-    HTUILabel *tizhiLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, tizhi_size.width, tizhi_size.height)];
-    [tizhiLabel setMiaobianColor:[UIColor blackColor]];
-    [tizhiLabel setBackgroundColor:[UIColor clearColor]];
-    [tizhiLabel setTextColor:RGBCOLOR(255, 255, 255)];
-    [tizhiLabel setFont:fonttx3];
-    tizhiLabel.text = tizhi;
-    [tizhiLabel setTextAlignment:NSTextAlignmentCenter];
-    [equipShow addSubview:tizhiLabel];
-    nowY += tizhi_size.height;
+    if (equip.tizhi > 0)
+    {
+        NSString *tizhi = [NSString stringWithFormat:@"体质+%d",(int)equip.tizhi];
+
+        CGSize tizhi_size = [tizhi sizeWithFont:fonttx3];
+        HTUILabel *tizhiLabel = [[HTUILabel alloc] initWithFrame:CGRectMake(68*2, nowY, tizhi_size.width, tizhi_size.height)];
+        [tizhiLabel setMiaobianColor:[UIColor blackColor]];
+        [tizhiLabel setBackgroundColor:[UIColor clearColor]];
+        [tizhiLabel setTextColor:RGBCOLOR(255, 255, 255)];
+        [tizhiLabel setFont:fonttx3];
+        tizhiLabel.text = tizhi;
+        [tizhiLabel setTextAlignment:NSTextAlignmentCenter];
+        [equipShow addSubview:tizhiLabel];
+        nowY += tizhi_size.height;
+    }
     
     if (equip.gengu > 0)
     {
