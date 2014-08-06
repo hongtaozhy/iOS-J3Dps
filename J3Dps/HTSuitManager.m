@@ -18,7 +18,7 @@
 {
     static dispatch_once_t onceQueue;
     static HTSuitManager *sharedManager = nil;
-    
+    //some
     dispatch_once(&onceQueue, ^{
         sharedManager = [[self alloc] init];
         sharedManager.allSuit = [NSKeyedUnarchiver unarchiveObjectWithFile:sharedManager.suitsFileName];
